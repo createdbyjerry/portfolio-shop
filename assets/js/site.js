@@ -26,3 +26,16 @@ if (frame && coords && window.matchMedia('(hover: hover)').matches) {
 
 // Footer year
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+// Google Analytics (same property as the Webflow site)
+(() => {
+  const GA_ID = 'G-D56XR5LTNB';
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') return; // don't count local previews
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', GA_ID);
+})();
