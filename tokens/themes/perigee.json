@@ -1,0 +1,120 @@
+{
+  "$description": "Perigee: the default dark theme. Tier 2 (semantic) and tier 3 (component) tokens. Values are aliases to tokens/base.json, written as {group.path}.",
+  "$extensions": {
+    "cbj": {
+      "name": "Perigee",
+      "selector": ":root",
+      "colorScheme": "dark",
+      "default": true
+    }
+  },
+  "surface": {
+    "$type": "color",
+    "page":   { "$value": "{color.neutral.950}", "$description": "Body background" },
+    "panel":  { "$value": "{color.neutral.900}", "$description": "Cards" },
+    "raised": { "$value": "{color.neutral.850}", "$description": "Tags, meta tiles, inputs" },
+    "glass":  { "$value": "{color.alpha.panel-75}", "$description": "Blurred bands over the orb" },
+    "void":   { "$value": "{color.neutral.0}", "$description": "Footer, deepest wells" },
+    "nav":    { "$value": "{color.alpha.black-10}" },
+    "overlay":{ "$value": "{color.neutral.950}", "$description": "Mobile menu sheet (solid: backdrop blur cannot nest inside the blurred nav)" }
+  },
+  "text": {
+    "$type": "color",
+    "primary":   { "$value": "{color.neutral.50}" },
+    "secondary": { "$value": "{color.neutral.400}" },
+    "tertiary":  { "$value": "{color.neutral.500}" },
+    "inverse":   { "$value": "{color.neutral.0}" },
+    "accent":    { "$value": "{color.coral.300}" },
+    "highlight": { "$value": "{color.gold.500}", "$description": "Prices, live readouts" }
+  },
+  "border": {
+    "$type": "color",
+    "subtle": { "$value": "{color.neutral.800}" },
+    "strong": { "$value": "{color.alpha.paper-20}" },
+    "accent": { "$value": "{color.coral.500}" }
+  },
+  "accent": {
+    "$type": "color",
+    "primary":         { "$value": "{color.coral.500}" },
+    "primary-hover":   { "$value": "{color.coral.300}" },
+    "primary-deep":    { "$value": "{color.coral.700}" },
+    "primary-wash":    { "$value": "{color.alpha.coral-15}" },
+    "secondary":       { "$value": "{color.gold.500}" },
+    "secondary-hover": { "$value": "{color.gold.300}" }
+  },
+  "focus": {
+    "$type": "color",
+    "ring": { "$value": "{color.gold.300}" }
+  },
+  "orb": {
+    "$type": "color",
+    "core": { "$value": "{color.coral.950}" },
+    "mid":  { "$value": "{color.coral.700}" },
+    "edge": { "$value": "{color.coral.500}" },
+    "rim":  { "$value": "{color.coral.500}" }
+  },
+  "type": {
+    "display": {
+      "family": { "$type": "fontFamily", "$value": "{font.family.display}" },
+      "hero":   { "$type": "dimension", "$value": "{font.size.fluid-4}" },
+      "page":   { "$type": "dimension", "$value": "{font.size.fluid-3}" },
+      "section":{ "$type": "dimension", "$value": "{font.size.fluid-2}" },
+      "sub":    { "$type": "dimension", "$value": "{font.size.fluid-1}" },
+      "card":   { "$type": "dimension", "$value": "{font.size.md}" }
+    },
+    "body": {
+      "family": { "$type": "fontFamily", "$value": "{font.family.body}" },
+      "sm":     { "$type": "dimension", "$value": "{font.size.md}" },
+      "md":     { "$type": "dimension", "$value": "{font.size.lg}" },
+      "lg":     { "$type": "dimension", "$value": "{font.size.xl}" },
+      "meta":   { "$type": "dimension", "$value": "{font.size.sm}" }
+    },
+    "mono": {
+      "family": { "$type": "fontFamily", "$value": "{font.family.mono}" },
+      "size":   { "$type": "dimension", "$value": "{font.size.xs}" }
+    }
+  },
+  "layout": {
+    "$type": "dimension",
+    "container": { "$value": "{size.container}" },
+    "prose":     { "$value": "{size.prose}" },
+    "gutter":    { "$value": "{space.sm}" },
+    "section-y": { "$value": "{space.6xl}" },
+    "section-y-compact": { "$value": "{space.4xl}" },
+    "nav-height":{ "$value": "{size.nav-height}" }
+  },
+  "component": {
+    "button": {
+      "bg":         { "$type": "color", "$value": "{accent.primary}" },
+      "bg-hover":   { "$type": "color", "$value": "{accent.primary-hover}" },
+      "fg":         { "$type": "color", "$value": "{text.inverse}" },
+      "ghost-border": { "$type": "color", "$value": "{border.strong}" },
+      "ghost-fg":   { "$type": "color", "$value": "{text.primary}" },
+      "padding-y":  { "$type": "dimension", "$value": "{space.xs}" },
+      "padding-x":  { "$type": "dimension", "$value": "{space.lg}" },
+      "radius":     { "$type": "dimension", "$value": "{radius.sm}" },
+      "font-size":  { "$type": "dimension", "$value": "{font.size.sm}" }
+    },
+    "card": {
+      "bg":           { "$type": "color", "$value": "{surface.panel}" },
+      "border":       { "$type": "color", "$value": "{border.subtle}" },
+      "border-hover": { "$type": "color", "$value": "{border.accent}" },
+      "radius":       { "$type": "dimension", "$value": "{radius.md}" },
+      "padding":      { "$type": "dimension", "$value": "{space.xl}" }
+    },
+    "tag": {
+      "bg":      { "$type": "color", "$value": "{surface.raised}" },
+      "border":  { "$type": "color", "$value": "{border.subtle}" },
+      "fg":      { "$type": "color", "$value": "{text.secondary}" },
+      "radius":  { "$type": "dimension", "$value": "{radius.pill}" }
+    },
+    "media": {
+      "radius": { "$type": "dimension", "$value": "{radius.lg}" },
+      "border": { "$type": "color", "$value": "{border.subtle}" }
+    },
+    "frame": {
+      "corner": { "$type": "color", "$value": "{accent.primary}" },
+      "corner-size": { "$type": "dimension", "$value": "{space.md}" }
+    }
+  }
+}

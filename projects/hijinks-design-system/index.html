@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hijinks Design System | Created by Jerry</title>
+  <meta name="description" content="Transformed Geospan's fragmented documentation into a living, searchable hub that unified design and engineering workflows.">
+  <link rel="canonical" href="https://www.createdbyjerry.com/projects/hijinks-design-system/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hijinks Design System | Created by Jerry">
+  <meta property="og:description" content="Transformed Geospan's fragmented documentation into a living, searchable hub that unified design and engineering workflows.">
+  <meta property="og:url" content="https://www.createdbyjerry.com/projects/hijinks-design-system/">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Oxygen:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-open="false">
+    <a class="brand" href="../../">
+      <img src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png" alt="" width="40" height="40">
+      <span class="brand__type"><span>created</span><span>by jerry</span></span>
+      <span class="visually-hidden">Home</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><a class="nav__link" href="../../prototypes/">Prototypes</a></li>
+        <li><a class="nav__link" href="../../arcade/">Arcade</a></li>
+        <li><a class="nav__link" href="../../shop/">Shop</a></li>
+        <li><a class="nav__link" href="../../about-jerry/">About</a></li>
+      </ul>
+    </nav>
+    <div class="status-pill mono"><span class="dot dot--gold dot--pulse"></span>Status: available</div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span></span><span class="visually-hidden">Menu</span></button>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero">
+      <div class="container">
+        <a class="back-link mono" href="../../work/"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> All work</a>
+        <div class="cs-hero__grid">
+          <img class="cs-hero__media" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6925cc69e885816c59a3496b_43ebe90e08a4ee7fff036f8d47beccde_Hero%20Image%20geospan.png" alt="Hijinks Design System project hero" width="1200" height="800">
+          <div class="cs-hero__text">
+            <h1 class="h1">Hijinks Design System</h1>
+            <p class="h3 text-accent">Turning Documentation into a Living Product</p>
+            <p class="body text-secondary">Geospan’s platform ecosystem—spanning everything from 3D-roof purchasing modules to complex roof-building estimation tools and analytics dashboards—was crippled by a classic tech-org disease: fragmented, buried, and broken documentation. I stepped in as the Lead Architect to transform our documentation from a forgotten static page into a high-powered, living digital product. We built an entirely searchable, centralized home for patterns, components, accessibility guidelines, token mappings, and decision histories, embedding it directly into the daily engineering and design workflow.</p>
+          </div>
+        </div>
+        <ul class="cs-meta">
+            <li><span class="mono">Role</span><span class="meta">Sr. Product Designer</span></li>
+            <li><span class="mono">Company</span><span class="meta">Geospan</span></li>
+            <li><span class="mono">Industry</span><span class="meta">GIS / Remote Sensing</span></li>
+            <li><span class="mono">Year</span><span class="meta">2024</span></li>
+            <li><span class="mono">Timeline</span><span class="meta">Aug – Dec</span></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="cs-section" id="s1" aria-labelledby="s1-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">01</span> / The Problem</span>
+          <h2 class="h2" id="s1-title">Fragmented Blueprints & Wasted Hours</h2>
+        </div>
+        <div class="prose body-md">
+          <p>Without a single source of truth for our user interface patterns, Geospan was burning valuable product velocity on repetitive work:</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Documentation Desert</h3>
+              <p class="body">Existing component pages were wildly inconsistent, incomplete, and completely separated from live code examples, leaving developers guessing during implementation.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The "Why" Factor</h3>
+              <p class="body">Product managers and designers lacked any record of design rationale. Without knowing <em>why</em> a specific pattern was built a certain way, teams kept accidentally creating unnecessary forks and duplicate components.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Onboarding Tax</h3>
+              <p class="body">Onboarding new designers and developers was a long, grueling process, leading to frequent reimplementation incidents where legacy patterns were accidentally rebuilt over and over.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">Why it mattered</span>
+          <p class="body-md">If your teams are spending half their sprint reinventing existing UI buttons and form fields, they aren't spending time solving complex spatial problems like 3D roof modeling. We needed to make the right design choices the path of least resistance.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Figma + Joy UI mapping">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Figma + Joy UI mapping</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6927227aa1e455a866dad333_c7b3fa425d30d5a5a38ef1475c07120d_geospan%204.png" alt="Figma + Joy UI mapping" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s2" aria-labelledby="s2-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">02</span> / The Solution</span>
+          <h2 class="h2" id="s2-title">The Blueprint Framework</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We didn't just write more text; we engineered a scalable, 5-part anatomical blueprint for every single component and pattern in Geospan's ecosystem. Every component page was standardized into a strict, predictable layout:</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <span class="callout__step mono">Step 01</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Purpose</h3>
+              <p class="body">The core why and user rationale behind the element.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 02</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Anatomy</h3>
+              <p class="body">A clear visual breakdown of the component’s structural zones and states.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 03</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Tokens Used</h3>
+              <p class="body">The exact semantic color, spacing, and typographic properties assigned to it.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 04</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Accessibility</h3>
+              <p class="body">Explicit instructions covering keyboard navigation, screen-reader behavior, and contrast rules.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 05</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Do / Don’t Layouts</h3>
+              <p class="body">Explicit, visual side-by-side examples showing proper vs. improper usage guidelines.</p>
+            </div>
+          </div>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout"><h3 class="h4">The Quick-Start Engine</h3><p class="body">We designed interactive onboarding checklists and dedicated guides tailored specifically for complex, frequent tasks—such as manipulating vector-editing map components or styling spatial map layers.</p></div>
+          <div class="callout"><h3 class="h4">The 3-Tier Token & Tool Synchronization</h3><p class="body">We implemented a unified 3-tier token system (core, semantic, and component) backed by an automated pipeline that synced properties seamlessly between design files and codebases, completely modernizing the top 20 highest-traffic UI components.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Multiple product audit session">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Multiple product audit session</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6927227a090849b27e2e76d4_geospan%201.png" alt="Multiple product audit session" loading="lazy">
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Tight timeline for the design system launch">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Tight timeline for the design system launch</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6927227ad31597c10f4029ad_5fe0adadda1c73c43d4fce2dcc148089_geospan%205.png" alt="Tight timeline for the design system launch" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s3" aria-labelledby="s3-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">03</span> / The Process</span>
+          <h2 class="h2" id="s3-title">Digging Into the Workflow</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We built our documentation engine using strict, user-centered product methodologies:</p>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <span class="callout__step mono">Step 01</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">The Discovery Loop</h3>
+              <p class="body">Conducted exhaustive interviews with frontline designers, engineers, and PMs to map out exactly where their day-to-day workflow friction was happening.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 02</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">The 40-Component Audit</h3>
+              <p class="body">Dissected over 40 active components and patterns across our platforms to identify structural inconsistencies.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 03</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">The Pilot Blueprint</h3>
+              <p class="body">Created reusable documentation templates and ran a pilot program utilizing our highest-traffic components to prove out the framework's layout.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 04</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">The Deployment Cadence</h3>
+              <p class="body">Rolled out the live documentation site alongside hands-on training sessions and internal adoption metrics to make sure the system stuck.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Component example with UX pattern">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Component example with UX pattern</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6927227a84bc081ec325de2b_geospan%203.png" alt="Component example with UX pattern" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s4" aria-labelledby="s4-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">04</span> / Splashdown</span>
+          <h2 class="h2" id="s4-title">Seamless Alignment</h2>
+        </div>
+        <div class="prose body-md">
+          <p>By treating documentation as an active product rather than a chore, we fundamentally shifted Geospan's development efficiency:</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Reimplementations Slashed</h3>
+              <p class="body">Duplicate component creations and accidental UI rebuilds plummeted by ~60% within just two quarters, tracked directly via pull request review tags.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Automatic Accessibility</h3>
+              <p class="body">Accessibility became a natural byproduct of the design process rather than a separate QA step, drastically increasing compliance across all product interfaces.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Unified Workspace</h3>
+              <p class="body">Designers and engineers finally stopped bouncing between disconnected files, operating out of a unified, synchronized pipeline.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Figma welcome and read-me">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Figma welcome and read-me</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6927227a92a269a16f045b61_geospan%202.png" alt="Figma welcome and read-me" loading="lazy">
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Tokens for the default dark theme">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Tokens for the default dark theme</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6927234f64a5d408e2ba0b47_geospan%206.png" alt="Tokens for the default dark theme" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s5" aria-labelledby="s5-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">05</span> / Retrospective</span>
+          <h2 class="h2" id="s5-title">Lessons & Next Steps</h2>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Hard Lesson</h3>
+              <p class="body">Documentation will die if it lives in a silo. You have to embed your guidelines directly inside the everyday tools your teams are already using (like Figma libraries and Jira tickets) so they don't have to go hunting for answers.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Horizon</h3>
+              <p class="body">The next milestone is data-driven optimization—integrating basic analytics onto our documentation pages to track which components get viewed the most and where users are getting stuck, allowing us to proactively improve the system.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--compact" aria-label="Next project">
+      <div class="container">
+        <span class="mono text-tertiary">Next project</span>
+        <a class="h2 link link--wrap" href="../../projects/governance-contribution/">Governance &amp; Contribution →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <a class="brand" href="../../">
+            <img src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png" alt="" width="40" height="40">
+            <span class="brand__type text-primary"><span>created</span><span>by jerry</span></span>
+            <span class="visually-hidden">Home</span>
+          </a>
+        </div>
+        <nav class="footer__col" aria-label="Sitemap">
+          <span class="mono">Sitemap</span>
+          <a class="link" href="../../">Home</a>
+          <a class="link" href="../../work/">Work</a>
+          <a class="link" href="../../prototypes/">Prototypes</a>
+          <a class="link" href="../../arcade/">Arcade</a>
+          <a class="link" href="../../shop/">Shop</a>
+          <a class="link" href="../../about-jerry/">About</a>
+          <a class="link" href="../../ai-disclosure-statement/">AI Disclosure</a>
+        </nav>
+        <nav class="footer__col" aria-label="Elsewhere">
+          <span class="mono">Elsewhere</span>
+          <a class="link" href="https://www.linkedin.com/in/jerryborundajr/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="link" href="https://createdbyjerry.itch.io/" target="_blank" rel="noopener">itch.io</a>
+          <a class="link" href="https://www.instagram.com/created_by_jerry/" target="_blank" rel="noopener">Instagram</a>
+          <a class="link" href="https://github.com/createdbyjerry" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+      <div class="footer__bar mono">
+        <span>© <span data-year>2026</span> createdbyjerry — all systems nominal</span>
+        <span>Status: open for select freelance work</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

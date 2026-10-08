@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geospatial Vectors | Created by Jerry</title>
+  <meta name="description" content="Field-mapping tools that turn satellite imagery into actionable site data.">
+  <link rel="canonical" href="https://www.createdbyjerry.com/projects/managing-and-editing-geospatial-vectors/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Geospatial Vectors | Created by Jerry">
+  <meta property="og:description" content="Field-mapping tools that turn satellite imagery into actionable site data.">
+  <meta property="og:url" content="https://www.createdbyjerry.com/projects/managing-and-editing-geospatial-vectors/">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Oxygen:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-open="false">
+    <a class="brand" href="../../">
+      <img src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png" alt="" width="40" height="40">
+      <span class="brand__type"><span>created</span><span>by jerry</span></span>
+      <span class="visually-hidden">Home</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><a class="nav__link" href="../../prototypes/">Prototypes</a></li>
+        <li><a class="nav__link" href="../../arcade/">Arcade</a></li>
+        <li><a class="nav__link" href="../../shop/">Shop</a></li>
+        <li><a class="nav__link" href="../../about-jerry/">About</a></li>
+      </ul>
+    </nav>
+    <div class="status-pill mono"><span class="dot dot--gold dot--pulse"></span>Status: available</div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span></span><span class="visually-hidden">Menu</span></button>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero">
+      <div class="container">
+        <a class="back-link mono" href="../../work/"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> All work</a>
+        <div class="cs-hero__grid">
+          <img class="cs-hero__media" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692216612e00d6edb68426e5_a3bd51e9b6c72d42e74231eddb414df6_Header%20Image%20-%20Planet.png" alt="Geospatial Vectors project hero" width="1200" height="800">
+          <div class="cs-hero__text">
+            <h1 class="h1">Geospatial Vectors</h1>
+            <p class="h3 text-accent">Taming the Wild West of Geospatial Vectors</p>
+            <p class="body text-secondary">Mapmakers just want to draw lines and shapes without fighting the software. We took Planet’s clunky, legacy vector-editing tools and completely overhauled them into a sleek, streamlined workspace. By replacing an unpredictable interface with an intuitive, scalable map toolkit, we stripped away user friction, stopped platform abandonment in its tracks, and supercharged workflow efficiency.</p>
+          </div>
+        </div>
+        <ul class="cs-meta">
+            <li><span class="mono">Role</span><span class="meta">Sr. Product Designer</span></li>
+            <li><span class="mono">Company</span><span class="meta">Planet</span></li>
+            <li><span class="mono">Industry</span><span class="meta">GIS / Remote Sensing</span></li>
+            <li><span class="mono">Year</span><span class="meta">2022</span></li>
+            <li><span class="mono">Timeline</span><span class="meta">Apr – Jun</span></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="cs-section" id="s1" aria-labelledby="s1-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">01</span> / The Problem</span>
+          <h2 class="h2" id="s1-title">Lost in the Coordinates</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We were dealing with a deeply frustrating user journey that risked pushing our core audience straight into the arms of competitor mapping tools:</p>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Business Threat</h3>
+              <p class="body">Users were actively abandoning Planet Explorer's vector tools because editing shapes felt like guesswork, directly threatening customer retention.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The "Planeteer" Pain</h3>
+              <p class="body">Internal users and clients were drowning in a sea of confusing "edit modes." Finding toolbar controls was a scavenger hunt, and making a simple mistake felt unpredictable and frustrating.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">Why it mattered</span>
+          <p class="body-md">If a user can’t easily draw a boundary box over a piece of satellite imagery to analyze it, the entire platform loses its value. We needed to transform Planet into a self-contained spatial analysis powerhouse.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Auditing the tools">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Auditing the tools</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692499a793eb0f6f4cae7236_1%20problem%20-01.png" alt="Auditing the tools (1 of 2)" loading="lazy">
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692499803a689aee50e41d72_1%20problem%20-02.png" alt="Auditing the tools (2 of 2)" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s2" aria-labelledby="s2-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">02</span> / Constraints</span>
+          <h2 class="h2" id="s2-title">The 3-Month Sprint</h2>
+        </div>
+        <div class="prose body-md">
+          <p>Fixing this wasn’t just a design challenge; it was a race against time with a lean crew:</p>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Two-Person Army</h3>
+              <p class="body">We only had two lead engineers available to implement the entire redesign.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Fragile Foundations</h3>
+              <p class="body">We were building on top of a fragile, legacy geospatial codebase that didn’t take kindly to massive, sweeping changes.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">Why it mattered</span>
+          <p class="body-md">If the interface was too simple, it was a toy. If it was too complex, it was homework. We had to hit the absolute sweet spot where intense physics met effortless UX.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Mapping the user journey with the tool">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Mapping the user journey with the tool</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6924997f29c379b506caf7d3_1%20problem%20-03.png" alt="Mapping the user journey with the tool" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s3" aria-labelledby="s3-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">03</span> / Strategy</span>
+          <h2 class="h2" id="s3-title">A North Star of Complete Predictability</h2>
+        </div>
+        <div class="prose body-md">
+          <p>Our UX strategy was anchored on a single golden rule: <strong>keep the user on the map.</strong> We mapped out an experience framework built to eliminate cognitive load:</p>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout callout--compare">
+            <div class="stack stack--tight">
+              <h3 class="mono text-tertiary">Old way</h3>
+              <p class="body-md text-primary">Bounce between side panels</p>
+            </div>
+          </div>
+          <div class="callout callout--compare-new">
+            <div class="stack stack--tight">
+              <h3 class="mono text-tertiary">New way</h3>
+              <p class="body-md text-primary">Single, unified map-side toolbar</p>
+            </div>
+          </div>
+        </div>
+        <div class="prose body-md"><p>We hypothesized that by consolidating all actions into one highly predictable toolbar and introducing buttery-smooth visual microinteractions, we could instantly eliminate mode confusion and build user confidence.</p></div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="UI hierarchy structuring session">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>UI hierarchy structuring session</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6924997fcab3fb4f86f8581e_2%20challenge.png" alt="UI hierarchy structuring session" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s4" aria-labelledby="s4-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">04</span> / UX Work</span>
+          <h2 class="h2" id="s4-title">Auditing the Chaos</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We didn’t just guess what was broken; we cracked open behavioral analytics, audited every single UI element, and ran co-design workshops with internal power users.</p>
+          <p>We battle-tested two distinct interface directions: a floating modular panel versus a consolidated map toolbar. Through intense, iterative prototyping sessions in Figma, we mapped out every single edge case—including how a user drags a vertex, snaps points together, handles bulk edits, or safely undoes a catastrophic misclick.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Exploring panel versus toolbar directions">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Exploring panel versus toolbar directions</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6924997f6f9d1d34f5c8c47a_3%20strategy.png" alt="Exploring panel versus toolbar directions" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s5" aria-labelledby="s5-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">05</span> / UI Design</span>
+          <h2 class="h2" id="s5-title">Pixel-Perfect Precision</h2>
+        </div>
+        <div class="prose body-md">
+          <p>To turn our strategy into a production-ready reality, we engineered a unified, systemized visual language directly into Planet’s component library:</p>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Consolidated Toolbar</h3>
+              <p class="body">A tight, accessible anchor housing all creation, editing, and utility tools in a predictable hierarchy.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Intelligent Interaction States</h3>
+              <p class="body">We designed highly visible states for snapping physics, alignment guides, and active hover-state vertices.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Safety Nets</h3>
+              <p class="body">Clean modal dialogs and non-intrusive toast notifications that let users know their work was securely saved or successfully modified.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Dev Hand-off Precision</h3>
+              <p class="body">Every component was fully documented with precise redlines, spacing tokens, and motion easing curves to make our two-engineer team's life infinitely easier.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Option exercise with the team">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Option exercise with the team</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/68f7f8b9932ebebdecaf0032_c0107f0468dc7d7576eb4c197d5a68f2_Ideation.png" alt="Option exercise with the team" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s6" aria-labelledby="s6-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">06</span> / Mission Control</span>
+          <h2 class="h2" id="s6-title">Huddling with Engineering</h2>
+        </div>
+        <div class="prose body-md">
+          <p>With an engineering team of two, silos weren't an option. We hosted daily co-creation sessions with our Product Manager and engineers to review technical feasibility in real time. We balanced rendering lag against UI smoothing, ensuring that what looked great in Figma could actually run beautifully in production.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="figure" aria-label="UI components">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>UI components</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/69249980811332048b357ffd_5%20ui%20design.png" alt="UI components" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s7" aria-labelledby="s7-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">07</span> / The Payload</span>
+          <h2 class="h2" id="s7-title">Seamless Mapping</h2>
+        </div>
+        <div class="prose body-md">
+          <p>The redesign completely transformed how users interact with Planet Explorer's map canvases:</p>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Zero Friction</h3>
+              <p class="body">User sentiment flipped completely, with mapping professionals reporting that editing shapes "finally feels entirely natural."</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Flawless Execution</h3>
+              <p class="body">Mode errors plummeted as users intuitively understood whether they were in "draw," "edit," or "navigation" states.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Fewer Fire Drills</h3>
+              <p class="body">Customer support tickets related to broken or confusing vector tools dropped off significantly.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Future-Proofing</h3>
+              <p class="body">The modular toolbar and vector components we built now serve as the official foundational framework for all upcoming geospatial analysis features.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">The ultimate takeaway</span>
+          <p class="body-md">Grounding your design in tight, early engineering collaboration turns complex, intimidating technical workflows into intuitive human experiences. When you design with technical constraints instead of ignoring them, you build a launchpad for future product growth.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Vector building states">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Vector building states</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/69249a748982df0ae6154dd3_6%20collab.png" alt="Vector building states" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section section--compact" aria-label="Next project">
+      <div class="container">
+        <span class="mono text-tertiary">Next project</span>
+        <a class="h2 link link--wrap" href="../../projects/corn-to-ethanol---emissions-dashboard/">Corn to Ethanol →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <a class="brand" href="../../">
+            <img src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png" alt="" width="40" height="40">
+            <span class="brand__type text-primary"><span>created</span><span>by jerry</span></span>
+            <span class="visually-hidden">Home</span>
+          </a>
+        </div>
+        <nav class="footer__col" aria-label="Sitemap">
+          <span class="mono">Sitemap</span>
+          <a class="link" href="../../">Home</a>
+          <a class="link" href="../../work/">Work</a>
+          <a class="link" href="../../prototypes/">Prototypes</a>
+          <a class="link" href="../../arcade/">Arcade</a>
+          <a class="link" href="../../shop/">Shop</a>
+          <a class="link" href="../../about-jerry/">About</a>
+          <a class="link" href="../../ai-disclosure-statement/">AI Disclosure</a>
+        </nav>
+        <nav class="footer__col" aria-label="Elsewhere">
+          <span class="mono">Elsewhere</span>
+          <a class="link" href="https://www.linkedin.com/in/jerryborundajr/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="link" href="https://createdbyjerry.itch.io/" target="_blank" rel="noopener">itch.io</a>
+          <a class="link" href="https://www.instagram.com/created_by_jerry/" target="_blank" rel="noopener">Instagram</a>
+          <a class="link" href="https://github.com/createdbyjerry" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+      <div class="footer__bar mono">
+        <span>© <span data-year>2026</span> createdbyjerry — all systems nominal</span>
+        <span>Status: open for select freelance work</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

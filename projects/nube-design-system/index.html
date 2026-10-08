@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nube Design System | Created by Jerry</title>
+  <meta name="description" content="Architected a scalable design token system to unify Gevo’s cross-platform brand and B2B white-labeling.">
+  <link rel="canonical" href="https://www.createdbyjerry.com/projects/nube-design-system/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nube Design System | Created by Jerry">
+  <meta property="og:description" content="Architected a scalable design token system to unify Gevo’s cross-platform brand and B2B white-labeling.">
+  <meta property="og:url" content="https://www.createdbyjerry.com/projects/nube-design-system/">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Oxygen:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-open="false">
+    <a class="brand" href="../../">
+      <img src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png" alt="" width="40" height="40">
+      <span class="brand__type"><span>created</span><span>by jerry</span></span>
+      <span class="visually-hidden">Home</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><a class="nav__link" href="../../prototypes/">Prototypes</a></li>
+        <li><a class="nav__link" href="../../arcade/">Arcade</a></li>
+        <li><a class="nav__link" href="../../shop/">Shop</a></li>
+        <li><a class="nav__link" href="../../about-jerry/">About</a></li>
+      </ul>
+    </nav>
+    <div class="status-pill mono"><span class="dot dot--gold dot--pulse"></span>Status: available</div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span></span><span class="visually-hidden">Menu</span></button>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero">
+      <div class="container">
+        <a class="back-link mono" href="../../work/"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> All work</a>
+        <div class="cs-hero__grid">
+          <img class="cs-hero__media" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6925cc7eaf845e4554d95c95_0fbd446f9ef062c91f4f05f49e738b85_Hero%20Image%20-%20verity.png" alt="Nube Design System project hero" width="1200" height="800">
+          <div class="cs-hero__text">
+            <h1 class="h1">Nube Design System</h1>
+            <p class="h3 text-accent">Standardizing the Sustainability Stack</p>
+            <p class="body text-secondary">Gevo needed a unified brand identity that could scale seamlessly across data-heavy product dashboards, customer portals, and public-facing marketing sites. The catch? It also had to support unique, white-labeled theme variants for B2B customers and strict accessibility contrast standards. I stepped in as the Design System Owner to architect a robust, multi-tier token system that unified color, spacing, and typography across web and mobile platforms—turning chaotic style variables into a single, automated source of truth.</p>
+          </div>
+        </div>
+        <ul class="cs-meta">
+            <li><span class="mono">Role</span><span class="meta">Lead Product Designer</span></li>
+            <li><span class="mono">Company</span><span class="meta">Gevo</span></li>
+            <li><span class="mono">Industry</span><span class="meta">Sustainability / Carbon Markets</span></li>
+            <li><span class="mono">Year</span><span class="meta">2022</span></li>
+            <li><span class="mono">Timeline</span><span class="meta">Aug – Dec</span></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="cs-section" id="s1" aria-labelledby="s1-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">01</span> / The Problem</span>
+          <h2 class="h2" id="s1-title">Fragmented Pixels & Raw Hex Codes</h2>
+        </div>
+        <div class="prose body-md">
+          <p>Before the design system was hard-coded, Gevo's digital interface was suffering from severe visual drift and engineering bottlenecks:</p>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Palette Explosion</h3>
+              <p class="body">Disconnected teams were inventing their own color palettes and spacing scales on the fly, leading to an inconsistent and fractured user experience.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Raw Hex Trap</h3>
+              <p class="body">There was no semantic layer. Designers and developers were copying and pasting raw hex codes and hard-coded pixel values, forcing engineers to manually rebuild basic styles over and over.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Brand Update Nightmare</h3>
+              <p class="body">A simple global brand change (like updating a primary corporate green) required a grueling, multi-week coordination dance across multiple isolated code repositories.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Theme Barrier</h3>
+              <p class="body">The platform lacked the foundational architecture needed to easily swap themes for B2B clients or dynamically adjust contrast for accessibility compliance.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">Why it mattered</span>
+          <p class="body-md">If your interface looks fragmented, users lose trust in your data. To scale a premium sustainability platform, we had to replace fragile, manual styling with a bulletproof token architecture.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Figma read-me for the design system">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Figma read-me for the design system</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/69275e28729aebfc459814ba_gevo%201.png" alt="Figma read-me for the design system" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s2" aria-labelledby="s2-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">02</span> / The Solution</span>
+          <h2 class="h2" id="s2-title">The 3-Tier Token Engine</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We didn't just organize components; we re-engineered the very DNA of our UI properties by rolling out a synchronized architecture. A highly scalable token hierarchy completely isolated raw values from operational components:</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <span class="callout__step mono">Step 01</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Global / core tokens</h3>
+              <p class="body">The raw foundational values (e.g., <code>color-green-500</code> → <code>#22C55E</code>).</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 02</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Semantic / alias tokens</h3>
+              <p class="body">The functional meaning of a value (e.g., <code>color-background-success</code> → <code>color-green-500</code>).</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 03</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Component tokens</h3>
+              <p class="body">Granular, isolated component overrides (e.g., <code>button-primary-background-active</code> → <code>color-background-success</code>).</p>
+            </div>
+          </div>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout"><h3 class="h4">The Automated Pipeline</h3><p class="body">We established an end-to-end design-to-engineering synchronization pipeline, ensuring that a token change in Figma instantly committed and updated the developer code repositories.</p></div>
+          <div class="callout"><h3 class="h4">Component Library Modernization</h3><p class="body">We completely refactored Gevo’s top 20 highest-traffic UI components, wiping out legacy styling and replacing it entirely with the new semantic tokens.</p></div>
+          <div class="callout"><h3 class="h4">Baked-In Accessibility</h3><p class="body">Accessibility was shifted entirely left. By encoding WCAG contrast ratios directly into our semantic token mappings, developers achieved automatic compliance out of the box.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Modernizing the button components">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Modernizing the button components</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/69275e28fc778d78ead1ba16_gevo%202.png" alt="Modernizing the button components" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s3" aria-labelledby="s3-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">03</span> / The Process</span>
+          <h2 class="h2" id="s3-title">Auditing to Ship</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We systematically transitioned the platform from legacy code to a modern, tokenized workflow:</p>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <span class="callout__step mono">Step 01</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">The Code Audit</h3>
+              <p class="body">Conducted a comprehensive deep-dive into existing product user interfaces and CSS variables to isolate and map out every rogue style variant.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 02</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">The Blueprint</h3>
+              <p class="body">Defined and fully documented strict taxonomic naming guidelines so both engineering and design teams could speak an identical nomenclature.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 03</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">The Library Build</h3>
+              <p class="body">Constructed and deployed the centralized token libraries inside Figma to act as the visual source of truth.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 04</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">The Pilot Launch</h3>
+              <p class="body">Applied the brand-new token structure to our top 20 high-traffic components, battle-tested the integration in a staging environment, and shipped them to production under rigid QA testing parameters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Figma token library">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Figma token library</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/69275e28944fbe60c4e05cd5_gevo%203.png" alt="Figma token library" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s4" aria-labelledby="s4-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">04</span> / Splashdown</span>
+          <h2 class="h2" id="s4-title">The Impact Metrics</h2>
+        </div>
+        <div class="prose body-md">
+          <p>By turning style properties into a systemized code asset, we unlocked massive velocity gains for both product design and engineering:</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Visual Consistency Up</h3>
+              <p class="body">Slashed random visual inconsistencies by ~45% within weeks, tracked and verified via automated weekly visual interface audits.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Rapid Brand Updates</h3>
+              <p class="body">Reduced global brand theme updates from a grueling multi-week developer ticket down to under a single day for global token pushes.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Instant Theming Unleashed</h3>
+              <p class="body">Successfully enabled independent product teams to launch custom theme variants and accessible views with zero specialized design intervention.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="UI and component auditing sessions">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>UI and component auditing sessions</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/69275e27c5bdbc6b006705eb_gevo%204.png" alt="UI and component auditing sessions" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s5" aria-labelledby="s5-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">05</span> / Retrospective</span>
+          <h2 class="h2" id="s5-title">Lessons & Next Steps</h2>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Hard Lesson</h3>
+              <p class="body">System governance cannot be an afterthought. We realized early on that token changes require a lightweight, cross-functional approval workflow to prevent teams from accidentally breaking dependent values downstream.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Horizon</h3>
+              <p class="body">Our next milestone is automation—creating a formalized token deprecation policy and deploying automated linters within the developer build pipeline to automatically flag and reject any legacy, hard-coded values before they hit production.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--compact" aria-label="Next project">
+      <div class="container">
+        <span class="mono text-tertiary">Next project</span>
+        <a class="h2 link link--wrap" href="../../projects/hijinks-design-system/">Hijinks Design System →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <a class="brand" href="../../">
+            <img src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png" alt="" width="40" height="40">
+            <span class="brand__type text-primary"><span>created</span><span>by jerry</span></span>
+            <span class="visually-hidden">Home</span>
+          </a>
+        </div>
+        <nav class="footer__col" aria-label="Sitemap">
+          <span class="mono">Sitemap</span>
+          <a class="link" href="../../">Home</a>
+          <a class="link" href="../../work/">Work</a>
+          <a class="link" href="../../prototypes/">Prototypes</a>
+          <a class="link" href="../../arcade/">Arcade</a>
+          <a class="link" href="../../shop/">Shop</a>
+          <a class="link" href="../../about-jerry/">About</a>
+          <a class="link" href="../../ai-disclosure-statement/">AI Disclosure</a>
+        </nav>
+        <nav class="footer__col" aria-label="Elsewhere">
+          <span class="mono">Elsewhere</span>
+          <a class="link" href="https://www.linkedin.com/in/jerryborundajr/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="link" href="https://createdbyjerry.itch.io/" target="_blank" rel="noopener">itch.io</a>
+          <a class="link" href="https://www.instagram.com/created_by_jerry/" target="_blank" rel="noopener">Instagram</a>
+          <a class="link" href="https://github.com/createdbyjerry" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+      <div class="footer__bar mono">
+        <span>© <span data-year>2026</span> createdbyjerry — all systems nominal</span>
+        <span>Status: open for select freelance work</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

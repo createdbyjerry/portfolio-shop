@@ -1,0 +1,25 @@
+name: Tokens
+
+# Fails the push if a token file is invalid, or if someone edited tokens/*.json
+# without running `npm run tokens` (so the committed CSS would be stale).
+on:
+  push:
+    paths: ['tokens/**', 'assets/css/tokens.css', 'scripts/build-tokens.mjs']
+  pull_request:
+    paths: ['tokens/**', 'assets/css/tokens.css', 'scripts/build-tokens.mjs']
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/build-tokens.mjs
+      - name: tokens.css is up to date
+        run: |
+          git diff --exit-code -- assets/css/tokens.css || {
+            echo "::error::assets/css/tokens.css is out of date. Run 'npm run tokens' and commit the result."
+            exit 1
+          }

@@ -1,0 +1,18 @@
+{
+  "name": "createdbyjerry",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio site for Created by Jerry: static HTML/CSS/JS with JSON design tokens.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "tokens": "node scripts/build-tokens.mjs",
+    "tokens:watch": "node scripts/build-tokens.mjs --watch",
+    "tokens:check": "node scripts/build-tokens.mjs --check",
+    "fetch-assets": "node scripts/fetch-assets.mjs",
+    "serve": "npx --yes serve . -l 3000",
+    "dev": "npm run tokens && (npm run tokens:watch & npm run serve)"
+  }
+}

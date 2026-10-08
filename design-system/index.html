@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design System | Created by Jerry</title>
+  <meta name="description" content="Internal reference for the createdbyjerry Perigee theme and components.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Design System | Created by Jerry">
+  <meta property="og:description" content="Internal reference for the createdbyjerry Perigee theme and components.">
+  <meta property="og:url" content="https://www.createdbyjerry.com/design-system/">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Oxygen:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/design-system.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-open="false">
+    <a class="brand" href="../">
+      <img src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png" alt="" width="40" height="40">
+      <span class="brand__type"><span>created</span><span>by jerry</span></span>
+      <span class="visually-hidden">Home</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="../work/">Work</a></li>
+        <li><a class="nav__link" href="../prototypes/">Prototypes</a></li>
+        <li><a class="nav__link" href="../arcade/">Arcade</a></li>
+        <li><a class="nav__link" href="../shop/">Shop</a></li>
+        <li><a class="nav__link" href="../about-jerry/">About</a></li>
+      </ul>
+    </nav>
+    <div class="status-pill mono"><span class="dot dot--gold dot--pulse"></span>Status: available</div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span></span><span class="visually-hidden">Menu</span></button>
+  </header>
+
+  <main id="main">
+    <section class="section section--first" id="intro" aria-labelledby="intro-title">
+      <div class="container">
+        <span class="tag"><span class="dot dot--gold"></span>Internal reference</span>
+        <h1 class="display" id="intro-title">Design System</h1>
+        <p class="lead lead--rule">The <span data-ds="theme-name">Perigee</span> theme and every component the site is built from. This page is unlisted: it isn't in the nav or sitemap and asks search engines not to index it.</p>
+        <div class="stack stack--tight">
+          <span class="mono text-tertiary">Source: <span class="text-primary">tokens/base.json</span> + <span class="text-primary">tokens/themes/*.json</span></span>
+          <span class="mono text-tertiary">Tokens: <span class="text-primary" data-ds="count">—</span> · Built: <span class="text-primary" data-ds="generated">—</span></span>
+        </div>
+        <nav class="ds-toc" aria-label="Sections">
+          <a class="tag" href="#foundations">Foundations</a>
+          <a class="tag" href="#color">Color</a>
+          <a class="tag" href="#type">Typography</a>
+          <a class="tag" href="#space">Space & shape</a>
+          <a class="tag" href="#tokens">Component tokens</a>
+          <a class="tag" href="#actions">Actions</a>
+          <a class="tag" href="#labels">Labels</a>
+          <a class="tag" href="#cards">Cards</a>
+          <a class="tag" href="#layout">Layout</a>
+          <a class="tag" href="#case-study">Case study</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section section--compact" id="foundations" aria-labelledby="foundations-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Foundations</span>
+        <h2 class="h2" id="foundations-title">How the Tokens Are Layered</h2>
+        <p class="body text-secondary">Three tiers, so a brand change is one edit and a new theme is one file.</p>
+    <div class="callouts callouts--3">
+      <div class="callout"><span class="callout__step mono">Tier 01 · core</span><h3 class="h4">Raw values</h3><p class="body"><code>tokens/base.json</code>. Hex codes, pixel sizes, font stacks. Named for what they are (<code>color.coral.500</code>), never for where they're used.</p></div>
+      <div class="callout"><span class="callout__step mono">Tier 02 · semantic</span><h3 class="h4">Meaning</h3><p class="body"><code>tokens/themes/perigee.json</code>. Aliases like <code>text.secondary → {color.neutral.400}</code>. The site's CSS reads these.</p></div>
+      <div class="callout"><span class="callout__step mono">Tier 03 · component</span><h3 class="h4">Overrides</h3><p class="body">Same theme file, under <code>component</code>. <code>--button-bg</code>, <code>--card-border</code>. Change one component without touching the rest.</p></div>
+    </div>
+    <aside class="note">
+      <span class="mono text-primary">Workflow</span>
+      <p class="body-md">Edit a JSON file, run <code>npm run tokens</code> (or <code>npm run tokens:watch</code> while you work). It regenerates <code>assets/css/tokens.css</code> and the data this page renders from. To add a theme, copy <code>perigee.json</code>, set its selector to <code>[data-theme="name"]</code>, and change only the aliases.</p>
+    </aside>
+      </div>
+    </section>
+
+    <section class="section section--compact section--glass" id="color" aria-labelledby="color-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Color</span>
+        <h2 class="h2" id="color-title">Color</h2>
+        <p class="body text-secondary">Click any swatch to copy its variable. Core colors are for building semantic tokens, not for using directly in CSS.</p>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Core palette</span><span class="mono">tier 01</span></div>
+      <div class="ds-swatches" data-ds="core-colors"></div>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Semantic colors</span><span class="mono">tier 02 · use these</span></div>
+      <div data-ds="semantic-colors"></div>
+    </div>
+      </div>
+    </section>
+
+    <section class="section section--compact" id="type" aria-labelledby="type-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Typography</span>
+        <h2 class="h2" id="type-title">Typography</h2>
+        <p class="body text-secondary">Three families. Michroma for display (it has a single weight, so headings never use bold), Oxygen for reading, Space Mono for labels and readouts.</p>
+    <div class="ds-block">
+      <div class="ds-type-row"><code class="mono text-tertiary">.display</code><span class="display">Designing for the Codebase</span></div>
+      <div class="ds-type-row"><code class="mono text-tertiary">.h1</code><span class="h1">Systems Built for Scale</span></div>
+      <div class="ds-type-row"><code class="mono text-tertiary">.h2</code><span class="h2">What You Get on Day One</span></div>
+      <div class="ds-type-row"><code class="mono text-tertiary">.h3</code><span class="h3">Making Rocket Science Child's Play</span></div>
+      <div class="ds-type-row"><code class="mono text-tertiary">.h4</code><span class="h4">Zero Translation Loss</span></div>
+      <div class="ds-type-row"><code class="mono text-tertiary">.lead</code><span class="lead">I embed directly with your engineering team to ship production-ready interfaces.</span></div>
+      <div class="ds-type-row"><code class="mono text-tertiary">.body-md</code><span class="body-md">Case-study prose and longer reading passages sit at 17px.</span></div>
+      <div class="ds-type-row"><code class="mono text-tertiary">.body</code><span class="body">Card descriptions and default body copy sit at 15px.</span></div>
+      <div class="ds-type-row"><code class="mono text-tertiary">.meta</code><span class="meta">Aerospace / Defense</span></div>
+      <div class="ds-type-row"><code class="mono text-tertiary">.mono</code><span class="mono">35.24°N — Rio Rancho, NM</span></div>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Color modifiers</span></div>
+      <div class="ds-specimen">
+        <span class="body text-primary">.text-primary</span>
+        <span class="body text-secondary">.text-secondary</span>
+        <span class="body text-tertiary">.text-tertiary</span>
+        <span class="body text-accent">.text-accent</span>
+        <span class="body text-highlight">.text-highlight</span>
+      </div>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Type tokens</span><span class="mono">tier 01</span></div>
+      <div data-ds="core-type"></div>
+    </div>
+      </div>
+    </section>
+
+    <section class="section section--compact section--glass" id="space" aria-labelledby="space-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Space & shape</span>
+        <h2 class="h2" id="space-title">Space, Radius & Motion</h2>
+        
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Spacing scale</span></div>
+      <div class="ds-scale" data-ds="space"></div>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Radius</span><span class="mono">sm buttons · md cards · lg media</span></div>
+      <div class="ds-radius" data-ds="radius"></div>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Sizes, blur & motion</span></div>
+      <div data-ds="core-motion"></div>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Other semantic tokens</span><span class="mono">type roles · layout</span></div>
+      <div data-ds="semantic-other"></div>
+    </div>
+      </div>
+    </section>
+
+    <section class="section section--compact" id="tokens" aria-labelledby="tokens-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Component tokens</span>
+        <h2 class="h2" id="tokens-title">Component Tokens</h2>
+        <p class="body text-secondary">Tier 03. Point these at different semantic tokens to restyle one component everywhere.</p>
+    <div data-ds="component-tokens"></div>
+      </div>
+    </section>
+
+    <section class="section section--compact section--glass" id="actions" aria-labelledby="actions-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Actions</span>
+        <h2 class="h2" id="actions-title">Buttons & Links</h2>
+        
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Button</span><span class="mono">.btn · .btn--ghost</span></div>
+      <div class="ds-specimen ">
+        <a class="btn" href="#">View work</a>
+        <a class="btn btn--ghost" href="#">See prototypes</a>
+        <a class="btn btn--ghost" href="#">Prototype <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+      </div>
+      <pre class="ds-code"><code>&lt;a class="btn" href="#"&gt;View work&lt;/a&gt;
+&lt;a class="btn btn--ghost" href="#"&gt;See prototypes&lt;/a&gt;
+&lt;a class="btn btn--ghost" href="#"&gt;Prototype &lt;svg&gt;…&lt;/svg&gt;&lt;/a&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Block button</span><span class="mono">.btn--block</span></div>
+      <div class="ds-specimen ds-specimen--stack">
+        <a class="btn btn--ghost btn--block" href="#">View on itch.io</a>
+      </div>
+      <pre class="ds-code"><code>&lt;a class="btn btn--ghost btn--block" href="#"&gt;View on itch.io&lt;/a&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Text link</span><span class="mono">.link</span></div>
+      <div class="ds-specimen ">
+        <a class="link" href="#">All work</a>
+        <a class="link" href="#">Read project</a>
+      </div>
+      <pre class="ds-code"><code>&lt;a class="link" href="#"&gt;All work&lt;/a&gt;
+&lt;a class="link" href="#"&gt;Read project&lt;/a&gt;</code></pre>
+    </div>
+      </div>
+    </section>
+
+    <section class="section section--compact" id="labels" aria-labelledby="labels-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Labels</span>
+        <h2 class="h2" id="labels-title">Tags, Status & Readouts</h2>
+        
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Tag</span><span class="mono">.tag + .dot / .dot--gold</span></div>
+      <div class="ds-specimen ">
+        <span class="tag"><span class="dot"></span>Selected work</span>
+        <span class="tag"><span class="dot dot--gold"></span>Process</span>
+      </div>
+      <pre class="ds-code"><code>&lt;span class="tag"&gt;&lt;span class="dot"&gt;&lt;/span&gt;Selected work&lt;/span&gt;
+&lt;span class="tag"&gt;&lt;span class="dot dot--gold"&gt;&lt;/span&gt;Process&lt;/span&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Status pill</span><span class="mono">.status-pill · .dot--pulse</span></div>
+      <div class="ds-specimen ">
+        <div class="status-pill mono"><span class="dot dot--gold dot--pulse"></span>Status: available</div>
+      </div>
+      <pre class="ds-code"><code>&lt;div class="status-pill mono"&gt;&lt;span class="dot dot--gold dot--pulse"&gt;&lt;/span&gt;Status: available&lt;/div&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Number label</span><span class="mono">.number-label · --text</span></div>
+      <div class="ds-specimen ">
+        <span class="number-label mono">01</span>
+        <span class="number-label number-label--text h4">2025</span>
+      </div>
+      <pre class="ds-code"><code>&lt;span class="number-label mono"&gt;01&lt;/span&gt;
+&lt;span class="number-label number-label--text h4"&gt;2025&lt;/span&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">AI provenance</span><span class="mono">.provenance</span></div>
+      <div class="ds-specimen ">
+        <span class="provenance">Human-made assets &amp; UI<a href="../ai-disclosure-statement/" aria-label="Read the AI disclosure statement"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="6.25"/><path d="M8 7.25V11.5M8 4.75v.5"/></svg></a></span>
+          <span class="provenance">60% human / 40% AI<a href="../ai-disclosure-statement/" aria-label="Read the AI disclosure statement"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="6.25"/><path d="M8 7.25V11.5M8 4.75v.5"/></svg></a></span>
+      </div>
+      <pre class="ds-code"><code>&lt;span class="provenance"&gt;Human-made assets &amp;amp; UI&lt;a href="/ai-disclosure-statement/" aria-label="Read the AI disclosure statement"&gt;&lt;svg&gt;…&lt;/svg&gt;&lt;/a&gt;&lt;/span&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Mono readout</span><span class="mono">.mono</span></div>
+      <div class="ds-specimen ">
+        <span class="mono text-tertiary">35.24°N — Rio Rancho, NM</span>
+        <span class="mono text-highlight">x:128 y:064</span>
+      </div>
+      <pre class="ds-code"><code>&lt;span class="mono text-tertiary"&gt;35.24°N — Rio Rancho, NM&lt;/span&gt;
+&lt;span class="mono text-highlight"&gt;x:128 y:064&lt;/span&gt;</code></pre>
+    </div>
+      </div>
+    </section>
+
+    <section class="section section--compact section--glass" id="cards" aria-labelledby="cards-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Cards</span>
+        <h2 class="h2" id="cards-title">Cards</h2>
+        <p class="body text-secondary">One <code>.card</code> shell. Content decides the variant. Cards with a single destination make the whole surface clickable via <code>.card__link</code>; cards with several actions use <code>.card--static</code>.</p>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Numbered card</span><span class="mono">.card--static + .number-label</span></div>
+      <div class="ds-specimen ds-specimen--grid">
+        <article class="card card--static">
+          <div class="card__body">
+            <span class="number-label mono">01</span>
+            <h3 class="h4">Zero Translation Loss</h3>
+            <p class="body text-secondary">I deliver structurally sound designs that map directly to your front-end architecture.</p>
+          </div>
+        </article>
+      </div>
+      <pre class="ds-code"><code>&lt;article class="card card--static"&gt;
+  &lt;div class="card__body"&gt;
+    &lt;span class="number-label mono"&gt;01&lt;/span&gt;
+    &lt;h3 class="h4"&gt;Zero Translation Loss&lt;/h3&gt;
+    &lt;p class="body text-secondary"&gt;I deliver structurally sound designs that map directly to your front-end architecture.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Project card</span><span class="mono">.card + .card__link</span></div>
+      <div class="ds-specimen ds-specimen--grid">
+        <article class="card">
+          <img class="card__media" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a9aa1deabed9991f1e21720_cover%20art%2001.png" alt="" loading="lazy" width="800" height="600">
+          <div class="card__body">
+            <h3 class="h4">Designing Orbits</h3>
+            <p class="body text-secondary">An interactive learning platform turning orbital physics into a real-time simulation sandbox.</p>
+            <a class="link card__link" href="../projects/designing-orbits/">Read project<span class="visually-hidden">: Designing Orbits</span></a>
+          </div>
+        </article>
+      </div>
+      <pre class="ds-code"><code>&lt;article class="card"&gt;
+  &lt;img class="card__media" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a9aa1deabed9991f1e21720_cover%20art%2001.png" alt="" loading="lazy" width="800" height="600"&gt;
+  &lt;div class="card__body"&gt;
+    &lt;h3 class="h4"&gt;Designing Orbits&lt;/h3&gt;
+    &lt;p class="body text-secondary"&gt;An interactive learning platform turning orbital physics into a real-time simulation sandbox.&lt;/p&gt;
+    &lt;a class="link card__link" href="../projects/designing-orbits/"&gt;Read project&lt;span class="visually-hidden"&gt;: Designing Orbits&lt;/span&gt;&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Kit card</span><span class="mono">.card__row · .text-highlight</span></div>
+      <div class="ds-specimen ds-specimen--grid">
+        <article class="card">
+          <img class="card__media" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a6df44aa6fd84d6c7f0daf7_83430522d88432867137a37b2c5f07fd_mrbubble-thumbnail.png" alt="" loading="lazy" width="800" height="600">
+          <div class="card__body">
+            <div class="card__row">
+              <h3 class="body">Mr. Bubble</h3>
+              <span class="body text-highlight">$4</span>
+            </div>
+            <a class="btn btn--ghost btn--block card__link" href="https://createdbyjerry.itch.io/mr-bubble-figma-godot-ui-kit" target="_blank" rel="noopener">View on itch.io <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+          </div>
+        </article>
+      </div>
+      <pre class="ds-code"><code>&lt;article class="card"&gt;
+  &lt;img class="card__media" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a6df44aa6fd84d6c7f0daf7_83430522d88432867137a37b2c5f07fd_mrbubble-thumbnail.png" alt="" loading="lazy" width="800" height="600"&gt;
+  &lt;div class="card__body"&gt;
+    &lt;div class="card__row"&gt;
+      &lt;h3 class="body"&gt;Mr. Bubble&lt;/h3&gt;
+      &lt;span class="body text-highlight"&gt;$4&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;a class="btn btn--ghost btn--block card__link" href="https://createdbyjerry.itch.io/mr-bubble-figma-godot-ui-kit" target="_blank" rel="noopener"&gt;View on itch.io &lt;svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"&gt;&lt;path d="M6 3h7v7M13 3 4 12"/&gt;&lt;/svg&gt;&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Build card</span><span class="mono">.card__actions · .card__footer</span></div>
+      <div class="ds-specimen ds-specimen--grid">
+        <article class="card card--static">
+          <img class="card__media" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6abd60cc5dc95a75b8bd4add_63571c57534e0cd9b93b3a7a825eca68_tracewell%20converart.png" alt="" loading="lazy" width="800" height="600">
+          <div class="card__body">
+            <h3 class="h4">Tracewell</h3>
+            <p class="body text-secondary">An interactive map of the natural gas supply chain.</p>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="https://createdbyjerry.github.io/tracewell-supply-chain/" target="_blank" rel="noopener">Prototype <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+              <a class="btn btn--ghost" href="https://createdbyjerry.github.io/tracewell-supply-chain/design-system/" target="_blank" rel="noopener">Design system <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+              <a class="btn btn--ghost" href="https://github.com/createdbyjerry/tracewell-supply-chain" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+            </div>
+          </div>
+          <div class="card__footer">
+          <span class="provenance">Human-made assets &amp; UI<a href="../ai-disclosure-statement/" aria-label="Read the AI disclosure statement"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="6.25"/><path d="M8 7.25V11.5M8 4.75v.5"/></svg></a></span>
+          <span class="provenance">60% human / 40% AI<a href="../ai-disclosure-statement/" aria-label="Read the AI disclosure statement"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="6.25"/><path d="M8 7.25V11.5M8 4.75v.5"/></svg></a></span>
+        </div>
+        </article>
+      </div>
+      <pre class="ds-code"><code>&lt;article class="card card--static"&gt;
+  &lt;img class="card__media" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6abd60cc5dc95a75b8bd4add_63571c57534e0cd9b93b3a7a825eca68_tracewell%20converart.png" alt="" loading="lazy" width="800" height="600"&gt;
+  &lt;div class="card__body"&gt;
+    &lt;h3 class="h4"&gt;Tracewell&lt;/h3&gt;
+    &lt;p class="body text-secondary"&gt;An interactive map of the natural gas supply chain.&lt;/p&gt;
+    &lt;div class="card__actions"&gt;
+      &lt;a class="btn btn--ghost" href="https://createdbyjerry.github.io/tracewell-supply-chain/" target="_blank" rel="noopener"&gt;Prototype &lt;svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"&gt;&lt;path d="M6 3h7v7M13 3 4 12"/&gt;&lt;/svg&gt;&lt;/a&gt;
+      &lt;a class="btn btn--ghost" href="https://createdbyjerry.github.io/tracewell-supply-chain/design-system/" target="_blank" rel="noopener"&gt;Design system &lt;svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"&gt;&lt;path d="M6 3h7v7M13 3 4 12"/&gt;&lt;/svg&gt;&lt;/a&gt;
+      &lt;a class="btn btn--ghost" href="https://github.com/createdbyjerry/tracewell-supply-chain" target="_blank" rel="noopener"&gt;GitHub &lt;svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"&gt;&lt;path d="M6 3h7v7M13 3 4 12"/&gt;&lt;/svg&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card__footer"&gt;
+  &lt;span class="provenance"&gt;Human-made assets &amp;amp; UI&lt;a href="../ai-disclosure-statement/" aria-label="Read the AI disclosure statement"&gt;&lt;svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"&gt;&lt;circle cx="8" cy="8" r="6.25"/&gt;&lt;path d="M8 7.25V11.5M8 4.75v.5"/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;span class="provenance"&gt;60% human / 40% AI&lt;a href="../ai-disclosure-statement/" aria-label="Read the AI disclosure statement"&gt;&lt;svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"&gt;&lt;circle cx="8" cy="8" r="6.25"/&gt;&lt;path d="M8 7.25V11.5M8 4.75v.5"/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Industry card</span><span class="mono">.card__body--center</span></div>
+      <div class="ds-specimen ds-specimen--grid">
+        <div class="card card--static">
+          <div class="card__body card__body--center">
+            <img class="icon-industry" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a679d7932d17a500cf291d7_aerospace-defense.png" alt="" width="96" height="96">
+            <span class="meta">Aerospace / Defense</span>
+          </div>
+        </div>
+      </div>
+      <pre class="ds-code"><code>&lt;div class="card card--static"&gt;
+  &lt;div class="card__body card__body--center"&gt;
+    &lt;img class="icon-industry" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a679d7932d17a500cf291d7_aerospace-defense.png" alt="" width="96" height="96"&gt;
+    &lt;span class="meta"&gt;Aerospace / Defense&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+      </div>
+    </section>
+
+    <section class="section section--compact section--glass" id="layout" aria-labelledby="layout-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Layout</span>
+        <h2 class="h2" id="layout-title">Layout Patterns</h2>
+        
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Hero frame</span><span class="mono">.frame · .frame__corner · .frame__readout</span></div>
+      <div class="ds-specimen ds-specimen--stack">
+        <div class="frame">
+          <span class="frame__corner frame__corner--tl"></span><span class="frame__corner frame__corner--tr"></span>
+          <span class="frame__corner frame__corner--br"></span><span class="frame__corner frame__corner--bl"></span>
+          <span class="frame__readout frame__readout--tr mono">35.24°N — Rio Rancho, NM</span>
+          <span class="frame__readout frame__readout--br mono">x:000 y:000</span>
+          <div class="frame__content">
+            <span class="tag"><span class="dot"></span>Portfolio / Shop</span>
+            <span class="h1">Frame Heading</span>
+            <p class="lead lead--rule">Lead copy with the coral rule.</p>
+          </div>
+        </div>
+      </div>
+      <pre class="ds-code"><code>&lt;div class="frame"&gt;
+  &lt;span class="frame__corner frame__corner--tl"&gt;&lt;/span&gt;&lt;span class="frame__corner frame__corner--tr"&gt;&lt;/span&gt;
+  &lt;span class="frame__corner frame__corner--br"&gt;&lt;/span&gt;&lt;span class="frame__corner frame__corner--bl"&gt;&lt;/span&gt;
+  &lt;span class="frame__readout frame__readout--tr mono"&gt;35.24°N — Rio Rancho, NM&lt;/span&gt;
+  &lt;span class="frame__readout frame__readout--br mono"&gt;x:000 y:000&lt;/span&gt;
+  &lt;div class="frame__content"&gt;
+    &lt;span class="tag"&gt;&lt;span class="dot"&gt;&lt;/span&gt;Portfolio / Shop&lt;/span&gt;
+    &lt;span class="h1"&gt;Frame Heading&lt;/span&gt;
+    &lt;p class="lead lead--rule"&gt;Lead copy with the coral rule.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Sections</span><span class="mono">wrap content in .container</span></div>
+      <div class="ds-specimen ">
+        <div class="stack">
+          <span class="mono">.section</span><span class="body text-secondary">200px vertical rhythm (80px under 992px), hairline bottom border.</span>
+          <span class="mono">.section--glass</span><span class="body text-secondary">Blurred glass band. Alternate with plain sections.</span>
+          <span class="mono">.section--compact</span><span class="body text-secondary">80px rhythm for dense pages like the shop.</span>
+          <span class="mono">.section--first</span><span class="body text-secondary">Adds clearance for the fixed nav.</span>
+        </div>
+      </div>
+      <pre class="ds-code"><code>&lt;section class="section section--glass"&gt;
+  &lt;div class="container"&gt;…&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Grid</span><span class="mono">.grid--3 · --4 · --5 (collapse at 991 / 479px)</span></div>
+      <div class="ds-specimen ds-specimen--stack">
+        <div class="grid grid--4">
+          <div class="callout">1</div><div class="callout">2</div><div class="callout">3</div><div class="callout">4</div>
+        </div>
+      </div>
+      <pre class="ds-code"><code>&lt;div class="grid grid--4"&gt;
+  &lt;div class="callout"&gt;1&lt;/div&gt;&lt;div class="callout"&gt;2&lt;/div&gt;&lt;div class="callout"&gt;3&lt;/div&gt;&lt;div class="callout"&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+      </div>
+    </section>
+
+    <section class="section section--compact" id="case-study" aria-labelledby="case-study-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Case study</span>
+        <h2 class="h2" id="case-study-title">Case Study Blocks</h2>
+        <p class="body text-secondary">Every project page is built from these five pieces, in this order: hero, meta strip, numbered sections, figures, next-project link.</p>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Meta strip</span><span class="mono">.cs-meta</span></div>
+      <div class="ds-specimen ds-specimen--stack">
+        <ul class="cs-meta">
+          <li><span class="mono">Role</span><span class="meta">Sr. Product Designer</span></li>
+          <li><span class="mono">Company</span><span class="meta">Slingshot</span></li>
+          <li><span class="mono">Industry</span><span class="meta">Aerospace / Defense</span></li>
+          <li><span class="mono">Year</span><span class="meta">2020–2021</span></li>
+          <li><span class="mono">Timeline</span><span class="meta">Sep – Mar</span></li>
+        </ul>
+      </div>
+      <pre class="ds-code"><code>&lt;ul class="cs-meta"&gt;
+  &lt;li&gt;&lt;span class="mono"&gt;Role&lt;/span&gt;&lt;span class="meta"&gt;Sr. Product Designer&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mono"&gt;Company&lt;/span&gt;&lt;span class="meta"&gt;Slingshot&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mono"&gt;Industry&lt;/span&gt;&lt;span class="meta"&gt;Aerospace / Defense&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mono"&gt;Year&lt;/span&gt;&lt;span class="meta"&gt;2020–2021&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mono"&gt;Timeline&lt;/span&gt;&lt;span class="meta"&gt;Sep – Mar&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Section heading</span><span class="mono">.cs-section__head</span></div>
+      <div class="ds-specimen ds-specimen--stack">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">01</span> / The Problem</span>
+          <span class="h2">Houston, We Have a Usability Issue</span>
+        </div>
+      </div>
+      <pre class="ds-code"><code>&lt;div class="cs-section__head"&gt;
+  &lt;span class="mono text-tertiary"&gt;&lt;span class="text-accent"&gt;01&lt;/span&gt; / The Problem&lt;/span&gt;
+  &lt;span class="h2"&gt;Houston, We Have a Usability Issue&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Callouts</span><span class="mono">.callouts--2 · --3 · --4 · --stack</span></div>
+      <div class="ds-specimen ds-specimen--stack">
+        <div class="callouts callouts--3">
+          <div class="callout"><h3 class="h4">Default</h3><p class="body">Title and body.</p></div>
+          <div class="callout"><span class="callout__step mono">Step 01</span><h3 class="h4">Step</h3><p class="body">For ordered processes.</p></div>
+          <div class="callout"><img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5970dc49518856a1d430_designing-orbit-icon01.png" alt=""><h3 class="h4">With icon</h3><p class="body">Icon sits above the title.</p></div>
+        </div>
+      </div>
+      <pre class="ds-code"><code>&lt;div class="callouts callouts--3"&gt;
+  &lt;div class="callout"&gt;&lt;h3 class="h4"&gt;Default&lt;/h3&gt;&lt;p class="body"&gt;Title and body.&lt;/p&gt;&lt;/div&gt;
+  &lt;div class="callout"&gt;&lt;span class="callout__step mono"&gt;Step 01&lt;/span&gt;&lt;h3 class="h4"&gt;Step&lt;/h3&gt;&lt;p class="body"&gt;For ordered processes.&lt;/p&gt;&lt;/div&gt;
+  &lt;div class="callout"&gt;&lt;img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5970dc49518856a1d430_designing-orbit-icon01.png" alt=""&gt;&lt;h3 class="h4"&gt;With icon&lt;/h3&gt;&lt;p class="body"&gt;Icon sits above the title.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Before / after</span><span class="mono">.callout--compare · --compare-new</span></div>
+      <div class="ds-specimen ds-specimen--stack">
+        <div class="callouts callouts--2">
+          <div class="callout callout--compare"><h3 class="mono text-tertiary">Old way</h3><p class="body-md text-primary">Bounce between side panels</p></div>
+          <div class="callout callout--compare-new"><h3 class="mono text-tertiary">New way</h3><p class="body-md text-primary">Single, unified map-side toolbar</p></div>
+        </div>
+      </div>
+      <pre class="ds-code"><code>&lt;div class="callouts callouts--2"&gt;
+  &lt;div class="callout callout--compare"&gt;&lt;h3 class="mono text-tertiary"&gt;Old way&lt;/h3&gt;&lt;p class="body-md text-primary"&gt;Bounce between side panels&lt;/p&gt;&lt;/div&gt;
+  &lt;div class="callout callout--compare-new"&gt;&lt;h3 class="mono text-tertiary"&gt;New way&lt;/h3&gt;&lt;p class="body-md text-primary"&gt;Single, unified map-side toolbar&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Note</span><span class="mono">.note</span></div>
+      <div class="ds-specimen ds-specimen--stack">
+        <aside class="note">
+          <span class="mono text-primary">Why it mattered</span>
+          <p class="body-md">The takeaway, pulled out of the flow.</p>
+        </aside>
+      </div>
+      <pre class="ds-code"><code>&lt;aside class="note"&gt;
+  &lt;span class="mono text-primary"&gt;Why it mattered&lt;/span&gt;
+  &lt;p class="body-md"&gt;The takeaway, pulled out of the flow.&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Figure caption</span><span class="mono">.figure · .figure__caption · .figure__img</span></div>
+      <div class="ds-specimen ">
+        <p class="figure__caption mono"><span class="dot"></span>Concept sketch of the classroom</p>
+      </div>
+      <pre class="ds-code"><code>&lt;p class="figure__caption mono"&gt;&lt;span class="dot"&gt;&lt;/span&gt;Concept sketch of the classroom&lt;/p&gt;</code></pre>
+    </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <a class="brand" href="../">
+            <img src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png" alt="" width="40" height="40">
+            <span class="brand__type text-primary"><span>created</span><span>by jerry</span></span>
+            <span class="visually-hidden">Home</span>
+          </a>
+        </div>
+        <nav class="footer__col" aria-label="Sitemap">
+          <span class="mono">Sitemap</span>
+          <a class="link" href="../">Home</a>
+          <a class="link" href="../work/">Work</a>
+          <a class="link" href="../prototypes/">Prototypes</a>
+          <a class="link" href="../arcade/">Arcade</a>
+          <a class="link" href="../shop/">Shop</a>
+          <a class="link" href="../about-jerry/">About</a>
+          <a class="link" href="../ai-disclosure-statement/">AI Disclosure</a>
+        </nav>
+        <nav class="footer__col" aria-label="Elsewhere">
+          <span class="mono">Elsewhere</span>
+          <a class="link" href="https://www.linkedin.com/in/jerryborundajr/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="link" href="https://createdbyjerry.itch.io/" target="_blank" rel="noopener">itch.io</a>
+          <a class="link" href="https://www.instagram.com/created_by_jerry/" target="_blank" rel="noopener">Instagram</a>
+          <a class="link" href="https://github.com/createdbyjerry" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+      <div class="footer__bar mono">
+        <span>© <span data-year>2026</span> createdbyjerry — all systems nominal</span>
+        <span>Status: open for select freelance work</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/site.js" defer></script>
+  <div class="ds-toast mono" role="status" aria-live="polite"></div>
+  <script src="../assets/js/tokens.js" defer></script>
+  <script src="../assets/js/design-system.js" defer></script>
+</body>
+</html>

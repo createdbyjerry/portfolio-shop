@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Designing Orbits | Created by Jerry</title>
+  <meta name="description" content="An interactive learning platform turning orbital physics into a real-time simulation sandbox.">
+  <link rel="canonical" href="https://www.createdbyjerry.com/projects/designing-orbits/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Designing Orbits | Created by Jerry">
+  <meta property="og:description" content="An interactive learning platform turning orbital physics into a real-time simulation sandbox.">
+  <meta property="og:url" content="https://www.createdbyjerry.com/projects/designing-orbits/">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Oxygen:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-open="false">
+    <a class="brand" href="../../">
+      <img src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png" alt="" width="40" height="40">
+      <span class="brand__type"><span>created</span><span>by jerry</span></span>
+      <span class="visually-hidden">Home</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><a class="nav__link" href="../../prototypes/">Prototypes</a></li>
+        <li><a class="nav__link" href="../../arcade/">Arcade</a></li>
+        <li><a class="nav__link" href="../../shop/">Shop</a></li>
+        <li><a class="nav__link" href="../../about-jerry/">About</a></li>
+      </ul>
+    </nav>
+    <div class="status-pill mono"><span class="dot dot--gold dot--pulse"></span>Status: available</div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span></span><span class="visually-hidden">Menu</span></button>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero">
+      <div class="container">
+        <a class="back-link mono" href="../../work/"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> All work</a>
+        <div class="cs-hero__grid">
+          <img class="cs-hero__media" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a548d36ee045b0e4e23f6_Project%20Image%20-%20Designing%20Orbits.png" alt="Designing Orbits project hero" width="1200" height="800">
+          <div class="cs-hero__text">
+            <h1 class="h1">Designing Orbits</h1>
+            <p class="h3 text-accent">Making Rocket Science Child's Play</p>
+            <p class="body text-secondary">Astrodynamics is notoriously mind-bending. We built an interactive learning platform that turned complex orbital physics into an intuitive, real-time simulation sandbox. Think less "staring at terrifying equations" and more "playing God with gravity." The result? A massive jump in student comprehension and a shiny new subscription revenue model for the business.</p>
+          </div>
+        </div>
+        <ul class="cs-meta">
+            <li><span class="mono">Role</span><span class="meta">Sr. Product Designer</span></li>
+            <li><span class="mono">Company</span><span class="meta">Slingshot</span></li>
+            <li><span class="mono">Industry</span><span class="meta">Aerospace / Defense</span></li>
+            <li><span class="mono">Year</span><span class="meta">2020–2021</span></li>
+            <li><span class="mono">Timeline</span><span class="meta">Sep – Mar</span></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="cs-section" id="s1" aria-labelledby="s1-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">01</span> / The Problem</span>
+          <h2 class="h2" id="s1-title">Houston, We Have a Usability Issue</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We were fighting a three-front war against boredom, technical debt, and rigid legacy software:</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5970dc49518856a1d430_designing-orbit-icon01.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">Human Challenge</h3>
+              <p class="body">Students were drowning in dry, static textbooks. Instructors were exhausted from trying to explain complex 3D orbital trajectories using 2D whiteboards.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a59702788c1c5a44d0b3a_designing-orbit-icon02.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">Dev Challenge</h3>
+              <p class="body">Building a real-time orbital simulation with a team of just four engineers is a massive lift. We had to balance absolute scientific accuracy with butter-smooth UI performance without melting anyone's laptop.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5970925f72a988c18159_designing-orbit-icon03.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">Business Challenge</h3>
+              <p class="body">Slingshot needed to launch an educational platform that universities would actually pay for, proving that a subscription model for space education could net recurring revenue.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">Why it mattered</span>
+          <p class="body-md">If the interface was too simple, it was a toy. If it was too complex, it was homework. We had to hit the absolute sweet spot where intense physics met effortless UX.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Concept sketch of the classroom">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Concept sketch of the classroom</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485acde9d3fbbc3190d9d_1%20problem%20-%2002.png" alt="Concept sketch of the classroom" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s2" aria-labelledby="s2-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">02</span> / The Launch Constraints</span>
+          <h2 class="h2" id="s2-title">We Didn't Have NASA's Budget</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We didn’t exactly have NASA’s timeline or budget. We were flying with:</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5970ad780675e0c09636_designing-orbit-icon04.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">A Lean Crew</h3>
+              <p class="body">4 engineers handling both the heavy-lifting math backend and the frontend pixels.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a59707bf943c0cdb15e29_designing-orbit-icon05.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">Strict Flight Paths</h3>
+              <p class="body">A tight 3-month MVP window.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a597053b35ddfe1be4869_designing-orbit-icon06.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">Zero Margin for Error</h3>
+              <p class="body">We partnered with two astrodynamics subject matter experts (SMEs) to ensure our physics weren’t just "close enough"—they had to be mathematically perfect.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Learning session on orbital behaviors">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Learning session on orbital behaviors</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485acbe1b5310c59ed57e_2%20challenge%20-%2001.png" alt="Learning session on orbital behaviors (1 of 2)" loading="lazy">
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485ace4527d1f718bf6f7_2%20challenge%20-%2002.png" alt="Learning session on orbital behaviors (2 of 2)" loading="lazy">
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Mapping the UI to orbital behaviors">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Mapping the UI to orbital behaviors</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/69248677723413c0e1734441_3%20strategy%20-%2001.png" alt="Mapping the UI to orbital behaviors (1 of 4)" loading="lazy">
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485ade5332a1757d0333d_3%20strategy%20-%2002.png" alt="Mapping the UI to orbital behaviors (2 of 4)" loading="lazy">
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485ac90243c06808d1268_3%20strategy%20-%2003.png" alt="Mapping the UI to orbital behaviors (3 of 4)" loading="lazy">
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485ac992af11dc4a3a49f_3%20strategy%20-%2004.png" alt="Mapping the UI to orbital behaviors (4 of 4)" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s3" aria-labelledby="s3-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">03</span> / Strategy</span>
+          <h2 class="h2" id="s3-title">The "Teach Them to Retain Them" North Star</h2>
+        </div>
+        <div class="prose body-md">
+          <p>Our experience principles were simple: <strong>ditch the flash, prioritize friction-free experimentation, and make gravity tangible.</strong></p>
+          <p>We bet heavily on two ideas:</p>
+        </div>
+        <div class="callouts callouts--stack">
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5970a87521a1b4a9765c_designing-orbit-icon07.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              
+              <p class="body">Students don’t learn by reading about orbits; they learn by bending them.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a59700b81c84bd7b963cc_designing-orbit-icon08.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              
+              <p class="body">If we made a tool that saved professors from lecturing into a void, adoption would follow naturally.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Mapping the user journey">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Mapping the user journey</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485acf054559ecd4a545d_4%20ux%20work%20-01.png" alt="Mapping the user journey" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s4" aria-labelledby="s4-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">04</span> / Deep Space UX</span>
+          <h2 class="h2" id="s4-title">From Scribbles to Orbit</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We didn't design this in a vacuum. We surveyed 100 students, interviewed professors, and badgered interns until we found the missing link: real-time visual feedback loops.</p>
+        </div>
+        <div class="callouts callouts--4">
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a59707bf943c0cdb15e40_designing-orbit-icon09.png" alt="" loading="lazy">
+            <span class="callout__step mono">Step 01</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Survey 100 Students</h3>
+              
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5970d55107d80bb1fcdc_designing-orbit-icon10.png" alt="" loading="lazy">
+            <span class="callout__step mono">Step 02</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Map Workflows</h3>
+              
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5971ad780675e0c09648_designing-orbit-icon11.png" alt="" loading="lazy">
+            <span class="callout__step mono">Step 03</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Figma Sandbox with SMEs</h3>
+              
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a59711e1fa68406a237c4_designing-orbit-icon12.png" alt="" loading="lazy">
+            <span class="callout__step mono">Step 04</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">High-Fidelity Flight Tests</h3>
+              
+            </div>
+          </div>
+        </div>
+        <div class="prose body-md"><p>We iterated frantically in Figma alongside our SMEs, engineering complex multi-orbit interactions and collision scenarios. We built interactive "Simulation Notebooks" so students could track their data without breaking their flow state.</p></div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Blocking out UI improvements from MVP v1">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Blocking out UI improvements from MVP v1</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485ac9c74439d2add6fb5_4%20ux%20work%20-02.png" alt="Blocking out UI improvements from MVP v1 (1 of 2)" loading="lazy">
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485ade9c50d63ab058200_4%20ux%20work%20-04.png" alt="Blocking out UI improvements from MVP v1 (2 of 2)" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s5" aria-labelledby="s5-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">05</span> / UI Design</span>
+          <h2 class="h2" id="s5-title">The Space-Glass Aesthetic</h2>
+        </div>
+        <div class="prose body-md">
+          <p>To make the platform feel like a modern control room rather than a spreadsheet, we built a sleek, systemized visual language:</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5971bee367278aa69080_designing-orbit-icon13.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Vibe</h3>
+              <p class="body">High-contrast orbit paths overlaid on deep-space dark backgrounds, using "space glass" containers to layer complex data beautifully.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5971384e28f96b73067f_designing-orbit-icon17.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Machinery</h3>
+              <p class="body">We built a modular library of sliders, playback controls, and visual indicators.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a59717bf943c0cdb15e63_designing-orbit-icon15.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Secret Weapon</h3>
+              <p class="body">Tight Figma token systems for color, typography, and motion easing meant our 4-person dev team could implement features with zero guesswork and maximum speed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="UI design">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>UI design</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485ad93eb0f6f4ca7c2ab_5%20ui%20design%20-02.png" alt="UI design (1 of 2)" loading="lazy">
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485adc090ba51994e9cc6_5%20ui%20design%20-01.png" alt="UI design (2 of 2)" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s6" aria-labelledby="s6-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">06</span> / Mission Control</span>
+          <h2 class="h2" id="s6-title">Collaboration</h2>
+        </div>
+        <div class="prose body-md">
+          <p>Great products require tight crews. Our cross-functional flow looked like this:</p>
+        </div>
+        <div class="callouts callouts--stack">
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5971d55107d80bb1fcff_designing-orbit-icon16.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">Product</h3>
+              <p class="body">Kept us laser-focused on the MVP scope, cutting out the nice-to-haves to preserve the core educational value.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5971384e28f96b73067f_designing-orbit-icon17.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">Engineering</h3>
+              <p class="body">Hand-in-hand collaboration to figure out where we could compromise on visual performance versus heavy mathematical rendering.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a597153b35ddfe1be4884_designing-orbit-icon18.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">SMEs</h3>
+              <p class="body">Our literal rocket scientists, who fact-checked every single UI state to ensure the science held up.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Screenshots of the MVP">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Screenshots of the MVP</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485ad83e164a5e1480dfb_0abc22df14f92264be4d2ba5c74d080d_6%20collab%20-%2001.png" alt="Screenshots of the MVP (1 of 3)" loading="lazy">
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485adb16e64066a36e321_ab71121c7455f283ddc130c26d6664af_6%20collab%20-%2003.png" alt="Screenshots of the MVP (2 of 3)" loading="lazy">
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485ad9a340adde8f3516c_59af0642bc3fa02f6bb3ae7e20409ee3_6%20collab%20-%2002.png" alt="Screenshots of the MVP (3 of 3)" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s7" aria-labelledby="s7-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">07</span> / Splashdown</span>
+          <h2 class="h2" id="s7-title">The Impact</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We didn't just launch a pretty tool; we shifted the trajectory of how this subject is taught.</p>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a59717bf943c0cdb15e7e_designing-orbit-icon19.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">Student Engagement</h3>
+              <p class="body">More than 85% of enrolled students actively spent their time tinkering in the platform during semester one.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a5971c8f8b57fde75a612_designing-orbit-icon20.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">Lightbulb Moments</h3>
+              <p class="body">Professors reported a massive <strong>60% improvement</strong> in student comprehension of orbital mechanics.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a59726e7296c1bb452383_designing-orbit-icon21.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Bottom Line</h3>
+              <p class="body">Secured early institutional subscriptions, validating the business model and proving the MVP's worth.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <img class="callout__icon" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a5a597101c9e16ba84ddd35_designing-orbit-icon22.png" alt="" loading="lazy">
+            <div class="stack stack--tight">
+              <h3 class="h4">The Horizon</h3>
+              <p class="body">The design system and simulation framework we built were so scalable they are already being used as the foundation for future AR/VR expansion.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">The ultimate takeaway</span>
+          <p class="body-md">Empathy-driven design can make even literal rocket science accessible. When you bridge the gap between brilliant engineers, precise scientists, and human-centric UX, everyone wins.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Product walkthrough">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Product walkthrough</p>
+        <iframe class="figure__video" src="https://www.youtube.com/embed/oYEy9uG3XHc?rel=0" title="Designing Orbits: Product walkthrough" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Concept sketch of simulation opportunities">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Concept sketch of simulation opportunities</p>
+        <img class="figure__img" src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/692485ac6f6ad990eea95fab_1%20problem%20-%2001.png" alt="Concept sketch of simulation opportunities" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section section--compact" aria-label="Next project">
+      <div class="container">
+        <span class="mono text-tertiary">Next project</span>
+        <a class="h2 link link--wrap" href="../../projects/managing-and-editing-geospatial-vectors/">Geospatial Vectors →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <a class="brand" href="../../">
+            <img src="https://cdn.prod.website-files.com/6704130eeaaa867504656467/6a0204b7895bd1e9d809644a_b7dd1590a54e26a326f0f03f2611d932_cbj%20logo.png" alt="" width="40" height="40">
+            <span class="brand__type text-primary"><span>created</span><span>by jerry</span></span>
+            <span class="visually-hidden">Home</span>
+          </a>
+        </div>
+        <nav class="footer__col" aria-label="Sitemap">
+          <span class="mono">Sitemap</span>
+          <a class="link" href="../../">Home</a>
+          <a class="link" href="../../work/">Work</a>
+          <a class="link" href="../../prototypes/">Prototypes</a>
+          <a class="link" href="../../arcade/">Arcade</a>
+          <a class="link" href="../../shop/">Shop</a>
+          <a class="link" href="../../about-jerry/">About</a>
+          <a class="link" href="../../ai-disclosure-statement/">AI Disclosure</a>
+        </nav>
+        <nav class="footer__col" aria-label="Elsewhere">
+          <span class="mono">Elsewhere</span>
+          <a class="link" href="https://www.linkedin.com/in/jerryborundajr/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="link" href="https://createdbyjerry.itch.io/" target="_blank" rel="noopener">itch.io</a>
+          <a class="link" href="https://www.instagram.com/created_by_jerry/" target="_blank" rel="noopener">Instagram</a>
+          <a class="link" href="https://github.com/createdbyjerry" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+      <div class="footer__bar mono">
+        <span>© <span data-year>2026</span> createdbyjerry — all systems nominal</span>
+        <span>Status: open for select freelance work</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

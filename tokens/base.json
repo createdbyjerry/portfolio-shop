@@ -1,0 +1,124 @@
+{
+  "$description": "Core (tier 1) tokens: raw values only. Nothing on the site should reference these directly; components use the semantic tokens defined in tokens/themes/*.json.",
+  "color": {
+    "$type": "color",
+    "neutral": {
+      "0":   { "$value": "#000000", "$description": "Void black" },
+      "950": { "$value": "#0a0b0d", "$description": "Page background" },
+      "900": { "$value": "#141618", "$description": "Panel" },
+      "850": { "$value": "#1a1d21", "$description": "Raised panel" },
+      "800": { "$value": "#232425", "$description": "Hairline" },
+      "500": { "$value": "#858582", "$description": "Faint ink (raised from #60605f to pass 4.5:1)" },
+      "400": { "$value": "#9c9c99", "$description": "Dim ink" },
+      "50":  { "$value": "#f5f3ee", "$description": "Paper" }
+    },
+    "coral": {
+      "300": { "$value": "#fc7b6a" },
+      "500": { "$value": "#f25644" },
+      "700": { "$value": "#bd2418" },
+      "950": { "$value": "#200703", "$description": "Eclipsed orb core" }
+    },
+    "gold": {
+      "300": { "$value": "#fee37d" },
+      "500": { "$value": "#f2ce4b" },
+      "700": { "$value": "#b9951f" }
+    },
+    "alpha": {
+      "paper-20":  { "$value": "#f5f3ee33" },
+      "panel-75":  { "$value": "#1a1d21bf" },
+      "black-10":  { "$value": "#0000001a" },
+      "coral-15":  { "$value": "#f2564426" }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "display": { "$value": ["Michroma", "sans-serif"] },
+      "body":    { "$value": ["Oxygen", "system-ui", "sans-serif"] },
+      "mono":    { "$value": ["Space Mono", "ui-monospace", "monospace"] }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": { "$value": 400 },
+      "bold":    { "$value": 700 }
+    },
+    "size": {
+      "$type": "dimension",
+      "2xs": { "$value": "11px" },
+      "xs":  { "$value": "12px" },
+      "sm":  { "$value": "13px" },
+      "md":  { "$value": "15px" },
+      "lg":  { "$value": "17px" },
+      "xl":  { "$value": "18px" },
+      "fluid-1": { "$value": "clamp(1.25rem, 2.2vw, 1.5rem)" },
+      "fluid-2": { "$value": "clamp(1.4rem, 3vw, 1.9rem)" },
+      "fluid-3": { "$value": "clamp(1.9rem, 4.6vw, 3rem)" },
+      "fluid-4": { "$value": "clamp(2.1rem, 5.6vw, 3.9rem)" }
+    },
+    "line-height": {
+      "$type": "number",
+      "tight": { "$value": 1.12 },
+      "snug":  { "$value": 1.35 },
+      "body":  { "$value": 1.6 }
+    },
+    "tracking": {
+      "$type": "dimension",
+      "normal": { "$value": "0" },
+      "wide":   { "$value": "0.04em" },
+      "wider":  { "$value": "0.16em" }
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "3xs": { "$value": "4px" },
+    "2xs": { "$value": "8px" },
+    "xs":  { "$value": "12px" },
+    "sm":  { "$value": "16px" },
+    "md":  { "$value": "20px" },
+    "lg":  { "$value": "24px" },
+    "xl":  { "$value": "32px" },
+    "2xl": { "$value": "40px" },
+    "3xl": { "$value": "56px" },
+    "4xl": { "$value": "80px" },
+    "5xl": { "$value": "120px" },
+    "6xl": { "$value": "200px" }
+  },
+  "radius": {
+    "$type": "dimension",
+    "sm":     { "$value": "3px" },
+    "md":     { "$value": "6px" },
+    "lg":     { "$value": "10px" },
+    "pill":   { "$value": "999px" },
+    "circle": { "$value": "50%" }
+  },
+  "size": {
+    "$type": "dimension",
+    "dot-sm":     { "$value": "6px" },
+    "dot-md":     { "$value": "8px" },
+    "container":  { "$value": "1200px" },
+    "prose":      { "$value": "720px" },
+    "nav-height": { "$value": "60px" }
+  },
+  "blur": {
+    "$type": "dimension",
+    "sm": { "$value": "12px" },
+    "md": { "$value": "20px" }
+  },
+  "motion": {
+    "duration": {
+      "$type": "duration",
+      "fast": { "$value": "150ms" },
+      "base": { "$value": "200ms" },
+      "slow": { "$value": "400ms" }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "standard": { "$value": [0.2, 0.8, 0.2, 1] }
+    },
+    "lift": {
+      "$type": "dimension",
+      "sm": { "$value": "-1px" },
+      "md": { "$value": "-3px" }
+    }
+  }
+}
