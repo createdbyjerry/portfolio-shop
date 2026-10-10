@@ -479,3 +479,19 @@ strong { font-weight: var(--font-weight-bold); }
   color: var(--text-primary);
 }
 @media (min-width: 1440px) { .orb-canvas { filter: blur(5px); } }
+
+/* Card media variants + disabled button ------------------------------------ */
+/* Square media for 1:1 renders (3D toys). Contained, never cropped, on the void surface. */
+.card__media--square { aspect-ratio: 1 / 1; object-fit: contain; background: var(--surface-void); }
+/* Stand-in until cover art exists. Uses the .mono type treatment. */
+.card__media--placeholder {
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--type-mono-family);
+  font-size: var(--font-size-2xs);
+  letter-spacing: var(--font-tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  background: repeating-linear-gradient(45deg, var(--surface-raised) 0 var(--space-sm), var(--surface-panel) var(--space-sm) calc(var(--space-sm) * 2));
+}
+/* Not-yet-available action: keeps the button shape, drops interaction */
+.btn[aria-disabled="true"] { color: var(--text-tertiary); border-color: var(--border-subtle); background: transparent; pointer-events: none; }
