@@ -46,9 +46,90 @@
   <main id="main">
     <section class="section section--first" id="intro" aria-labelledby="intro-title">
       <div class="container">
-        <span class="tag"><span class="dot"></span>3D</span>
-        <h1 class="display" id="intro-title">Built in Three Dimensions</h1>
-        <p class="lead lead--rule">Original toy designs made for 3D printing. Download the files on Cults3D and print them at home.</p>
+        <div class="hero__grid">
+          <div class="page-hero__copy">
+            <span class="tag"><span class="dot"></span>3D</span>
+            <h1 class="display" id="intro-title">Built in Three Dimensions</h1>
+            <p class="lead lead--rule">Original toy designs made for 3D printing. Download the files on Cults3D and print them at home.</p>
+          </div>
+          <figure class="viz viz--hero" aria-hidden="true">
+            <span class="viz__label mono">Fig.00 / Mesh → Print</span>
+            <svg viewBox="0 0 440 400" focusable="false">
+              <defs>
+                <clipPath id="print-shape"><rect x="196" y="340" width="48" height="36"/><circle cx="220" cy="322" r="18"/><path d="M204 314L200 292 216 308zM236 314L240 292 224 308z"/></clipPath>
+                <clipPath id="print-reveal"><rect class="viz-print-rise" x="0" y="286" width="440" height="90"/></clipPath>
+              </defs>
+              <text class="viz-t" x="24" y="46" font-size="9">Model / toy.stl</text>
+              <text class="viz-t viz-t--gold" x="416" y="46" font-size="9" text-anchor="end">12,480 tris</text>
+              <rect class="viz-box" x="24" y="54" width="392" height="150" rx="4"/>
+
+              <g class="viz-fade" style="--d:0ms">
+                <path class="viz-stroke-muted" fill="none" d="M105 130l30 16M135 130l-30 16M105 146v36M90 156l30 16M135 146v36M150 156l-30 16"/>
+                <path class="viz-stroke-accent" d="M120 122l30 16-30 16-30-16zM90 138v36l30 16 30-16v-36M120 154v36"/>
+                <ellipse class="viz-stroke-muted" cx="120" cy="96" rx="24" ry="7" fill="none"/>
+                <ellipse class="viz-stroke-muted viz-spin" cx="120" cy="96" rx="24" ry="24" fill="none"/>
+                <ellipse class="viz-stroke-muted viz-spin" style="animation-delay:-1.25s" cx="120" cy="96" rx="24" ry="24" fill="none"/>
+                <circle class="viz-stroke-accent" cx="120" cy="96" r="24"/>
+                <path class="viz-stroke-accent" d="M104 79L100 60 115 73M136 79L140 60 125 73"/>
+              </g>
+              <g class="viz-fade viz-fill-accent" style="--d:300ms">
+                <circle cx="120" cy="122" r="2.2"/><circle cx="150" cy="138" r="2.2"/><circle cx="90" cy="138" r="2.2"/>
+                <circle cx="120" cy="154" r="2.2"/><circle cx="90" cy="174" r="2.2"/><circle cx="150" cy="174" r="2.2"/><circle cx="120" cy="190" r="2.2"/>
+                <circle cx="100" cy="60" r="2.2"/><circle cx="140" cy="60" r="2.2"/>
+              </g>
+              <g class="viz-fade" style="--d:400ms">
+                <path class="viz-stroke-accent" d="M48 186l14 7"/><path class="viz-stroke-gold" d="M48 186l-14 7"/><path class="viz-stroke-muted" d="M48 186v-16"/>
+                <text class="viz-t viz-t--accent" x="66" y="197" font-size="7">x</text>
+                <text class="viz-t viz-t--gold" x="27" y="197" font-size="7">y</text>
+                <text class="viz-t" x="48" y="166" font-size="7" text-anchor="middle">z</text>
+              </g>
+              <g class="viz-stroke-gold">
+                <path class="viz-draw" pathLength="1" style="--d:500ms" d="M172 60v130M167 60h10M167 190h10"/>
+              </g>
+              <text class="viz-t viz-t--gold viz-fade" style="--d:700ms" x="178" y="128" font-size="10">64</text>
+
+              <path class="viz-stroke-muted viz-dash viz-fade" style="--d:600ms" d="M204 66v126"/>
+              <g class="viz-fade" style="--d:750ms">
+                <text class="viz-t" x="218" y="80" font-size="8">Layer height</text><text class="viz-t viz-t--light" x="402" y="80" font-size="9" text-anchor="end">0.20 mm</text>
+                <text class="viz-t" x="218" y="104" font-size="8">Infill</text><text class="viz-t viz-t--light" x="402" y="104" font-size="9" text-anchor="end">15% gyroid</text>
+                <text class="viz-t" x="218" y="128" font-size="8">Supports</text><text class="viz-t viz-t--light" x="402" y="128" font-size="9" text-anchor="end">Tree</text>
+                <text class="viz-t" x="218" y="152" font-size="8">Walls</text><text class="viz-t viz-t--light" x="402" y="152" font-size="9" text-anchor="end">3</text>
+                <path class="viz-stroke-muted viz-dash" d="M218 166h184"/>
+                <text class="viz-t" x="218" y="186" font-size="8">Est. print</text><text class="viz-t viz-t--gold" x="402" y="186" font-size="10" text-anchor="end">4h 12m</text>
+              </g>
+
+              <g class="viz-fade" style="--d:900ms">
+                <path class="viz-stroke-muted viz-dash" d="M24 226h136M280 226h136"/>
+                <text class="viz-t viz-t--accent-caps" x="220" y="229" font-size="9" text-anchor="middle">Slice ↓ G-code</text>
+              </g>
+
+              <text class="viz-t" x="24" y="258" font-size="9">Printer / FDM 0.4 mm</text>
+              <text class="viz-t viz-t--gold viz-fade" style="--d:1500ms" x="416" y="258" font-size="9" text-anchor="end">Printing ●</text>
+              <rect class="viz-box" x="24" y="266" width="392" height="126" rx="4"/>
+              <g class="viz-fade" style="--d:1050ms">
+                <text class="viz-t" x="40" y="288" font-size="8">Nozzle</text><text class="viz-t viz-t--light" x="40" y="301" font-size="9">210°C</text>
+                <text class="viz-t" x="40" y="322" font-size="8">Bed</text><text class="viz-t viz-t--light" x="40" y="335" font-size="9">60°C</text>
+                <text class="viz-t" x="400" y="288" font-size="8" text-anchor="end">Filament</text><text class="viz-t viz-t--light" x="400" y="301" font-size="9" text-anchor="end">PLA</text>
+                <text class="viz-t" x="400" y="322" font-size="8" text-anchor="end">Speed</text><text class="viz-t viz-t--light" x="400" y="335" font-size="9" text-anchor="end">60 mm/s</text>
+                <rect class="viz-fill-raised" x="110" y="376" width="220" height="5" rx="1"/>
+                <path class="viz-stroke-muted viz-dash" fill="none" d="M196 376v-36h48v36M204 340a18 18 0 1 1 32 0M204 314l-4-22 16 16M236 314l4-22-16 16"/>
+              </g>
+              <g class="viz-fade" style="--d:1150ms" clip-path="url(#print-reveal)">
+                <path class="viz-stroke-accent" clip-path="url(#print-shape)" d="M186 375h68M186 372h68M186 369h68M186 366h68M186 363h68M186 360h68M186 357h68M186 354h68M186 351h68M186 348h68M186 345h68M186 342h68M186 339h68M186 336h68M186 333h68M186 330h68M186 327h68M186 324h68M186 321h68M186 318h68M186 315h68M186 312h68M186 309h68M186 306h68M186 303h68M186 300h68M186 297h68M186 294h68M186 291h68"/>
+              </g>
+              <g class="viz-fade" style="--d:1150ms">
+                <g class="viz-print-head">
+                  <path class="viz-stroke-muted" d="M120 362h200"/>
+                  <g class="viz-print-sweep">
+                    <rect class="viz-box" x="208" y="352" width="24" height="14" rx="2"/>
+                    <path class="viz-fill-accent" d="M214 366h12l-6 9z"/>
+                    <circle class="viz-fill-gold" cx="220" cy="376" r="1.8"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </figure>
+        </div>
       </div>
     </section>
 

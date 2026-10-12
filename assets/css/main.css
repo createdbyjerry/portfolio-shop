@@ -630,3 +630,21 @@ strong { font-weight: var(--font-weight-bold); }
   /* All five cards are visible together on desktop, so chain them: 2011 first, 2025 last */
   .viz-track-grid--rtl .viz { --cd: var(--cd-desk, 0ms); }
 }
+
+/* Page heroes: intro copy beside a Fig.00 diagram (Work, Prototypes, Arcade, 3D, UI Kits).
+   Same .hero__grid + .viz--hero as the home page, without the full-height frame. */
+.page-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-lg); }
+/* 3D: wireframe meridians turning */
+.viz-spin { transform-box: fill-box; transform-origin: center; animation: viz-spin 2.5s ease-in-out infinite alternate; }
+@keyframes viz-spin { from { transform: scaleX(1); } to { transform: scaleX(-1); } }
+/* 3D: layers build up while the print head climbs and sweeps.
+   Static state (no JS / reduced motion) = finished print, head parked on top. */
+.viz-print-rise { transform-box: view-box; transform-origin: 220px 376px; animation: viz-print-rise 9s linear infinite; }
+@keyframes viz-print-rise { from { transform: scaleY(0); } 90%, to { transform: scaleY(1); } }
+.viz-print-head { transform: translateY(-86px); animation: viz-print-climb 9s linear infinite; }
+@keyframes viz-print-climb { from { transform: translateY(0); } 90%, to { transform: translateY(-86px); } }
+.viz-print-sweep { animation: viz-print-sweep .9s ease-in-out infinite alternate; }
+@keyframes viz-print-sweep { from { transform: translateX(-24px); } to { transform: translateX(24px); } }
+/* Arcade: idle bob on the player sprite */
+.viz-bob { animation: viz-bob 1.2s ease-in-out infinite alternate; }
+@keyframes viz-bob { to { transform: translateY(-3px); } }
