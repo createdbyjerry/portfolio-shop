@@ -495,3 +495,122 @@ strong { font-weight: var(--font-weight-bold); }
 }
 /* Not-yet-available action: keeps the button shape, drops interaction */
 .btn[aria-disabled="true"] { color: var(--text-tertiary); border-color: var(--border-subtle); background: transparent; pointer-events: none; }
+
+/* Card diagrams (.viz) ------------------------------------------------------ */
+/* Inline-SVG figures that sit on top of a card, styled like the hero frame:
+   coral corner brackets, mono readouts, dot grid on the void surface.
+   SVG geometry is drawn in a 320x180 viewBox; all colour comes from tokens. */
+.viz {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--surface-void);
+  background-image: radial-gradient(var(--border-subtle) 1px, transparent 1px);
+  background-size: var(--space-sm) var(--space-sm);
+  background-position: center;
+  border-bottom: 1px solid var(--card-border);
+  overflow: hidden;
+}
+.viz::before, .viz::after {
+  content: ''; position: absolute; z-index: 1;
+  width: var(--space-xs); height: var(--space-xs);
+  border: 0 solid var(--frame-corner); pointer-events: none;
+}
+.viz::before { top: var(--space-2xs); left: var(--space-2xs); border-top-width: 1px; border-left-width: 1px; }
+.viz::after  { bottom: var(--space-2xs); right: var(--space-2xs); border-bottom-width: 1px; border-right-width: 1px; }
+.viz svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.viz__label, .viz__readout {
+  position: absolute; z-index: 1;
+  font-size: var(--font-size-2xs);
+  color: var(--text-tertiary);
+  pointer-events: none;
+}
+.viz__label   { top: var(--space-xs); left: var(--space-lg); }
+.viz__readout { bottom: var(--space-xs); right: var(--space-lg); color: var(--text-highlight); }
+
+/* SVG paint */
+.viz-stroke-accent { stroke: var(--accent-primary); stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.viz-stroke-gold   { stroke: var(--accent-secondary); stroke-width: 1; fill: none; }
+.viz-stroke-muted  { stroke: var(--border-strong); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
+.viz-fill-accent   { fill: var(--accent-primary); }
+.viz-fill-gold     { fill: var(--accent-secondary); }
+.viz-fill-muted    { fill: var(--border-strong); }
+.viz-fill-raised   { fill: var(--surface-raised); }
+.viz-dash { stroke-dasharray: 3 4; }
+.viz-box { fill: var(--surface-panel); stroke: var(--border-strong); stroke-width: 1; }
+.viz-box--accent { fill: var(--accent-primary-wash); stroke: var(--accent-primary); }
+.viz-t {
+  font-family: var(--type-mono-family);
+  letter-spacing: var(--font-tracking-wide);
+  text-transform: uppercase;
+  fill: var(--text-tertiary);
+}
+.viz-t--light  { fill: var(--text-secondary); text-transform: none; }
+.viz-t--accent { fill: var(--text-accent); text-transform: none; }
+.viz-t--gold   { fill: var(--text-highlight); }
+.viz-display   { font-family: var(--type-display-family); fill: var(--text-primary); }
+
+/* 60/40 donut + orbit */
+.viz-track { fill: none; stroke: var(--surface-raised); stroke-width: 10; }
+.viz-arc { fill: none; stroke-width: 10; transition: stroke-dasharray 1.2s var(--motion-easing-standard); }
+.viz-arc--human { stroke: var(--accent-primary); stroke-dasharray: 59 41; }
+.viz-arc--ai    { stroke: var(--accent-secondary); stroke-dasharray: 39 61; stroke-dashoffset: -60; transition-delay: 300ms; }
+.viz-orbit { fill: none; stroke: var(--border-strong); stroke-width: 1; stroke-dasharray: 1 5; }
+.viz-satellite { transform-box: view-box; transform-origin: 160px 96px; animation: viz-orbit 14s linear infinite; }
+@keyframes viz-orbit { to { transform: rotate(360deg); } }
+
+/* State machine nodes: highlight cycles Default → Hover → Pressed → Loading */
+.viz-node rect { fill: var(--surface-panel); stroke: var(--border-strong); stroke-width: 1; }
+.viz-node text { font-family: var(--type-mono-family); text-transform: uppercase; letter-spacing: var(--font-tracking-wide); fill: var(--text-secondary); }
+.viz-node--rest rect { fill: var(--accent-primary-wash); stroke: var(--accent-primary); }
+.viz-node--off rect { stroke-dasharray: 3 3; fill: transparent; }
+.viz-node--off text { fill: var(--text-tertiary); }
+.viz-node:not(.viz-node--off) rect { animation: viz-state 6s steps(1) infinite; animation-delay: calc(var(--i) * 1.5s); }
+@keyframes viz-state {
+  0%   { fill: var(--accent-primary-wash); stroke: var(--accent-primary); }
+  25%  { fill: var(--surface-panel); stroke: var(--border-strong); }
+}
+
+/* Telemetry ping */
+.viz-ping { transform-box: fill-box; transform-origin: center; animation: pulse 2s var(--motion-easing-standard) infinite; }
+
+/* Reveal on scroll. Without JS (or with reduced motion) everything is simply shown. */
+.viz-draw { stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset 900ms var(--motion-easing-standard) var(--d, 0ms); }
+.viz-fade { transition: opacity var(--motion-duration-slow) var(--motion-easing-standard) var(--d, 0ms); }
+.viz-reveal .viz:not(.is-in) .viz-draw { stroke-dashoffset: 1; }
+.viz-reveal .viz:not(.is-in) .viz-fade { opacity: 0; }
+.viz-reveal .viz:not(.is-in) .viz-arc { stroke-dasharray: 0 100; }
+
+/* Messy → Shipped scale above the process track */
+.viz-scale { display: flex; align-items: center; gap: var(--space-sm); width: 100%; color: var(--text-tertiary); }
+.viz-scale__bar {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, var(--border-strong), var(--accent-primary));
+  position: relative;
+}
+.viz-scale__bar::after {
+  content: ''; position: absolute; right: 0; top: 50%;
+  width: var(--size-dot-sm); height: var(--size-dot-sm);
+  border-radius: var(--radius-circle); background: var(--accent-primary);
+  transform: translate(50%, -50%);
+}
+/* Process track: a touch taller so the narrow 4-up cards keep breathing room.
+   The track line stays vertically centred, so it lines up card to card. */
+.viz-track-grid .viz { aspect-ratio: 16 / 11; }
+
+/* Hero diagram: canvas spec on top, the matching code underneath */
+.hero__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: var(--space-2xl); align-items: center; width: 100%; }
+.viz--hero { aspect-ratio: 11 / 10; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); }
+.viz-pad { fill: var(--accent-secondary); opacity: .35; }
+.viz-content { fill: none; stroke: var(--text-inverse); stroke-width: 1; stroke-dasharray: 2 3; opacity: .45; }
+.viz-t--inverse { fill: var(--text-inverse); }
+.viz-t--accent-caps { fill: var(--text-accent); }
+.viz-code text:not(.viz-t) { font-family: var(--type-mono-family); fill: var(--text-secondary); white-space: pre; }
+.viz-code__sel { fill: var(--text-accent); }
+.viz-code__tok { fill: var(--text-highlight); }
+.viz-cursor { fill: var(--accent-primary); animation: viz-blink 1.1s steps(1) infinite; }
+@keyframes viz-blink { 50% { opacity: 0; } }
+@media (max-width: 991px) {
+  .hero__grid { grid-template-columns: minmax(0, 1fr); }
+  .viz--hero { max-width: 520px; }
+}

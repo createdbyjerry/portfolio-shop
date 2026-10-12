@@ -39,3 +39,17 @@ document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new 
   window.gtag('js', new Date());
   window.gtag('config', GA_ID);
 })();
+
+// Card diagrams: draw in when scrolled into view (home page .viz figures)
+const vizzes = document.querySelectorAll('.viz');
+if (vizzes.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.classList.add('viz-reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+  vizzes.forEach((el) => io.observe(el));
+}
