@@ -575,8 +575,9 @@ strong { font-weight: var(--font-weight-bold); }
 .viz-ping { transform-box: fill-box; transform-origin: center; animation: pulse 2s var(--motion-easing-standard) infinite; }
 
 /* Reveal on scroll. Without JS (or with reduced motion) everything is simply shown. */
-.viz-draw { stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset 900ms var(--motion-easing-standard) var(--d, 0ms); }
-.viz-fade { transition: opacity var(--motion-duration-slow) var(--motion-easing-standard) var(--d, 0ms); }
+.viz-draw { stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset 900ms var(--motion-easing-standard) calc(var(--d, 0ms) + var(--cd, 0ms)); }
+.viz-fade { transition: opacity var(--motion-duration-slow) var(--motion-easing-standard) calc(var(--d, 0ms) + var(--cd, 0ms)); }
+.viz-noanim .viz * { transition: none !important; }
 .viz-reveal .viz:not(.is-in) .viz-draw { stroke-dashoffset: 1; }
 .viz-reveal .viz:not(.is-in) .viz-fade { opacity: 0; }
 .viz-reveal .viz:not(.is-in) .viz-arc { stroke-dasharray: 0 100; }
@@ -613,4 +614,19 @@ strong { font-weight: var(--font-weight-bold); }
 @media (max-width: 991px) {
   .hero__grid { grid-template-columns: minmax(0, 1fr); }
   .viz--hero { max-width: 520px; }
+}
+
+/* About timeline: newest on the left, so the scale runs Now → origin */
+.viz-scale--reverse .viz-scale__bar { background: linear-gradient(90deg, var(--accent-primary), var(--border-strong)); }
+.viz-fill-light { fill: var(--text-primary); }
+/* Five-up cards are narrow; thicken hairlines so they survive the scale-down */
+.grid--5.viz-track-grid .viz-stroke-muted, .grid--5.viz-track-grid .viz-box { stroke-width: 1.5; }
+.grid--5.viz-track-grid .viz-stroke-accent { stroke-width: 2; }
+.grid--5.viz-track-grid .viz { aspect-ratio: 4 / 3; }
+
+/* About timeline runs right → left: 2011 starts the line, Now is where it lands */
+.viz-reveal .viz-track-grid--rtl .viz:not(.is-in) .viz-draw { stroke-dashoffset: -1; }
+@media (min-width: 992px) {
+  /* All five cards are visible together on desktop, so chain them: 2011 first, 2025 last */
+  .viz-track-grid--rtl .viz { --cd: var(--cd-desk, 0ms); }
 }

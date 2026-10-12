@@ -43,13 +43,19 @@ document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new 
 // Card diagrams: draw in when scrolled into view (home page .viz figures)
 const vizzes = document.querySelectorAll('.viz');
 if (vizzes.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.documentElement.classList.add('viz-reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-in');
-      io.unobserve(entry.target);
-    });
-  }, { threshold: 0.4 });
-  vizzes.forEach((el) => io.observe(el));
+  const root = document.documentElement;
+  // Hide the figures instantly (no transition), then start watching for them
+  root.classList.add('viz-reveal', 'viz-noanim');
+  void root.offsetWidth;
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    root.classList.remove('viz-noanim');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.4 });
+    vizzes.forEach((el) => io.observe(el));
+  }));
 }
