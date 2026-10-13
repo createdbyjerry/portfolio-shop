@@ -46,79 +46,83 @@
   <main id="main">
     <section class="section section--first" id="intro" aria-labelledby="intro-title">
       <div class="container">
-        <div class="hero__grid">
-          <div class="page-hero__copy">
-            <span class="tag"><span class="dot"></span>Labs</span>
-            <h1 class="display" id="intro-title">Live Code, Not Static</h1>
-            <p class="lead lead--rule">Static screens lie. I use AI-assisted coding to move rapidly out of Figma and into the browser. These builds live directly on GitHub as functioning HTML, CSS, and JavaScript—stress-testing UI logic and interactions in real-world environments before a single engineering ticket is written.</p>
+        <div class="frame">
+          <span class="frame__corner frame__corner--tl"></span><span class="frame__corner frame__corner--tr"></span>
+          <span class="frame__corner frame__corner--br"></span><span class="frame__corner frame__corner--bl"></span>
+          <div class="hero__grid">
+            <div class="page-hero__copy">
+              <span class="tag"><span class="dot"></span>Labs</span>
+              <h1 class="display" id="intro-title">Live Code, Not Static</h1>
+              <p class="lead lead--rule">Static screens lie. I use AI-assisted coding to move rapidly out of Figma and into the browser. These builds live directly on GitHub as functioning HTML, CSS, and JavaScript—stress-testing UI logic and interactions in real-world environments before a single engineering ticket is written.</p>
+            </div>
+            <figure class="viz viz--hero" aria-hidden="true">
+              <span class="viz__label mono">Fig.00 / Canvas → Browser</span>
+              <svg viewBox="0 0 440 400" focusable="false">
+                <text class="viz-t" x="24" y="46" font-size="9">Canvas / static</text>
+                <text class="viz-t" x="180" y="46" font-size="9">Browser / live</text>
+                <text class="viz-t viz-t--gold" x="416" y="46" font-size="9" text-anchor="end">60 fps</text>
+
+                <g class="viz-fade" style="--d:0ms">
+                  <rect class="viz-box viz-dash" x="24" y="54" width="140" height="70" rx="4"/>
+                  <path class="viz-stroke-muted" d="M36 68h44M36 78h70"/>
+                  <rect class="viz-stroke-muted" x="36" y="88" width="52" height="14" rx="2" fill="none"/>
+                  <text class="viz-t" x="152" y="116" font-size="7" text-anchor="end">0 states</text>
+                </g>
+                <g class="viz-fade" style="--d:900ms">
+                  <rect class="viz-box" x="24" y="134" width="140" height="70" rx="4"/>
+                  <text class="viz-t viz-t--light" x="36" y="152" font-size="8"><tspan class="viz-code__sel">✓</tspan> hover / focus</text>
+                  <text class="viz-t viz-t--light" x="36" y="166" font-size="8"><tspan class="viz-code__sel">✓</tspan> drag + drop</text>
+                  <text class="viz-t viz-t--light" x="36" y="180" font-size="8"><tspan class="viz-code__sel">✓</tspan> empty state</text>
+                  <text class="viz-t viz-t--light" x="36" y="194" font-size="8"><tspan class="viz-code__sel">✓</tspan> 320px wide</text>
+                </g>
+                <path class="viz-draw viz-stroke-accent" pathLength="1" style="--d:200ms" d="M164 89h10"/>
+
+                <rect class="viz-box" x="180" y="54" width="236" height="150" rx="4"/>
+                <g class="viz-fade" style="--d:300ms">
+                  <path class="viz-stroke-muted" d="M180 72h236"/>
+                  <circle class="viz-fill-muted" cx="191" cy="63" r="2.5"/><circle class="viz-fill-muted" cx="200" cy="63" r="2.5"/><circle class="viz-fill-muted" cx="209" cy="63" r="2.5"/>
+                  <rect class="viz-fill-raised" x="220" y="58" width="186" height="10" rx="5"/>
+                  <text class="viz-t viz-t--light" x="228" y="66" font-size="7">createdbyjerry.github.io/leo-tracker</text>
+                </g>
+                <g class="viz-fade" style="--d:500ms">
+                  <circle class="viz-orbit" cx="252" cy="138" r="44"/>
+                  <circle class="viz-box" cx="252" cy="138" r="20"/>
+                  <ellipse class="viz-stroke-muted" cx="252" cy="138" rx="20" ry="6" fill="none"/>
+                  <path class="viz-stroke-muted" d="M252 118v40" fill="none"/>
+                </g>
+                <g class="viz-satellite" style="transform-origin:252px 138px"><circle class="viz-fill-gold" cx="252" cy="94" r="3.5"/></g>
+                <g class="viz-fade" style="--d:650ms">
+                  <text class="viz-t" x="316" y="94" font-size="7">Alt</text><text class="viz-t viz-t--light" x="406" y="94" font-size="8" text-anchor="end">412 km</text>
+                  <text class="viz-t" x="316" y="110" font-size="7">Vel</text><text class="viz-t viz-t--light" x="406" y="110" font-size="8" text-anchor="end">7.66 km/s</text>
+                  <text class="viz-t" x="316" y="126" font-size="7">Inc</text><text class="viz-t viz-t--light" x="406" y="126" font-size="8" text-anchor="end">51.6°</text>
+                  <rect class="viz-fill-accent" x="316" y="140" width="90" height="20" rx="3"/>
+                  <text class="viz-t viz-t--inverse" x="361" y="153" font-size="8" text-anchor="middle">TRACK</text>
+                  <text class="viz-t viz-t--gold" x="316" y="182" font-size="7">state: tracking</text>
+                </g>
+                <g class="viz-fade" style="--d:800ms">
+                  <circle class="viz-ping viz-fill-gold" cx="390" cy="152" r="4"/>
+                  <path class="viz-fill-light" d="M390 152v17l4.5-4.5 3.5 7.5 2.6-1.2-3.5-7.4h6.4z"/>
+                </g>
+
+                <g class="viz-fade" style="--d:1000ms">
+                  <path class="viz-stroke-muted viz-dash" d="M24 226h120M296 226h120"/>
+                  <text class="viz-t viz-t--accent-caps" x="220" y="229" font-size="9" text-anchor="middle">Push ↓ GitHub Pages</text>
+                </g>
+
+                <text class="viz-t" x="24" y="258" font-size="9">Terminal / zsh</text>
+                <text class="viz-t viz-t--gold viz-fade" style="--d:1800ms" x="416" y="258" font-size="9" text-anchor="end">Tickets filed: 0</text>
+                <rect class="viz-box" x="24" y="266" width="392" height="126" rx="4"/>
+                <g class="viz-code" font-size="11">
+                  <g class="viz-fade" style="--d:1100ms"><text class="viz-t" x="44" y="290" font-size="9" text-anchor="end">1</text><text x="56" y="290"><tspan class="viz-code__sel">$</tspan> git commit -m <tspan class="viz-code__tok">"drag states"</tspan></text></g>
+                  <g class="viz-fade" style="--d:1220ms"><text class="viz-t" x="44" y="309" font-size="9" text-anchor="end">2</text><text x="56" y="309"><tspan class="viz-code__sel">$</tspan> git push origin <tspan class="viz-code__tok">main</tspan></text></g>
+                  <g class="viz-fade" style="--d:1340ms"><text class="viz-t" x="44" y="328" font-size="9" text-anchor="end">3</text><text x="56" y="328">→ pages build · <tspan class="viz-code__tok">38s</tspan></text></g>
+                  <g class="viz-fade" style="--d:1460ms"><text class="viz-t" x="44" y="347" font-size="9" text-anchor="end">4</text><text x="56" y="347"><tspan class="viz-code__sel">✓</tspan> deployed to <tspan class="viz-code__tok">github.io</tspan></text></g>
+                  <g class="viz-fade" style="--d:1580ms"><text class="viz-t" x="44" y="366" font-size="9" text-anchor="end">5</text><text x="56" y="366"><tspan class="viz-code__sel">✓</tspan> ready for review</text></g>
+                  <g class="viz-fade" style="--d:1700ms"><text class="viz-t" x="44" y="385" font-size="9" text-anchor="end">6</text><text x="56" y="385"><tspan class="viz-code__sel">$</tspan></text><rect class="viz-cursor" x="68" y="375" width="6" height="12"/></g>
+                </g>
+              </svg>
+            </figure>
           </div>
-          <figure class="viz viz--hero" aria-hidden="true">
-            <span class="viz__label mono">Fig.00 / Canvas → Browser</span>
-            <svg viewBox="0 0 440 400" focusable="false">
-              <text class="viz-t" x="24" y="46" font-size="9">Canvas / static</text>
-              <text class="viz-t" x="180" y="46" font-size="9">Browser / live</text>
-              <text class="viz-t viz-t--gold" x="416" y="46" font-size="9" text-anchor="end">60 fps</text>
-
-              <g class="viz-fade" style="--d:0ms">
-                <rect class="viz-box viz-dash" x="24" y="54" width="140" height="70" rx="4"/>
-                <path class="viz-stroke-muted" d="M36 68h44M36 78h70"/>
-                <rect class="viz-stroke-muted" x="36" y="88" width="52" height="14" rx="2" fill="none"/>
-                <text class="viz-t" x="152" y="116" font-size="7" text-anchor="end">0 states</text>
-              </g>
-              <g class="viz-fade" style="--d:900ms">
-                <rect class="viz-box" x="24" y="134" width="140" height="70" rx="4"/>
-                <text class="viz-t viz-t--light" x="36" y="152" font-size="8"><tspan class="viz-code__sel">✓</tspan> hover / focus</text>
-                <text class="viz-t viz-t--light" x="36" y="166" font-size="8"><tspan class="viz-code__sel">✓</tspan> drag + drop</text>
-                <text class="viz-t viz-t--light" x="36" y="180" font-size="8"><tspan class="viz-code__sel">✓</tspan> empty state</text>
-                <text class="viz-t viz-t--light" x="36" y="194" font-size="8"><tspan class="viz-code__sel">✓</tspan> 320px wide</text>
-              </g>
-              <path class="viz-draw viz-stroke-accent" pathLength="1" style="--d:200ms" d="M164 89h10"/>
-
-              <rect class="viz-box" x="180" y="54" width="236" height="150" rx="4"/>
-              <g class="viz-fade" style="--d:300ms">
-                <path class="viz-stroke-muted" d="M180 72h236"/>
-                <circle class="viz-fill-muted" cx="191" cy="63" r="2.5"/><circle class="viz-fill-muted" cx="200" cy="63" r="2.5"/><circle class="viz-fill-muted" cx="209" cy="63" r="2.5"/>
-                <rect class="viz-fill-raised" x="220" y="58" width="186" height="10" rx="5"/>
-                <text class="viz-t viz-t--light" x="228" y="66" font-size="7">createdbyjerry.github.io/leo-tracker</text>
-              </g>
-              <g class="viz-fade" style="--d:500ms">
-                <circle class="viz-orbit" cx="252" cy="138" r="44"/>
-                <circle class="viz-box" cx="252" cy="138" r="20"/>
-                <ellipse class="viz-stroke-muted" cx="252" cy="138" rx="20" ry="6" fill="none"/>
-                <path class="viz-stroke-muted" d="M252 118v40" fill="none"/>
-              </g>
-              <g class="viz-satellite" style="transform-origin:252px 138px"><circle class="viz-fill-gold" cx="252" cy="94" r="3.5"/></g>
-              <g class="viz-fade" style="--d:650ms">
-                <text class="viz-t" x="316" y="94" font-size="7">Alt</text><text class="viz-t viz-t--light" x="406" y="94" font-size="8" text-anchor="end">412 km</text>
-                <text class="viz-t" x="316" y="110" font-size="7">Vel</text><text class="viz-t viz-t--light" x="406" y="110" font-size="8" text-anchor="end">7.66 km/s</text>
-                <text class="viz-t" x="316" y="126" font-size="7">Inc</text><text class="viz-t viz-t--light" x="406" y="126" font-size="8" text-anchor="end">51.6°</text>
-                <rect class="viz-fill-accent" x="316" y="140" width="90" height="20" rx="3"/>
-                <text class="viz-t viz-t--inverse" x="361" y="153" font-size="8" text-anchor="middle">TRACK</text>
-                <text class="viz-t viz-t--gold" x="316" y="182" font-size="7">state: tracking</text>
-              </g>
-              <g class="viz-fade" style="--d:800ms">
-                <circle class="viz-ping viz-fill-gold" cx="390" cy="152" r="4"/>
-                <path class="viz-fill-light" d="M390 152v17l4.5-4.5 3.5 7.5 2.6-1.2-3.5-7.4h6.4z"/>
-              </g>
-
-              <g class="viz-fade" style="--d:1000ms">
-                <path class="viz-stroke-muted viz-dash" d="M24 226h120M296 226h120"/>
-                <text class="viz-t viz-t--accent-caps" x="220" y="229" font-size="9" text-anchor="middle">Push ↓ GitHub Pages</text>
-              </g>
-
-              <text class="viz-t" x="24" y="258" font-size="9">Terminal / zsh</text>
-              <text class="viz-t viz-t--gold viz-fade" style="--d:1800ms" x="416" y="258" font-size="9" text-anchor="end">Tickets filed: 0</text>
-              <rect class="viz-box" x="24" y="266" width="392" height="126" rx="4"/>
-              <g class="viz-code" font-size="11">
-                <g class="viz-fade" style="--d:1100ms"><text class="viz-t" x="44" y="290" font-size="9" text-anchor="end">1</text><text x="56" y="290"><tspan class="viz-code__sel">$</tspan> git commit -m <tspan class="viz-code__tok">"drag states"</tspan></text></g>
-                <g class="viz-fade" style="--d:1220ms"><text class="viz-t" x="44" y="309" font-size="9" text-anchor="end">2</text><text x="56" y="309"><tspan class="viz-code__sel">$</tspan> git push origin <tspan class="viz-code__tok">main</tspan></text></g>
-                <g class="viz-fade" style="--d:1340ms"><text class="viz-t" x="44" y="328" font-size="9" text-anchor="end">3</text><text x="56" y="328">→ pages build · <tspan class="viz-code__tok">38s</tspan></text></g>
-                <g class="viz-fade" style="--d:1460ms"><text class="viz-t" x="44" y="347" font-size="9" text-anchor="end">4</text><text x="56" y="347"><tspan class="viz-code__sel">✓</tspan> deployed to <tspan class="viz-code__tok">github.io</tspan></text></g>
-                <g class="viz-fade" style="--d:1580ms"><text class="viz-t" x="44" y="366" font-size="9" text-anchor="end">5</text><text x="56" y="366"><tspan class="viz-code__sel">✓</tspan> ready for review</text></g>
-                <g class="viz-fade" style="--d:1700ms"><text class="viz-t" x="44" y="385" font-size="9" text-anchor="end">6</text><text x="56" y="385"><tspan class="viz-code__sel">$</tspan></text><rect class="viz-cursor" x="68" y="375" width="6" height="12"/></g>
-              </g>
-            </svg>
-          </figure>
         </div>
       </div>
     </section>
