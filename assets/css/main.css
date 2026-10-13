@@ -175,7 +175,57 @@ strong { font-weight: var(--font-weight-bold); }
 .nav[data-open="true"] .nav__toggle span::before { transform: translateY(6px) rotate(45deg); }
 .nav[data-open="true"] .nav__toggle span::after  { transform: translateY(-6px) rotate(-45deg); }
 
-/* Status pill */
+/* Nav actions: theme toggle + mobile menu button, kept together on the right */
+.nav__actions { display: flex; align-items: center; gap: var(--space-xs); }
+
+/* Theme toggle: a sun / moon switch. The thumb sits under the active theme's icon:
+   gold moon in Perigee (dark), coral sun in Apogee (light). Position is driven by
+   html[data-theme] (set before first paint), so it is correct before site.js runs. */
+.theme-toggle {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 2px;
+  padding: 3px;
+  background: var(--theme-toggle-bg);
+  border: 1px solid var(--theme-toggle-border);
+  border-radius: var(--radius-pill);
+  transition: border-color var(--motion-duration-base) var(--motion-easing-standard);
+}
+.theme-toggle:hover { border-color: var(--accent-primary); }
+.theme-toggle__thumb {
+  position: absolute; top: 3px; left: 3px;
+  width: 26px; height: 26px;
+  border-radius: var(--radius-circle);
+  background: var(--theme-toggle-thumb);
+  transform: translateX(28px); /* under the moon */
+  transition: transform var(--motion-duration-slow) var(--motion-easing-standard), background-color var(--motion-duration-slow) var(--motion-easing-standard);
+}
+.theme-toggle__icon {
+  position: relative; z-index: 1;
+  width: 26px; height: 26px; padding: 6px;
+  color: var(--theme-toggle-icon);
+  transition: color var(--motion-duration-slow) var(--motion-easing-standard), transform var(--motion-duration-slow) var(--motion-easing-standard);
+}
+.theme-toggle__icon--moon { color: var(--theme-toggle-icon-active); }
+.theme-toggle:hover .theme-toggle__icon--sun { transform: rotate(45deg); }
+[data-theme="apogee"] .theme-toggle__thumb { transform: translateX(0); }
+[data-theme="apogee"] .theme-toggle__icon--sun { color: var(--theme-toggle-icon-active); }
+[data-theme="apogee"] .theme-toggle__icon--moon { color: var(--theme-toggle-icon); }
+[data-theme="apogee"] .theme-toggle:hover .theme-toggle__icon--sun { transform: none; }
+[data-theme="apogee"] .theme-toggle:hover .theme-toggle__icon--moon { transform: rotate(-20deg); }
+/* Without JS the switch can't do anything, so don't show it */
+html:not([data-theme]) .theme-toggle { display: none; }
+
+/* Brief colour cross-fade while switching themes (site.js adds the class for ~400ms) */
+.theme-switching, .theme-switching *, .theme-switching *::before, .theme-switching *::after {
+  transition: background-color var(--motion-duration-slow) var(--motion-easing-standard),
+              border-color var(--motion-duration-slow) var(--motion-easing-standard),
+              color var(--motion-duration-slow) var(--motion-easing-standard),
+              fill var(--motion-duration-slow) var(--motion-easing-standard),
+              stroke var(--motion-duration-slow) var(--motion-easing-standard),
+              transform var(--motion-duration-slow) var(--motion-easing-standard) !important;
+}
+
+/* Status pill (no longer in the nav; kept as a component) */
 .status-pill {
   display: inline-flex; align-items: center; gap: var(--space-2xs);
   color: var(--text-secondary);

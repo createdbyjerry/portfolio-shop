@@ -115,6 +115,13 @@
     "frame": {
       "corner": { "$type": "color", "$value": "{accent.primary}" },
       "corner-size": { "$type": "dimension", "$value": "{space.md}" }
+    },
+    "theme-toggle": {
+      "bg":          { "$type": "color", "$value": "{surface.raised}", "$description": "Track" },
+      "border":      { "$type": "color", "$value": "{border.strong}" },
+      "thumb":       { "$type": "color", "$value": "{accent.secondary}", "$description": "Gold moon in the dark" },
+      "icon":        { "$type": "color", "$value": "{text.tertiary}", "$description": "Inactive icon" },
+      "icon-active": { "$type": "color", "$value": "{text.inverse}", "$description": "Icon sitting on the thumb" }
     }
   }
 }

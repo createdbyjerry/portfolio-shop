@@ -5,14 +5,14 @@
   const container = document.querySelector('.orb-canvas');
   if (!container || !window.THREE) return;
 
-  const css = getComputedStyle(document.documentElement);
-  const token = (name, fallback) => (css.getPropertyValue(name).trim() || fallback);
-  const colors = {
+  const token = (name, fallback) => (getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback);
+  const readColors = () => ({
     core: token('--orb-core', '#200703'),
     mid: token('--orb-mid', '#bd2418'),
     edge: token('--orb-edge', '#f25644'),
     rim: token('--orb-rim', '#f25644'),
-  };
+  });
+  const colors = readColors();
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const scene = new THREE.Scene();
@@ -91,6 +91,22 @@
     },
     vertexShader,
     fragmentShader,
+  });
+
+  // Theme switch (site.js): ease the orb from its old colours to the new theme's.
+  const keys = { core: 'color1', mid: 'color2', edge: 'color3', rim: 'rimColor' };
+  window.addEventListener('cbj:themechange', () => {
+    const next = readColors();
+    const from = {}, to = {};
+    for (const k in keys) { from[k] = shared[keys[k]].value.clone(); to[k] = new THREE.Color(next[k]); }
+    const start = performance.now(), dur = reduceMotion ? 0 : 450;
+    const step = (now) => {
+      const p = dur ? Math.min(1, (now - start) / dur) : 1;
+      for (const k in keys) shared[keys[k]].value.copy(from[k]).lerp(to[k], p);
+      if (reduceMotion) renderer.render(scene, camera);
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
   });
 
   const materialMain = makeMaterial(0.0, 0.1);

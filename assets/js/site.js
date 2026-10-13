@@ -13,6 +13,49 @@ if (nav && toggle) {
   nav.querySelectorAll('.nav__link').forEach((a) => a.addEventListener('click', () => setOpen(false)));
 }
 
+// Theme toggle: Perigee (dark, default) ↔ Apogee (light).
+// The choice is saved in localStorage, so returning visitors get the theme they picked.
+// The inline <head> script applies it before first paint; this wires up the switch.
+(() => {
+  const KEY = 'cbj-theme';
+  const THEMES = { dark: 'perigee', light: 'apogee' };
+  const root = document.documentElement;
+  const meta = document.querySelector('meta[name="theme-color"]');
+  const toggles = document.querySelectorAll('.theme-toggle');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const current = () => (root.dataset.theme === THEMES.light ? 'light' : 'dark');
+
+  const sync = () => {
+    const light = current() === 'light';
+    toggles.forEach((t) => {
+      t.setAttribute('aria-checked', String(light));
+      t.title = light ? 'Switch to dark theme' : 'Switch to light theme';
+    });
+    if (meta) meta.content = getComputedStyle(root).getPropertyValue('--surface-page').trim() || (light ? '#ffffff' : '#0a0b0d');
+  };
+
+  const apply = (mode, { save = true, animate = true } = {}) => {
+    if (animate && !reduceMotion) {
+      root.classList.add('theme-switching');
+      clearTimeout(apply.t);
+      apply.t = setTimeout(() => root.classList.remove('theme-switching'), 450);
+    }
+    root.dataset.theme = THEMES[mode];
+    if (save) { try { localStorage.setItem(KEY, mode); } catch { /* storage blocked: still switches for this page */ } }
+    sync();
+    window.dispatchEvent(new CustomEvent('cbj:themechange', { detail: { mode, theme: THEMES[mode] } }));
+  };
+
+  if (!root.dataset.theme) root.dataset.theme = THEMES.dark;
+  sync();
+  toggles.forEach((t) => t.addEventListener('click', () => apply(current() === 'light' ? 'dark' : 'light')));
+  // Keep other open tabs in step
+  window.addEventListener('storage', (e) => {
+    if (e.key === KEY && (e.newValue === 'light' || e.newValue === 'dark') && e.newValue !== current()) apply(e.newValue, { save: false });
+  });
+  window.CBJ_THEME = { apply, current };
+})();
+
 // Hero frame cursor readout
 const frame = document.querySelector('[data-coords-frame]');
 const coords = document.querySelector('[data-coords]');
