@@ -324,6 +324,7 @@ html:not([data-theme]) .theme-toggle { display: none; }
 /* Whole-card click target for cards with one destination */
 .card__link::after { content: ''; position: absolute; inset: 0; }
 .card__link { text-decoration: none; }
+.card__link:hover { transform: none; }
 /* Industry icons: inline SVG paths filled with currentColor, so they follow the theme */
 .card .icon-industry { width: 96px; height: 96px; flex: none; color: var(--icon-fg); }
 
