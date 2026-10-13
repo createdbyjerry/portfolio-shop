@@ -324,6 +324,7 @@ html:not([data-theme]) .theme-toggle { display: none; }
 /* Whole-card click target for cards with one destination */
 .card__link::after { content: ''; position: absolute; inset: 0; }
 .card__link { text-decoration: none; }
+/* The card already lifts; a second lift on the button shifts its full-card overlay and makes the hover flicker */
 .card__link:hover { transform: none; }
 /* Industry icons: inline SVG paths filled with currentColor, so they follow the theme */
 .card .icon-industry { width: 96px; height: 96px; flex: none; color: var(--icon-fg); }
@@ -701,3 +702,28 @@ html:not([data-theme]) .theme-toggle { display: none; }
 /* Arcade: idle bob on the player sprite */
 .viz-bob { animation: viz-bob 1.2s ease-in-out infinite alternate; }
 @keyframes viz-bob { to { transform: translateY(-3px); } }
+
+/* Impact stats (home): big numbers under each card diagram, counted up by site.js */
+.stat__value {
+  display: flex; align-items: baseline;
+  font-family: var(--type-display-family);
+  font-size: var(--type-display-section);
+  line-height: 1;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+.stat__unit {
+  font-family: var(--type-mono-family);
+  font-size: var(--type-body-meta);
+  letter-spacing: var(--font-tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-accent);
+  margin-left: 0.5em;
+}
+.stat__value > [aria-hidden] { display: inline-flex; align-items: baseline; }
+.stat__source { margin-top: auto; padding-top: var(--space-sm); font-size: var(--font-size-2xs); color: var(--text-tertiary); }
+.viz-bar { stroke: var(--text-tertiary); stroke-width: 22; fill: none; }
+.viz-bar--accent { stroke: var(--accent-primary); }
+.viz-hbar { stroke: var(--text-tertiary); stroke-width: 14; fill: none; }
+.viz-hbar--accent { stroke: var(--accent-primary); }
+.viz-track-line { stroke: var(--surface-raised); stroke-width: 14; fill: none; }

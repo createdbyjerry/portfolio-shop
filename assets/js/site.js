@@ -102,3 +102,25 @@ if (vizzes.length && 'IntersectionObserver' in window && !window.matchMedia('(pr
     vizzes.forEach((el) => io.observe(el));
   }));
 }
+
+// Impact stats: count each number up from zero when its card scrolls into view
+const counters = document.querySelectorAll('[data-count]');
+if (counters.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const show = (el, v) => { el.textContent = v.toFixed(Number(el.dataset.decimals || 0)); };
+  const countIo = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      countIo.unobserve(entry.target);
+      const el = entry.target;
+      const end = parseFloat(el.dataset.count);
+      const start = performance.now();
+      const step = (now) => {
+        const p = Math.min((now - start) / 1400, 1);
+        show(el, end * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.6 });
+  counters.forEach((el) => { show(el, 0); countIo.observe(el); });
+}
