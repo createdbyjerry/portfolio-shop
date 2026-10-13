@@ -116,6 +116,9 @@
       "corner": { "$type": "color", "$value": "{accent.primary}" },
       "corner-size": { "$type": "dimension", "$value": "{space.md}" }
     },
+    "icon": {
+      "fg": { "$type": "color", "$value": "{text.primary}", "$description": "Line icons (industry cards). Inline SVG, fill: currentColor" }
+    },
     "theme-toggle": {
       "bg":          { "$type": "color", "$value": "{surface.raised}", "$description": "Track" },
       "border":      { "$type": "color", "$value": "{border.strong}" },

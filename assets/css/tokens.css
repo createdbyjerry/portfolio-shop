@@ -159,6 +159,7 @@
   --media-border: var(--border-subtle);
   --frame-corner: var(--accent-primary);
   --frame-corner-size: var(--space-md);
+  --icon-fg: var(--text-primary);
   --theme-toggle-bg: var(--surface-raised);
   --theme-toggle-border: var(--border-strong);
   --theme-toggle-thumb: var(--accent-secondary);
@@ -209,6 +210,7 @@
   --tag-fg: var(--text-secondary);
   --media-border: var(--border-subtle);
   --frame-corner: var(--accent-primary);
+  --icon-fg: var(--text-primary);
   --theme-toggle-bg: var(--surface-raised);
   --theme-toggle-border: var(--border-strong);
   --theme-toggle-thumb: var(--accent-secondary);
@@ -259,6 +261,7 @@
   --tag-fg: var(--text-secondary);
   --media-border: var(--border-subtle);
   --frame-corner: var(--accent-primary);
+  --icon-fg: var(--text-primary);
   --theme-toggle-bg: var(--surface-raised);
   --theme-toggle-border: var(--border-strong);
   --theme-toggle-thumb: var(--accent-primary);
