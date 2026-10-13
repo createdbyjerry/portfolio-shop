@@ -431,7 +431,8 @@ html:not([data-theme]) .theme-toggle { display: none; }
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
 }
-.callout__icon { width: 56px; height: 56px; object-fit: contain; margin-bottom: var(--space-2xs); }
+/* Callout icons: <use> from assets/images/orbit-icons.svg, filled with currentColor so they follow the theme */
+.callout__icon { width: 56px; height: 56px; flex: none; color: var(--icon-fg); fill: currentColor; margin-bottom: var(--space-2xs); }
 .callouts--stack .callout:has(.callout__icon) { flex-direction: row; align-items: center; gap: var(--space-lg); }
 .callouts--stack .callout:has(.callout__icon) .callout__icon { margin: 0; flex: none; }
 .callout__step { color: var(--accent-primary); }
