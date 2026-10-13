@@ -1,0 +1,61 @@
+{
+  "$description": "Apogee: the light theme. Overrides only the colour tokens of Perigee; type, space, layout and every non-colour component token inherit from the default theme. Built for high contrast on white: body ink 19.7:1, secondary 12.1:1, tertiary 7.2:1, accent text 8.3:1, highlight text 8.2:1, primary button 6.1:1, strong borders 5:1.",
+  "$extensions": {
+    "cbj": {
+      "name": "Apogee",
+      "selector": "[data-theme=\"apogee\"]",
+      "colorScheme": "light",
+      "default": false
+    }
+  },
+  "surface": {
+    "$type": "color",
+    "page":    { "$value": "{color.neutral.white}", "$description": "Body background" },
+    "panel":   { "$value": "{color.neutral.white}", "$description": "Cards (separated by hairlines, not tint)" },
+    "raised":  { "$value": "{color.neutral.200}", "$description": "Tags, meta tiles, inputs" },
+    "glass":   { "$value": "{color.alpha.white-85}", "$description": "Blurred bands over the orb" },
+    "void":    { "$value": "{color.neutral.100}", "$description": "Footer, card footers, diagram wells" },
+    "nav":     { "$value": "{color.alpha.white-80}" },
+    "overlay": { "$value": "{color.neutral.white}", "$description": "Mobile menu sheet" }
+  },
+  "text": {
+    "$type": "color",
+    "primary":   { "$value": "{color.neutral.950}", "$description": "19.7:1 on white" },
+    "secondary": { "$value": "{color.neutral.750}", "$description": "12.1:1 on white" },
+    "tertiary":  { "$value": "{color.neutral.700}", "$description": "7.2:1 on white" },
+    "inverse":   { "$value": "{color.neutral.white}" },
+    "accent":    { "$value": "{color.coral.800}", "$description": "Active nav, accent text. 8.3:1 on white (AAA)" },
+    "highlight": { "$value": "{color.gold.900}", "$description": "Prices, live readouts. 8.2:1 on white (AAA)" }
+  },
+  "border": {
+    "$type": "color",
+    "subtle": { "$value": "{color.neutral.300}" },
+    "strong": { "$value": "{color.neutral.600}", "$description": "Ghost buttons, inputs. 5:1 on white" },
+    "accent": { "$value": "{color.coral.700}" }
+  },
+  "accent": {
+    "$type": "color",
+    "primary":         { "$value": "{color.coral.700}" },
+    "primary-hover":   { "$value": "{color.coral.800}" },
+    "primary-deep":    { "$value": "{color.coral.800}" },
+    "primary-wash":    { "$value": "{color.alpha.coral-700-10}" },
+    "secondary":       { "$value": "{color.gold.800}" },
+    "secondary-hover": { "$value": "{color.gold.900}" }
+  },
+  "focus": {
+    "$type": "color",
+    "ring": { "$value": "{color.neutral.950}" }
+  },
+  "orb": {
+    "$type": "color",
+    "core": { "$value": "{color.neutral.white}", "$description": "Sunlit: the lit face goes white" },
+    "mid":  { "$value": "{color.coral.100}" },
+    "edge": { "$value": "{color.coral.300}" },
+    "rim":  { "$value": "{color.coral.500}" }
+  },
+  "component": {
+    "theme-toggle": {
+      "thumb": { "$type": "color", "$value": "{accent.primary}", "$description": "Coral sun in the light" }
+    }
+  }
+}

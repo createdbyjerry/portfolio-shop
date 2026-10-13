@@ -3,31 +3,45 @@
   "color": {
     "$type": "color",
     "neutral": {
-      "0":   { "$value": "#000000", "$description": "Void black" },
-      "950": { "$value": "#0a0b0d", "$description": "Page background" },
-      "900": { "$value": "#141618", "$description": "Panel" },
-      "850": { "$value": "#1a1d21", "$description": "Raised panel" },
-      "800": { "$value": "#232425", "$description": "Hairline" },
-      "500": { "$value": "#858582", "$description": "Faint ink (raised from #60605f to pass 4.5:1)" },
-      "400": { "$value": "#9c9c99", "$description": "Dim ink" },
-      "50":  { "$value": "#f5f3ee", "$description": "Paper" }
+      "white": { "$value": "#ffffff", "$description": "Apogee page + panels" },
+      "0":     { "$value": "#000000", "$description": "Void black" },
+      "50":    { "$value": "#f5f3ee", "$description": "Paper" },
+      "100":   { "$value": "#f1f0eb", "$description": "Apogee wells: footer, card footers, diagrams" },
+      "200":   { "$value": "#e9e7e1", "$description": "Apogee raised: tags, meta tiles, inputs" },
+      "300":   { "$value": "#d6d4cd", "$description": "Apogee hairline" },
+      "400":   { "$value": "#9c9c99", "$description": "Dim ink" },
+      "500":   { "$value": "#858582", "$description": "Faint ink (raised from #60605f to pass 4.5:1)" },
+      "600":   { "$value": "#6f706d", "$description": "Apogee strong border (5:1 on white, passes 3:1 for UI)" },
+      "700":   { "$value": "#55575b", "$description": "Apogee faint ink (7.2:1 on white)" },
+      "750":   { "$value": "#34363a", "$description": "Apogee dim ink (12.1:1 on white)" },
+      "800":   { "$value": "#232425", "$description": "Hairline" },
+      "850":   { "$value": "#1a1d21", "$description": "Raised panel" },
+      "900":   { "$value": "#141618", "$description": "Panel" },
+      "950":   { "$value": "#0a0b0d", "$description": "Page background" }
     },
     "coral": {
+      "100": { "$value": "#ffe1db", "$description": "Sunlit orb mid" },
       "300": { "$value": "#fc7b6a" },
       "500": { "$value": "#f25644" },
-      "700": { "$value": "#bd2418" },
+      "700": { "$value": "#bd2418", "$description": "Apogee accent: 6.1:1 on white, white text on it 6.1:1" },
+      "800": { "$value": "#9a1b11", "$description": "Apogee accent text + hover (8.3:1 on white)" },
       "950": { "$value": "#200703", "$description": "Eclipsed orb core" }
     },
     "gold": {
       "300": { "$value": "#fee37d" },
       "500": { "$value": "#f2ce4b" },
-      "700": { "$value": "#b9951f" }
+      "700": { "$value": "#b9951f" },
+      "800": { "$value": "#806300", "$description": "Apogee gold for dots, strokes, toast (5.7:1 on white)" },
+      "900": { "$value": "#634c00", "$description": "Apogee highlight text: prices, readouts (8.2:1 on white)" }
     },
     "alpha": {
-      "paper-20":  { "$value": "#f5f3ee33" },
-      "panel-75":  { "$value": "#1a1d21bf" },
-      "black-10":  { "$value": "#0000001a" },
-      "coral-15":  { "$value": "#f2564426" }
+      "paper-20":     { "$value": "#f5f3ee33" },
+      "panel-75":     { "$value": "#1a1d21bf" },
+      "black-10":     { "$value": "#0000001a" },
+      "coral-15":     { "$value": "#f2564426" },
+      "white-80":     { "$value": "#ffffffcc", "$description": "Apogee nav" },
+      "white-85":     { "$value": "#ffffffd9", "$description": "Apogee glass bands over the orb" },
+      "coral-700-10": { "$value": "#bd24181a", "$description": "Apogee accent wash" }
     }
   },
   "font": {
@@ -44,12 +58,12 @@
     },
     "size": {
       "$type": "dimension",
-      "2xs": { "$value": "11px" },
-      "xs":  { "$value": "12px" },
-      "sm":  { "$value": "13px" },
-      "md":  { "$value": "15px" },
-      "lg":  { "$value": "17px" },
-      "xl":  { "$value": "18px" },
+      "2xs":     { "$value": "11px" },
+      "xs":      { "$value": "12px" },
+      "sm":      { "$value": "13px" },
+      "md":      { "$value": "15px" },
+      "lg":      { "$value": "17px" },
+      "xl":      { "$value": "18px" },
       "fluid-1": { "$value": "clamp(1.25rem, 2.2vw, 1.5rem)" },
       "fluid-2": { "$value": "clamp(1.4rem, 3vw, 1.9rem)" },
       "fluid-3": { "$value": "clamp(1.9rem, 4.6vw, 3rem)" },
