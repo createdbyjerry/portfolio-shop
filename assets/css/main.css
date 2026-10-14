@@ -552,7 +552,7 @@ html:not([data-theme]) .theme-toggle { display: none; }
 
 /* Card diagrams (.viz) ------------------------------------------------------ */
 /* Inline-SVG figures that sit on top of a card, styled like the hero frame:
-   coral corner brackets, mono readouts, dot grid on the void surface.
+   mono readouts and a dot grid on the void surface.
    SVG geometry is drawn in a 320x180 viewBox; all colour comes from tokens. */
 .viz {
   position: relative;
@@ -565,13 +565,6 @@ html:not([data-theme]) .theme-toggle { display: none; }
   border-bottom: 1px solid var(--card-border);
   overflow: hidden;
 }
-.viz::before, .viz::after {
-  content: ''; position: absolute; z-index: 1;
-  width: var(--space-xs); height: var(--space-xs);
-  border: 0 solid var(--frame-corner); pointer-events: none;
-}
-.viz::before { top: var(--space-2xs); left: var(--space-2xs); border-top-width: 1px; border-left-width: 1px; }
-.viz::after  { bottom: var(--space-2xs); right: var(--space-2xs); border-bottom-width: 1px; border-right-width: 1px; }
 .viz svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .viz__label, .viz__readout {
   position: absolute; z-index: 1;
