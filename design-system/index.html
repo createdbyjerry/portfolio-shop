@@ -40,22 +40,23 @@
       </ul>
     </nav>
     <div class="nav__actions">
-      <button class="theme-toggle" type="button" role="switch" aria-checked="false" title="Switch to light theme">
-        <span class="visually-hidden">Light theme</span>
-        <span class="theme-toggle__thumb" aria-hidden="true"></span>
-        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="2.75"/><path d="M8 1.25v1.5M8 13.25v1.5M1.25 8h1.5M13.25 8h1.5M3.23 3.23l1.06 1.06M11.71 11.71l1.06 1.06M3.23 12.77l1.06-1.06M11.71 4.29l1.06-1.06"/></svg>
-        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M14 8.53A6 6 0 1 1 7.47 2a4.67 4.67 0 0 0 6.53 6.53z"/></svg>
-      </button>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span></span><span class="visually-hidden">Menu</span></button>
     </div>
   </header>
+
+  <button class="theme-toggle theme-toggle--floating" type="button" role="switch" aria-checked="false" title="Switch to light theme">
+    <span class="visually-hidden">Light theme</span>
+    <span class="theme-toggle__thumb" aria-hidden="true"></span>
+    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="2.75"/><path d="M8 1.25v1.5M8 13.25v1.5M1.25 8h1.5M13.25 8h1.5M3.23 3.23l1.06 1.06M11.71 11.71l1.06 1.06M3.23 12.77l1.06-1.06M11.71 4.29l1.06-1.06"/></svg>
+    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M14 8.53A6 6 0 1 1 7.47 2a4.67 4.67 0 0 0 6.53 6.53z"/></svg>
+  </button>
 
   <main id="main">
     <section class="section section--first" id="intro" aria-labelledby="intro-title">
       <div class="container">
         <span class="tag"><span class="dot dot--gold"></span>Internal reference</span>
         <h1 class="display" id="intro-title">Design System</h1>
-        <p class="lead lead--rule">Two themes, <span class="text-primary">Perigee</span> (dark) and <span class="text-primary">Apogee</span> (light), and every component the site is built from. You are viewing <span class="text-accent" data-ds="theme-name">Perigee</span>; flip the sun / moon switch in the nav to compare. This page is unlisted: it isn't in the nav or sitemap and asks search engines not to index it.</p>
+        <p class="lead lead--rule">Two themes, <span class="text-primary">Perigee</span> (dark) and <span class="text-primary">Apogee</span> (light), and every component the site is built from. You are viewing <span class="text-accent" data-ds="theme-name">Perigee</span>; flip the sun / moon switch in the bottom-right corner to compare. This page is unlisted: it isn't in the nav or sitemap and asks search engines not to index it.</p>
         <div class="stack stack--tight">
           <span class="mono text-tertiary">Source: <span class="text-primary">tokens/base.json</span> + <span class="text-primary">tokens/themes/*.json</span></span>
           <span class="mono text-tertiary">Tokens: <span class="text-primary" data-ds="count">—</span> · Built: <span class="text-primary" data-ds="generated">—</span></span>
@@ -72,6 +73,7 @@
           <a class="tag" href="#cards">Cards</a>
           <a class="tag" href="#layout">Layout</a>
           <a class="tag" href="#case-study">Case study</a>
+          <a class="tag" href="#navigation">Nav &amp; footer</a>
         </nav>
       </div>
     </section>
@@ -276,7 +278,7 @@
 &lt;span class="tag"&gt;&lt;span class="dot dot--gold"&gt;&lt;/span&gt;Process&lt;/span&gt;</code></pre>
     </div>
     <div class="ds-block">
-      <div class="ds-label"><span class="meta text-primary">Theme toggle</span><span class="mono">.theme-toggle · role="switch"</span></div>
+      <div class="ds-label"><span class="meta text-primary">Theme toggle</span><span class="mono">.theme-toggle · .theme-toggle--floating · role="switch"</span></div>
       <div class="ds-specimen ">
         <button class="theme-toggle" type="button" role="switch" aria-checked="false" title="Switch to light theme">
           <span class="visually-hidden">Light theme</span>
@@ -284,9 +286,10 @@
           <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="2.75"/><path d="M8 1.25v1.5M8 13.25v1.5M1.25 8h1.5M13.25 8h1.5M3.23 3.23l1.06 1.06M11.71 11.71l1.06 1.06M3.23 12.77l1.06-1.06M11.71 4.29l1.06-1.06"/></svg>
           <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M14 8.53A6 6 0 1 1 7.47 2a4.67 4.67 0 0 0 6.53 6.53z"/></svg>
         </button>
-        <span class="body text-secondary">Lives in the nav, where the status pill was. The thumb sits under the active theme: gold moon in Perigee, coral sun in Apogee. This one works too.</span>
+        <span class="body text-secondary">Pinned to the bottom-right of every page with <span class="mono">.theme-toggle--floating</span> (fixed, 24px from the corner, 16px under 992px), outside the nav. The thumb sits under the active theme: gold moon in Perigee, coral sun in Apogee. This one works too.</span>
       </div>
-      <pre class="ds-code"><code>&lt;button class="theme-toggle" type="button" role="switch" aria-checked="false" title="Switch to light theme"&gt;
+      <pre class="ds-code"><code>&lt;!-- Site-wide: placed right after &lt;/header&gt;, outside the nav --&gt;
+&lt;button class="theme-toggle theme-toggle--floating" type="button" role="switch" aria-checked="false" title="Switch to light theme"&gt;
   &lt;span class="visually-hidden"&gt;Light theme&lt;/span&gt;
   &lt;span class="theme-toggle__thumb" aria-hidden="true"&gt;&lt;/span&gt;
   &lt;svg class="theme-toggle__icon theme-toggle__icon--sun" …&gt;…&lt;/svg&gt;
@@ -645,6 +648,124 @@
         <p class="figure__caption mono"><span class="dot"></span>Concept sketch of the classroom</p>
       </div>
       <pre class="ds-code"><code>&lt;p class="figure__caption mono"&gt;&lt;span class="dot"&gt;&lt;/span&gt;Concept sketch of the classroom&lt;/p&gt;</code></pre>
+    </div>
+      </div>
+    </section>
+
+    <section class="section section--compact section--glass" id="navigation" aria-labelledby="navigation-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Navigation</span>
+        <h2 class="h2" id="navigation-title">Nav &amp; Footer</h2>
+        
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Nav bar</span><span class="mono">.nav · floating app bar</span></div>
+      <div class="ds-specimen ds-specimen--stack ds-specimen--nav">
+        <div class="nav">
+          <a class="brand" href="#">
+            <img src="../assets/images/cbj-logo.png" alt="" width="40" height="40">
+            <span class="visually-hidden">Home</span>
+          </a>
+          <nav aria-label="Nav specimen">
+            <ul class="nav__menu">
+            <li><a class="nav__link" href="#">Work</a></li>
+            <li><a class="nav__link" href="#" data-demo="hover">Prototypes</a></li>
+            <li><a class="nav__link" href="#" aria-current="page">Arcade</a></li>
+            <li><a class="nav__link" href="#">3D</a></li>
+            <li><a class="nav__link" href="#">UI Kits</a></li>
+            <li><a class="nav__link" href="#">About</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <span class="body text-secondary">Fixed, centred and sized to its links: 12px from the top with a 48px bar, so it ends at <span class="mono">--layout-nav-height</span> (60px) and page offsets are unchanged. Pill shape, 1px <span class="mono">--border-subtle</span> stroke, 92% <span class="mono">--surface-page</span> with backdrop blur and a soft shadow. A divider separates the logo from the links. Under 992px it stretches to the gutters and the links move into a rounded drop-down panel behind <span class="mono">.nav__toggle</span>.</span>
+      <pre class="ds-code"><code>&lt;header class=&quot;nav&quot; data-open=&quot;false&quot;&gt;
+  &lt;a class=&quot;brand&quot; href=&quot;/&quot;&gt;
+    &lt;img src=&quot;/assets/images/cbj-logo.png&quot; alt=&quot;&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+    &lt;span class=&quot;brand__type&quot;&gt;&lt;span&gt;created&lt;/span&gt;&lt;span&gt;by jerry&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;visually-hidden&quot;&gt;Home&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;nav aria-label=&quot;Main&quot;&gt;
+    &lt;ul class=&quot;nav__menu&quot; id=&quot;nav-menu&quot;&gt;
+      &lt;li&gt;&lt;a class=&quot;nav__link&quot; href=&quot;/work/&quot; aria-current=&quot;page&quot;&gt;Work&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;nav__link&quot; href=&quot;/prototypes/&quot;&gt;Prototypes&lt;/a&gt;&lt;/li&gt;
+      …
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;div class=&quot;nav__actions&quot;&gt;
+    &lt;button class=&quot;nav__toggle&quot; type=&quot;button&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;nav-menu&quot;&gt;…&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Nav link states</span><span class="mono">.nav__link · :hover · [aria-current="page"]</span></div>
+      <div class="ds-specimen">
+        <div class="stack">
+          <span class="mono">Rest</span><span class="body text-secondary"><span class="mono">--text-secondary</span>, no outline. 32px tall, 10px radius (<span class="mono">--radius-lg</span>), 12px apart.</span>
+          <span class="mono">Hover / focus · "lock-on"</span><span class="body text-secondary">Text goes to <span class="mono">--text-primary</span> and a 1px <span class="mono">--frame-corner</span> outline appears. Four rounded 3px corner brackets, the same coral as the hero frame corners, start 10px outside the link and home in to sit flush on its corners (<span class="mono">--motion-duration-slow</span>, standard easing). Desktop pointers only; with reduced motion the brackets fade in place. Shown on "Prototypes" above; hover any link to see it animate.</span>
+          <span class="mono">Current page</span><span class="body text-secondary">The 1px coral outline only, no fill (see "Arcade" above). Set with <span class="mono">aria-current="page"</span>.</span>
+        </div>
+      </div>
+      <pre class="ds-code"><code>&lt;a class=&quot;nav__link&quot; href=&quot;/arcade/&quot; aria-current=&quot;page&quot;&gt;Arcade&lt;/a&gt;
+&lt;!-- Brackets are .nav__link::before: a rounded 3px border masked to its corners --&gt;</code></pre>
+    </div>
+    <div class="ds-block">
+      <div class="ds-label"><span class="meta text-primary">Footer</span><span class="mono">.footer · .footer__grid · .footer__bar</span></div>
+      <div class="ds-specimen ds-specimen--stack ds-specimen--footer">
+        <div class="footer">
+          <div class="container">
+            <div class="footer__grid">
+              <div class="footer__intro">
+                <a class="footer__brand" href="#"><img src="../assets/images/cbj-logo.png" alt="" width="32" height="32"><span>created by jerry</span></a>
+                <p class="footer__tagline">Senior product designer shipping interfaces, design systems, and live prototypes.</p>
+                <a class="footer__email" href="#">jerryborundajr@gmail.com <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="footer__nav">
+                <span class="mono footer__label">Sitemap</span>
+                <ul class="footer__list footer__list--2col">
+                  <li><a href="#">Home</a></li><li><a href="#">Work</a></li><li><a href="#">Prototypes</a></li><li><a href="#">Arcade</a></li>
+                  <li><a href="#">3D</a></li><li><a href="#">UI Kits</a></li><li><a href="#">About</a></li><li><a href="#">AI Disclosure</a></li>
+                </ul>
+              </div>
+              <div class="footer__nav">
+                <span class="mono footer__label">Elsewhere</span>
+                <ul class="footer__list">
+                  <li><a href="#">LinkedIn</a></li><li><a href="#">itch.io</a></li><li><a href="#">Instagram</a></li><li><a href="#">GitHub</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__bar mono">
+              <span>© <span data-year>2026</span> createdbyjerry</span>
+              <span class="footer__status"><span class="footer__dot" aria-hidden="true"></span>Open for select freelance work</span>
+              <a class="footer__top" href="#navigation">Back to top ↑</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="body text-secondary">Three columns (2fr / 1.25fr / 0.75fr): brand, tagline and email; a two-column sitemap; and social links. Links are <span class="mono">--text-secondary</span> with no underline and brighten on hover; the email underlines in coral on hover. A hairline <span class="mono">--border-subtle</span> rule separates the bar: copyright, freelance status with a coral dot, and back to top. Under 768px everything stacks, the sitemap keeps two columns and the social links sit in one row.</span>
+      <pre class="ds-code"><code>&lt;footer class=&quot;footer&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;footer__grid&quot;&gt;
+      &lt;div class=&quot;footer__intro&quot;&gt;
+        &lt;a class=&quot;footer__brand&quot; href=&quot;/&quot;&gt;&lt;img src=&quot;/assets/images/cbj-logo.png&quot; alt=&quot;&quot; width=&quot;32&quot; height=&quot;32&quot;&gt;&lt;span&gt;created by jerry&lt;/span&gt;&lt;/a&gt;
+        &lt;p class=&quot;footer__tagline&quot;&gt;Senior product designer shipping interfaces, design systems, and live prototypes.&lt;/p&gt;
+        &lt;a class=&quot;footer__email&quot; href=&quot;mailto:…&quot;&gt;jerryborundajr@gmail.com &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;nav class=&quot;footer__nav&quot; aria-label=&quot;Sitemap&quot;&gt;
+        &lt;span class=&quot;mono footer__label&quot;&gt;Sitemap&lt;/span&gt;
+        &lt;ul class=&quot;footer__list footer__list--2col&quot;&gt;&lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;…&lt;/ul&gt;
+      &lt;/nav&gt;
+      &lt;nav class=&quot;footer__nav&quot; aria-label=&quot;Elsewhere&quot;&gt;
+        &lt;span class=&quot;mono footer__label&quot;&gt;Elsewhere&lt;/span&gt;
+        &lt;ul class=&quot;footer__list&quot;&gt;&lt;li&gt;&lt;a href=&quot;…&quot;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;…&lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;footer__bar mono&quot;&gt;
+      &lt;span&gt;© &lt;span data-year&gt;2026&lt;/span&gt; createdbyjerry&lt;/span&gt;
+      &lt;span class=&quot;footer__status&quot;&gt;&lt;span class=&quot;footer__dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;Open for select freelance work&lt;/span&gt;
+      &lt;a class=&quot;footer__top&quot; href=&quot;#main&quot;&gt;Back to top ↑&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
     </div>
       </div>
     </section>
