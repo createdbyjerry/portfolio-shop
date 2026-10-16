@@ -167,7 +167,7 @@ strong { font-weight: var(--font-weight-bold); }
               background-color var(--motion-duration-base) var(--motion-easing-standard),
               box-shadow var(--motion-duration-base) var(--motion-easing-standard);
 }
-.nav__link:hover, .nav__link[data-demo="hover"] { color: var(--text-primary); box-shadow: inset 0 0 0 1px var(--frame-corner); }
+.nav__link:hover, .nav__link[data-demo="hover"] { color: var(--text-primary); }
 .nav__link[aria-current="page"] { color: var(--text-primary); box-shadow: inset 0 0 0 1px var(--frame-corner); }
 
 /* Nav link hover: "lock-on". Rounded corner brackets (3px, same coral as the hero
