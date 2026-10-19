@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nube Design System | Created by Jerry</title>
-  <meta name="description" content="Architected a scalable design token system to unify Gevo’s cross-platform brand and B2B white-labeling.">
+  <meta name="description" content="A three-tier token system that unified Gevo’s products and powered white-label and high-contrast themes.">
   <link rel="canonical" href="https://www.createdbyjerry.com/projects/nube-design-system/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Nube Design System | Created by Jerry">
-  <meta property="og:description" content="Architected a scalable design token system to unify Gevo’s cross-platform brand and B2B white-labeling.">
+  <meta property="og:description" content="A three-tier token system that unified Gevo’s products and powered white-label and high-contrast themes.">
   <meta property="og:url" content="https://www.createdbyjerry.com/projects/nube-design-system/">
   <meta name="theme-color" content="#0a0b0d">
   <script>/* Apply the saved theme before first paint (no flash). Default: Perigee (dark). */try{if(localStorage.getItem('cbj-theme')==='light'){document.documentElement.dataset.theme='apogee';document.querySelector('meta[name="theme-color"]').content='#ffffff'}else document.documentElement.dataset.theme='perigee'}catch(e){document.documentElement.dataset.theme='perigee'}</script>
@@ -55,69 +55,95 @@
       <div class="container">
         <a class="back-link mono" href="../../work/"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> All work</a>
         <div class="cs-hero__grid">
-          <img class="cs-hero__media" src="../../assets/images/hero-image-verity.png" alt="Nube Design System project hero" width="1200" height="800">
+          <img class="cs-hero__media" src="../../assets/images/nube-hero-coverart.png" alt="Nube Design System cover: four theme cards for Verity Light, Verity Dark, Client B white-label and High Contrast Linen" width="1260" height="840">
           <div class="cs-hero__text">
             <h1 class="h1">Nube Design System</h1>
-            <p class="h3 text-accent">Standardizing the Sustainability Stack</p>
-            <p class="body text-secondary">Gevo needed a unified brand identity that could scale seamlessly across data-heavy product dashboards, customer portals, and public-facing marketing sites. The catch? It also had to support unique, white-labeled theme variants for B2B customers and strict accessibility contrast standards. I stepped in as the Design System Owner to architect a robust, multi-tier token system that unified color, spacing, and typography across web and mobile platforms—turning chaotic style variables into a single, automated source of truth.</p>
+            <p class="h3 text-accent">One token system for every Gevo product and every client theme</p>
+            <p class="body text-secondary">Gevo’s dashboards, customer portals and marketing sites had drifted apart, and B2B clients needed their own branded themes that still met strict accessibility contrast. As the design system owner, I built a three-tier token architecture and a design-to-code pipeline, so a single change in Figma updates every product, in every theme.</p>
           </div>
         </div>
         <ul class="cs-meta">
-            <li><span class="mono">Role</span><span class="meta">Lead Product Designer</span></li>
-            <li><span class="mono">Company</span><span class="meta">Gevo</span></li>
+            <li><span class="mono">Role</span><span class="meta">Lead Product Designer · Design System Owner</span></li>
+            <li><span class="mono">Company</span><span class="meta">Gevo (Verity)</span></li>
             <li><span class="mono">Industry</span><span class="meta">Sustainability / Carbon Markets</span></li>
             <li><span class="mono">Year</span><span class="meta">2022</span></li>
-            <li><span class="mono">Timeline</span><span class="meta">Aug – Dec</span></li>
+            <li><span class="mono">Timeline</span><span class="meta">Aug – Dec · 5 months</span></li>
         </ul>
+        <div class="callouts callouts--3" aria-label="At a glance">
+          <div class="callout">
+            <span class="callout__step mono">At a glance</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">What I built</h3>
+              <p class="body">A three-tier token system, theme modes for white-label clients and high contrast, and Gevo’s top 20 components rebuilt on tokens.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">My role</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">What I owned</h3>
+              <p class="body">The audit, token architecture and naming, Figma libraries, documentation and contribution model, delivered with Gevo’s front-end engineers.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Result</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">What changed</h3>
+              <p class="body">About 45% fewer visual inconsistencies, and global brand updates in under a day instead of weeks.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
+
+    <section class="figure" aria-label="Same components, three themes">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Same components, three themes</p>
+        <a class="figure__link" href="../../assets/images/nube-themes.png" target="_blank" rel="noopener">
+          <img class="figure__img figure__img--wide" src="../../assets/images/nube-themes.png" alt="The same production dashboard rendered in Verity Light, Client B white-label and High Contrast Linen themes" loading="lazy" width="2800" height="851">
+          <span class="visually-hidden"> (opens full size)</span>
+        </a>
+      </div>
+    </section>
 
     <section class="cs-section" id="s1" aria-labelledby="s1-title">
       <div class="container">
         <div class="cs-section__head">
           <span class="mono text-tertiary"><span class="text-accent">01</span> / The Problem</span>
-          <h2 class="h2" id="s1-title">Fragmented Pixels & Raw Hex Codes</h2>
+          <h2 class="h2" id="s1-title">Fragmented pixels and raw hex codes</h2>
         </div>
         <div class="prose body-md">
-          <p>Before the design system was hard-coded, Gevo's digital interface was suffering from severe visual drift and engineering bottlenecks:</p>
+          <p>Before Nube, every team styled its own way, and it showed:</p>
         </div>
         <div class="callouts callouts--2">
           <div class="callout">
             <div class="stack stack--tight">
-              <h3 class="h4">The Palette Explosion</h3>
-              <p class="body">Disconnected teams were inventing their own color palettes and spacing scales on the fly, leading to an inconsistent and fractured user experience.</p>
+              <h3 class="h4">Palette sprawl</h3>
+              <p class="body">Teams invented colors and spacing scales as they went, so products that should have felt like one platform didn’t.</p>
             </div>
           </div>
           <div class="callout">
             <div class="stack stack--tight">
-              <h3 class="h4">The Raw Hex Trap</h3>
-              <p class="body">There was no semantic layer. Designers and developers were copying and pasting raw hex codes and hard-coded pixel values, forcing engineers to manually rebuild basic styles over and over.</p>
+              <h3 class="h4">No semantic layer</h3>
+              <p class="body">Designers and engineers copied raw hex codes and pixel values, so engineers rebuilt the same styles again and again.</p>
             </div>
           </div>
           <div class="callout">
             <div class="stack stack--tight">
-              <h3 class="h4">The Brand Update Nightmare</h3>
-              <p class="body">A simple global brand change (like updating a primary corporate green) required a grueling, multi-week coordination dance across multiple isolated code repositories.</p>
+              <h3 class="h4">Slow brand changes</h3>
+              <p class="body">Changing the primary brand color meant weeks of coordination across separate code repositories.</p>
             </div>
           </div>
           <div class="callout">
             <div class="stack stack--tight">
-              <h3 class="h4">The Theme Barrier</h3>
-              <p class="body">The platform lacked the foundational architecture needed to easily swap themes for B2B clients or dynamically adjust contrast for accessibility compliance.</p>
+              <h3 class="h4">No theming</h3>
+              <p class="body">There was no way to give B2B clients their own theme or offer a high-contrast view for accessibility.</p>
             </div>
           </div>
         </div>
         <aside class="note">
           <span class="mono text-primary">Why it mattered</span>
-          <p class="body-md">If your interface looks fragmented, users lose trust in your data. To scale a premium sustainability platform, we had to replace fragile, manual styling with a bulletproof token architecture.</p>
+          <p class="body-md">Carbon-market customers make decisions based on our data. When the interface looks inconsistent, they start to question the numbers.</p>
         </aside>
-      </div>
-    </section>
-
-    <section class="figure" aria-label="Figma read-me for the design system">
-      <div class="container">
-        <p class="figure__caption mono"><span class="dot"></span>Figma read-me for the design system</p>
-        <img class="figure__img" src="../../assets/images/gevo-1.png" alt="Figma read-me for the design system" loading="lazy">
       </div>
     </section>
 
@@ -125,154 +151,268 @@
       <div class="container">
         <div class="cs-section__head">
           <span class="mono text-tertiary"><span class="text-accent">02</span> / The Solution</span>
-          <h2 class="h2" id="s2-title">The 3-Tier Token Engine</h2>
+          <h2 class="h2" id="s2-title">A three-tier token engine</h2>
         </div>
         <div class="prose body-md">
-          <p>We didn't just organize components; we re-engineered the very DNA of our UI properties by rolling out a synchronized architecture. A highly scalable token hierarchy completely isolated raw values from operational components:</p>
+          <p>Raw values never reach a component. Each tier only references the tier below it, so a change happens in exactly one place.</p>
         </div>
         <div class="callouts callouts--3">
           <div class="callout">
-            <span class="callout__step mono">Step 01</span>
+            <span class="callout__step mono">Tier 01</span>
             <div class="stack stack--tight">
-              <h3 class="h4">Global / core tokens</h3>
-              <p class="body">The raw foundational values (e.g., <code>color-green-500</code> → <code>#22C55E</code>).</p>
+              <h3 class="h4">Global tokens</h3>
+              <p class="body">Raw values with no meaning, hidden from designers: <code>color/blue/700</code> → <code>#1227E1</code>.</p>
             </div>
           </div>
           <div class="callout">
-            <span class="callout__step mono">Step 02</span>
+            <span class="callout__step mono">Tier 02</span>
             <div class="stack stack--tight">
-              <h3 class="h4">Semantic / alias tokens</h3>
-              <p class="body">The functional meaning of a value (e.g., <code>color-background-success</code> → <code>color-green-500</code>).</p>
+              <h3 class="h4">Semantic tokens</h3>
+              <p class="body">What a value means. Each theme remaps this tier: <code>color/action/primary</code> → <code>color/blue/700</code> in Verity Light, <code>color/teal/700</code> for Client B.</p>
             </div>
           </div>
           <div class="callout">
-            <span class="callout__step mono">Step 03</span>
+            <span class="callout__step mono">Tier 03</span>
             <div class="stack stack--tight">
               <h3 class="h4">Component tokens</h3>
-              <p class="body">Granular, isolated component overrides (e.g., <code>button-primary-background-active</code> → <code>color-background-success</code>).</p>
+              <p class="body">Scoped to one component, so a tweak never leaks: <code>button/contained/background/enabled</code> → <code>color/action/primary</code>.</p>
             </div>
           </div>
-        </div>
-        <div class="callouts callouts--3">
-          <div class="callout"><h3 class="h4">The Automated Pipeline</h3><p class="body">We established an end-to-end design-to-engineering synchronization pipeline, ensuring that a token change in Figma instantly committed and updated the developer code repositories.</p></div>
-          <div class="callout"><h3 class="h4">Component Library Modernization</h3><p class="body">We completely refactored Gevo’s top 20 highest-traffic UI components, wiping out legacy styling and replacing it entirely with the new semantic tokens.</p></div>
-          <div class="callout"><h3 class="h4">Baked-In Accessibility</h3><p class="body">Accessibility was shifted entirely left. By encoding WCAG contrast ratios directly into our semantic token mappings, developers achieved automatic compliance out of the box.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="figure" aria-label="Modernizing the button components">
+    <section class="figure" aria-label="The three-tier token architecture">
       <div class="container">
-        <p class="figure__caption mono"><span class="dot"></span>Modernizing the button components</p>
-        <img class="figure__img" src="../../assets/images/gevo-2.png" alt="Modernizing the button components" loading="lazy">
+        <p class="figure__caption mono"><span class="dot"></span>The three-tier token architecture</p>
+        <a class="figure__link" href="../../assets/images/nube-token-architecture.png" target="_blank" rel="noopener">
+          <img class="figure__img figure__img--wide" src="../../assets/images/nube-token-architecture.png" alt="Diagram of global, semantic and component token tiers with token counts" loading="lazy" width="2400" height="739">
+          <span class="visually-hidden"> (opens full size)</span>
+        </a>
       </div>
     </section>
 
     <section class="cs-section" id="s3" aria-labelledby="s3-title">
       <div class="container">
         <div class="cs-section__head">
-          <span class="mono text-tertiary"><span class="text-accent">03</span> / The Process</span>
-          <h2 class="h2" id="s3-title">Auditing to Ship</h2>
+          <span class="mono text-tertiary"><span class="text-accent">03</span> / Decisions</span>
+          <h2 class="h2" id="s3-title">Decisions and tradeoffs</h2>
         </div>
-        <div class="prose body-md">
-          <p>We systematically transitioned the platform from legacy code to a modern, tokenized workflow:</p>
-        </div>
-        <div class="callouts callouts--2">
+        <div class="callouts callouts--3">
           <div class="callout">
-            <span class="callout__step mono">Step 01</span>
             <div class="stack stack--tight">
-              <h3 class="h4">The Code Audit</h3>
-              <p class="body">Conducted a comprehensive deep-dive into existing product user interfaces and CSS variables to isolate and map out every rogue style variant.</p>
+              <h3 class="h4">Three tiers, not two</h3>
+              <p class="body">Two tiers would have shipped faster, but themes need a layer to remap, and the component tier lets a team adjust one component without changing the semantic layer for everyone. The cost is more tokens to govern.</p>
             </div>
           </div>
           <div class="callout">
-            <span class="callout__step mono">Step 02</span>
             <div class="stack stack--tight">
-              <h3 class="h4">The Blueprint</h3>
-              <p class="body">Defined and fully documented strict taxonomic naming guidelines so both engineering and design teams could speak an identical nomenclature.</p>
+              <h3 class="h4">One naming grammar</h3>
+              <p class="body">Every token reads category / property / variant / state, so designers and engineers read <code>color/action/primary-hover</code> the same way, and it maps straight to a CSS variable.</p>
             </div>
           </div>
           <div class="callout">
-            <span class="callout__step mono">Step 03</span>
             <div class="stack stack--tight">
-              <h3 class="h4">The Library Build</h3>
-              <p class="body">Constructed and deployed the centralized token libraries inside Figma to act as the visual source of truth.</p>
-            </div>
-          </div>
-          <div class="callout">
-            <span class="callout__step mono">Step 04</span>
-            <div class="stack stack--tight">
-              <h3 class="h4">The Pilot Launch</h3>
-              <p class="body">Applied the brand-new token structure to our top 20 high-traffic components, battle-tested the integration in a staging environment, and shipped them to production under rigid QA testing parameters.</p>
+              <h3 class="h4">Themes are mappings, not variants</h3>
+              <p class="body">A client theme is a new mapping of semantic tokens, not a new set of components. Adding a theme adds zero component variants.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="figure" aria-label="Figma token library">
+    <section class="figure" aria-label="One semantic token, four themes">
       <div class="container">
-        <p class="figure__caption mono"><span class="dot"></span>Figma token library</p>
-        <img class="figure__img" src="../../assets/images/gevo-3.png" alt="Figma token library" loading="lazy">
+        <p class="figure__caption mono"><span class="dot"></span>One semantic token, four themes</p>
+        <a class="figure__link" href="../../assets/images/nube-token-library.png" target="_blank" rel="noopener">
+          <img class="figure__img figure__img--wide" src="../../assets/images/nube-token-library.png" alt="Table of semantic color tokens shown in Verity Light, Verity Dark, Client B and High Contrast Linen" loading="lazy" width="2400" height="905">
+          <span class="visually-hidden"> (opens full size)</span>
+        </a>
       </div>
     </section>
 
     <section class="cs-section" id="s4" aria-labelledby="s4-title">
       <div class="container">
         <div class="cs-section__head">
-          <span class="mono text-tertiary"><span class="text-accent">04</span> / Splashdown</span>
-          <h2 class="h2" id="s4-title">The Impact Metrics</h2>
+          <span class="mono text-tertiary"><span class="text-accent">04</span> / Theming and Accessibility</span>
+          <h2 class="h2" id="s4-title">White-label themes with contrast built in</h2>
         </div>
         <div class="prose body-md">
-          <p>By turning style properties into a systemized code asset, we unlocked massive velocity gains for both product design and engineering:</p>
+          <p>A theme is a different semantic mapping. Every mapping is contrast-checked before it ships, so any team that uses the tokens gets compliant contrast without having to think about it.</p>
         </div>
-        <div class="callouts callouts--3">
+        <div class="callouts callouts--2">
           <div class="callout">
             <div class="stack stack--tight">
-              <h3 class="h4">Visual Consistency Up</h3>
-              <p class="body">Slashed random visual inconsistencies by ~45% within weeks, tracked and verified via automated weekly visual interface audits.</p>
+              <h3 class="h4">Four themes, one library</h3>
+              <p class="body">Verity Light, Verity Dark, a white-label client theme, and High Contrast · Linen, a warm, soft high-contrast theme for long reading sessions.</p>
             </div>
           </div>
           <div class="callout">
             <div class="stack stack--tight">
-              <h3 class="h4">Rapid Brand Updates</h3>
-              <p class="body">Reduced global brand theme updates from a grueling multi-week developer ticket down to under a single day for global token pushes.</p>
-            </div>
-          </div>
-          <div class="callout">
-            <div class="stack stack--tight">
-              <h3 class="h4">Instant Theming Unleashed</h3>
-              <p class="body">Successfully enabled independent product teams to launch custom theme variants and accessible views with zero specialized design intervention.</p>
+              <h3 class="h4">Checked in every theme</h3>
+              <p class="body">Text pairs meet WCAG AA (4.5:1) and borders and focus rings meet 3:1 in all four themes. In High Contrast · Linen, every text pair reaches 7:1.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="figure" aria-label="UI and component auditing sessions">
+    <section class="figure" aria-label="Contrast checked in every theme">
       <div class="container">
-        <p class="figure__caption mono"><span class="dot"></span>UI and component auditing sessions</p>
-        <img class="figure__img" src="../../assets/images/gevo-4.png" alt="UI and component auditing sessions" loading="lazy">
+        <p class="figure__caption mono"><span class="dot"></span>Contrast checked in every theme</p>
+        <a class="figure__link" href="../../assets/images/nube-accessibility.png" target="_blank" rel="noopener">
+          <img class="figure__img figure__img--wide" src="../../assets/images/nube-accessibility.png" alt="Contrast ratios for body text, buttons, focus rings and status chips in each of the four themes" loading="lazy" width="2400" height="745">
+          <span class="visually-hidden"> (opens full size)</span>
+        </a>
       </div>
     </section>
 
     <section class="cs-section" id="s5" aria-labelledby="s5-title">
       <div class="container">
         <div class="cs-section__head">
-          <span class="mono text-tertiary"><span class="text-accent">05</span> / Retrospective</span>
-          <h2 class="h2" id="s5-title">Lessons & Next Steps</h2>
+          <span class="mono text-tertiary"><span class="text-accent">05</span> / The Components</span>
+          <h2 class="h2" id="s5-title">Modernizing the component library</h2>
+        </div>
+        <div class="prose body-md">
+          <p>We rebuilt Gevo’s 20 highest-traffic components on component tokens, starting with the button: the most-used component, and the messiest. It became the template for the other 19.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Button: 3 variants × 5 states, every value a token">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Button: 3 variants × 5 states, every value a token</p>
+        <a class="figure__link" href="../../assets/images/nube-button-sheet.png" target="_blank" rel="noopener">
+          <img class="figure__img figure__img--wide" src="../../assets/images/nube-button-sheet.png" alt="Contained, outlined and text buttons in enabled, hover, pressed, focused and disabled states" loading="lazy" width="2400" height="595">
+          <span class="visually-hidden"> (opens full size)</span>
+        </a>
+      </div>
+    </section>
+    <section class="figure" aria-label="Buttons, chips, fields, data cards and navigation on one token system">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Buttons, chips, fields, data cards and navigation on one token system</p>
+        <a class="figure__link" href="../../assets/images/nube-component-overview.png" target="_blank" rel="noopener">
+          <img class="figure__img figure__img--wide" src="../../assets/images/nube-component-overview.png" alt="Overview of the Nube component library: buttons, status chips, text fields, data cards and navigation items" loading="lazy" width="2400" height="755">
+          <span class="visually-hidden"> (opens full size)</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="cs-section" id="s6" aria-labelledby="s6-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">06</span> / The Process</span>
+          <h2 class="h2" id="s6-title">From audit to production</h2>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <span class="callout__step mono">Step 01</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Audit</h3>
+              <p class="body">Inventoried every UI and CSS variable to map each rogue style variant.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 02</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Blueprint</h3>
+              <p class="body">Defined the naming grammar so design and engineering used the same words for the same things.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 03</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Library</h3>
+              <p class="body">Built the token and component libraries in Figma as the visual source of truth.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 04</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Pilot</h3>
+              <p class="body">Moved the 20 most-used components onto tokens, tested them in staging, then shipped them to production.</p>
+            </div>
+          </div>
         </div>
         <div class="callouts callouts--2">
           <div class="callout">
             <div class="stack stack--tight">
-              <h3 class="h4">The Hard Lesson</h3>
-              <p class="body">System governance cannot be an afterthought. We realized early on that token changes require a lightweight, cross-functional approval workflow to prevent teams from accidentally breaking dependent values downstream.</p>
+              <h3 class="h4">Design-to-code pipeline</h3>
+              <p class="body">A token change in Figma goes through a reviewed pull request and updates the code repositories, so no one copies a hex value by hand.</p>
             </div>
           </div>
           <div class="callout">
             <div class="stack stack--tight">
-              <h3 class="h4">The Horizon</h3>
-              <p class="body">Our next milestone is automation—creating a formalized token deprecation policy and deploying automated linters within the developer build pipeline to automatically flag and reject any legacy, hard-coded values before they hit production.</p>
+              <h3 class="h4">Documentation and contribution</h3>
+              <p class="body">Every component ships with the same template: description, when to use it, behaviors and accessibility, plus a status from Ready to Backlog.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Every component ships with the same documentation template">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>Every component ships with the same documentation template</p>
+        <a class="figure__link" href="../../assets/images/nube-contribution-docs.png" target="_blank" rel="noopener">
+          <img class="figure__img figure__img--wide" src="../../assets/images/nube-contribution-docs.png" alt="Button information card and component status legend from the Nube Figma library" loading="lazy" width="2400" height="581">
+          <span class="visually-hidden"> (opens full size)</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="cs-section" id="s7" aria-labelledby="s7-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">07</span> / Impact</span>
+          <h2 class="h2" id="s7-title">What changed</h2>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">~45% fewer inconsistencies</h3>
+              <p class="body">Visual inconsistencies dropped by about 45% within weeks, tracked in weekly visual interface audits.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Brand updates in under a day</h3>
+              <p class="body">A global brand change went from a multi-week, cross-repository effort to a single token update.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Self-serve theming</h3>
+              <p class="body">Product teams launched client themes and accessible views on their own, without design intervention.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="s8" aria-labelledby="s8-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">08</span> / Retrospective</span>
+          <h2 class="h2" id="s8-title">Lessons and next steps</h2>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The hard lesson</h3>
+              <p class="body">Governance can’t come later. Token changes needed a lightweight cross-team approval step from day one, or one team’s edit could quietly break another team’s screens.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">The horizon</h3>
+              <p class="body">A formal deprecation policy, and linters in the build pipeline that reject hard-coded values before they reach production.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Revisiting Nube in 2026</h3>
+              <p class="body">I rebuilt the library on Figma Variables, with one mode per theme and tokens exported in the W3C design tokens (DTCG) format. The visuals on this page come from that rebuild. Next, I’d connect components to code with Code Connect and expose the tokens to AI coding agents through Figma’s MCP server, so generated UI stays on brand and accessible.</p>
             </div>
           </div>
         </div>

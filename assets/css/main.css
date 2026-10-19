@@ -551,6 +551,9 @@ html:not([data-theme]) .theme-toggle { display: none; }
   background: var(--surface-page);
 }
 .figure__video { width: 100%; max-width: 900px; aspect-ratio: 16 / 9; border: 0; border-radius: var(--media-radius); }
+.figure__link { display: block; width: 100%; cursor: zoom-in; }
+.figure__link:focus-visible { outline: 2px solid var(--border-accent); outline-offset: 4px; border-radius: var(--media-radius); }
+.figure__img--wide { display: block; max-width: 100%; height: auto; }
 
 /* About */
 .about-intro { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: var(--space-2xl); align-items: center; width: 100%; }
