@@ -124,3 +124,27 @@ if (counters.length && 'IntersectionObserver' in window && !window.matchMedia('(
   }, { threshold: 0.6 });
   counters.forEach((el) => { show(el, 0); countIo.observe(el); });
 }
+
+// Card scroll reveal: every .card and .callout fades and slides up as it scrolls into view.
+// Cards that enter together are staggered in reading order, so a row cascades in rather than popping at once.
+(() => {
+  const cards = document.querySelectorAll('.card, .callout');
+  if (!cards.length || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const STEP = 90;   // ms between cards in the same batch
+  const MAX = 6;     // cap the stagger so long batches don't drag
+  document.documentElement.classList.add('card-reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries
+      .filter((e) => e.isIntersecting)
+      .sort((a, b) => (a.boundingClientRect.top - b.boundingClientRect.top) || (a.boundingClientRect.left - b.boundingClientRect.left))
+      .forEach((entry, i) => {
+        const el = entry.target;
+        io.unobserve(el);
+        el.style.setProperty('--reveal-delay', `${Math.min(i, MAX) * STEP}ms`);
+        el.classList.add('is-revealed');
+        // Clear the delay once done, so the card's own hover transitions aren't affected
+        el.addEventListener('animationend', () => el.style.removeProperty('--reveal-delay'), { once: true });
+      });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  cards.forEach((el) => io.observe(el));
+})();

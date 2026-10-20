@@ -157,7 +157,7 @@ strong { font-weight: var(--font-weight-bold); }
   position: relative;
   display: block;
   padding: 6px var(--space-xs);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   color: var(--text-secondary);
   font-size: var(--type-body-sm);
   font-weight: var(--font-weight-bold);
@@ -170,15 +170,15 @@ strong { font-weight: var(--font-weight-bold); }
 .nav__link:hover, .nav__link[data-demo="hover"] { color: var(--text-primary); }
 .nav__link[aria-current="page"] { color: var(--text-primary); box-shadow: inset 0 0 0 1px var(--frame-corner); }
 
-/* Nav link hover: "lock-on". Rounded corner brackets (3px, same coral as the hero
-   frame corners) home in and land flush on the link's rounded corners.
-   Built from a full rounded border, masked so only the four corners show. */
+/* Nav link hover: "lock-on". Square corner brackets (1px, same coral as the hero
+   frame corners) home in and land flush on the link's corners.
+   Built from a full square border, masked so only the four corners show. */
 @media (hover: hover) and (min-width: 992px) {
   .nav__link::before {
     --l: 12px;
     content: ''; position: absolute; inset: -10px; pointer-events: none;
-    border: 3px solid var(--frame-corner);
-    border-radius: calc(var(--radius-lg) + 10px);
+    border: 1px solid var(--frame-corner);
+    border-radius: 0;
     -webkit-mask:
       linear-gradient(to right, #000 var(--l), transparent var(--l) calc(100% - var(--l)), #000 calc(100% - var(--l))),
       linear-gradient(to bottom, #000 var(--l), transparent var(--l) calc(100% - var(--l)), #000 calc(100% - var(--l)));
@@ -189,13 +189,12 @@ strong { font-weight: var(--font-weight-bold); }
             mask-composite: intersect;
     opacity: 0;
     transition: inset var(--motion-duration-slow) var(--motion-easing-standard),
-                border-radius var(--motion-duration-slow) var(--motion-easing-standard),
                 opacity var(--motion-duration-base) linear;
   }
-  .nav__link:hover::before, .nav__link:focus-visible::before, .nav__link[data-demo="hover"]::before { inset: 0; border-radius: var(--radius-lg); opacity: 1; }
+  .nav__link:hover::before, .nav__link:focus-visible::before, .nav__link[data-demo="hover"]::before { inset: 0; opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .nav__link::before { transition: opacity var(--motion-duration-base) linear !important; inset: 0 !important; border-radius: var(--radius-lg) !important; }
+  .nav__link::before { transition: opacity var(--motion-duration-base) linear !important; inset: 0 !important; }
 }
 
 .nav__toggle {
@@ -589,7 +588,7 @@ html:not([data-theme]) .theme-toggle { display: none; }
     display: none;
   }
   .nav[data-open="true"] .nav__menu { display: flex; }
-  .nav__link { padding: var(--space-sm); font-size: var(--type-body-md); border-radius: var(--radius-md); }
+  .nav__link { padding: var(--space-sm); font-size: var(--type-body-md); border-radius: 0; }
   .theme-toggle--floating { right: var(--space-sm); bottom: var(--space-sm); }
 
   :root { --layout-section-y: var(--space-4xl); }
@@ -823,3 +822,52 @@ html:not([data-theme]) .theme-toggle { display: none; }
 .figure-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); width: 100%; align-items: start; }
 .figure-pair__item { margin: 0; display: flex; flex-direction: column; gap: var(--space-2xs); min-width: 0; }
 @media (max-width: 767px) { .figure-pair { grid-template-columns: minmax(0, 1fr); } }
+
+/* Industry diagrams: drawn in the .viz vocabulary, each with one ambient loop */
+.viz-grid { opacity: .5; }
+.viz-cell { fill: var(--surface-raised); }
+.viz-poly { fill: var(--accent-primary-wash); }
+.viz-scan__glow { fill: var(--accent-primary); opacity: .12; }
+.viz-scan--raster { animation: viz-scan-raster 2.8s ease-in-out infinite alternate; }
+@keyframes viz-scan-raster { from { transform: translateY(0); } to { transform: translateY(80px); } }
+.viz-col { stroke: var(--text-tertiary); stroke-width: 16; fill: none; }
+.viz-col--accent { stroke: var(--accent-primary); }
+.viz-hud-track { fill: var(--surface-raised); }
+.viz-hud { transform-box: fill-box; transform-origin: left center; }
+.viz-hud--hp { animation: viz-hp 5s var(--motion-easing-standard) infinite; }
+.viz-hud--mp { animation: viz-mp 3.4s ease-in-out infinite alternate; }
+@keyframes viz-hp { 0%, 20% { transform: scaleX(1); } 30%, 55% { transform: scaleX(.45); } 85%, 100% { transform: scaleX(1); } }
+@keyframes viz-mp { from { transform: scaleX(.9); } to { transform: scaleX(.3); } }
+
+/* Game HUD: W, D, S, A press in turn (4s loop) and the map dot walks the same square; Space makes it jump */
+.viz-key { --kd: 0s; }
+.viz-key--d { --kd: 1s; }
+.viz-key--s { --kd: 2s; }
+.viz-key--a { --kd: 3s; }
+.viz-key--space { --kd: 1.6s; }
+.viz-key, .viz-key rect, .viz-key text { animation-duration: 4s; animation-timing-function: linear; animation-iteration-count: infinite; animation-delay: var(--kd); }
+.viz-key { transform-box: fill-box; animation-name: viz-key; }
+.viz-key rect { fill: var(--surface-panel); stroke: var(--border-strong); stroke-width: 1; animation-name: viz-key-paint; }
+.viz-key text { font-family: var(--type-mono-family); fill: var(--text-secondary); animation-name: viz-key-text; }
+.viz-key--space { animation-name: viz-key-tap; }
+.viz-key--space rect { animation-name: viz-key-tap-paint; }
+.viz-key--space text { animation-name: viz-key-tap-text; }
+@keyframes viz-key { 0%, 22% { transform: translateY(1.5px); } 25%, 100% { transform: none; } }
+@keyframes viz-key-paint { 0%, 22% { fill: var(--accent-primary-wash); stroke: var(--accent-primary); } 25%, 100% { fill: var(--surface-panel); stroke: var(--border-strong); } }
+@keyframes viz-key-text { 0%, 22% { fill: var(--text-accent); } 25%, 100% { fill: var(--text-secondary); } }
+@keyframes viz-key-tap { 0%, 6% { transform: translateY(1.5px); } 9%, 100% { transform: none; } }
+@keyframes viz-key-tap-paint { 0%, 6% { fill: var(--surface-raised); stroke: var(--accent-secondary); } 9%, 100% { fill: var(--surface-panel); stroke: var(--border-strong); } }
+@keyframes viz-key-tap-text { 0%, 6% { fill: var(--text-highlight); } 9%, 100% { fill: var(--text-secondary); } }
+.viz-player { animation: viz-walk 4s var(--motion-easing-standard) infinite; }
+@keyframes viz-walk {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(0, -22px); }
+  50% { transform: translate(22px, -22px); }
+  75% { transform: translate(22px, 0); }
+  100% { transform: translate(0, 0); }
+}
+.viz-player__jump { transform-box: fill-box; transform-origin: center; opacity: 0; animation: viz-jump 4s ease-out 1.6s infinite; }
+@keyframes viz-jump { 0% { opacity: .9; transform: scale(.6); } 12% { opacity: 0; transform: scale(2); } 100% { opacity: 0; } }
+.viz-slot text { font-family: var(--type-mono-family); fill: var(--text-secondary); }
+.viz-slot__cd { fill: var(--accent-primary); opacity: .3; transform-box: fill-box; transform-origin: center bottom; animation: viz-cooldown 3.6s linear infinite; animation-delay: calc(var(--i) * -1.2s); }
+@keyframes viz-cooldown { 0% { transform: scaleY(1); } 85% { transform: scaleY(0); opacity: .3; } 88% { transform: scaleY(0); opacity: .9; } 100% { transform: scaleY(0); opacity: 0; } }
