@@ -125,22 +125,25 @@ strong { font-weight: var(--font-weight-bold); }
 
 /* 4. Components ------------------------------------------------------------ */
 
-/* Nav: a floating, centred app bar pinned to the top.
-   12px offset + 48px bar = --layout-nav-height (60px), so page offsets still line up. */
+/* Nav: a centred app bar flush to the top of the viewport.
+   Max --nav-max-width (800px) wide, square top corners, --nav-radius (24px) bottom corners.
+   Height stays --layout-nav-height minus 12px (48px bar); offsets still use --layout-nav-height. */
 .nav {
-  position: fixed; top: var(--space-xs); left: 50%; z-index: 50;
+  position: fixed; top: 0; left: 50%; z-index: 50;
   transform: translateX(-50%);
-  width: max-content; max-width: calc(100% - 2 * var(--layout-gutter));
+  width: 100%; max-width: var(--nav-max-width);
   height: calc(var(--layout-nav-height) - var(--space-xs));
-  display: flex; align-items: center; gap: var(--space-sm);
-  padding: var(--space-3xs) var(--space-3xs) var(--space-3xs) var(--space-xs);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm);
+  padding: var(--space-3xs) var(--space-xs) var(--space-3xs) var(--space-sm);
   background: color-mix(in srgb, var(--surface-page) 92%, transparent);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-pill);
+  border-top: 0;
+  border-radius: 0 0 var(--nav-radius) var(--nav-radius);
   box-shadow: 0 8px 24px -12px rgb(0 0 0 / 0.5);
   backdrop-filter: saturate(140%) blur(var(--blur-md));
   -webkit-backdrop-filter: saturate(140%) blur(var(--blur-md));
 }
+.nav > nav { margin-left: auto; }
 .nav > .brand { padding-right: var(--space-sm); border-right: 1px solid var(--border-subtle); }
 .nav > .brand img { width: 28px; height: 28px; }
 .brand { display: flex; align-items: center; gap: var(--space-2xs); text-decoration: none; }
@@ -546,17 +549,18 @@ html:not([data-theme]) .theme-toggle { display: none; }
   .nav__toggle { display: inline-flex; }
   .nav .status-pill { display: none; }
   .nav {
-    left: var(--layout-gutter); right: var(--layout-gutter); transform: none;
+    left: 0; right: 0; transform: none;
     width: auto; max-width: none; justify-content: space-between;
+    border-left: 0; border-right: 0; border-radius: var(--nav-radius-mobile);
   }
   .nav > .brand { border-right: 0; }
   .nav__menu {
-    position: absolute; top: calc(100% + var(--space-2xs)); right: 0; left: 0;
+    position: absolute; top: 100%; right: 0; left: 0;
     flex-direction: column; align-items: stretch; gap: var(--space-3xs);
     padding: var(--space-2xs);
     background: var(--surface-overlay);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
+    border-bottom: 1px solid var(--border-subtle);
+    border-radius: var(--nav-radius-mobile);
     box-shadow: 0 16px 32px -16px rgb(0 0 0 / 0.6);
     display: none;
   }

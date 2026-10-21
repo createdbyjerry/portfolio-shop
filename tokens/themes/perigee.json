@@ -81,7 +81,8 @@
     "gutter":    { "$value": "{space.sm}" },
     "section-y": { "$value": "{space.6xl}" },
     "section-y-compact": { "$value": "{space.4xl}" },
-    "nav-height":{ "$value": "{size.nav-height}" }
+    "nav-height":{ "$value": "{size.nav-height}" },
+    "nav-max-width":{ "$value": "{size.nav-max-width}" }
   },
   "component": {
     "button": {
@@ -107,6 +108,11 @@
       "border":  { "$type": "color", "$value": "{border.subtle}" },
       "fg":      { "$type": "color", "$value": "{text.secondary}" },
       "radius":  { "$type": "dimension", "$value": "{radius.pill}" }
+    },
+    "nav": {
+      "max-width":     { "$type": "dimension", "$value": "{layout.nav-max-width}", "$description": "Desktop bar, centred" },
+      "radius":        { "$type": "dimension", "$value": "{radius.xl}", "$description": "Bottom corners only; the bar is flush to the top of the viewport" },
+      "radius-mobile": { "$type": "dimension", "$value": "{radius.none}", "$description": "Under 992px the bar runs edge to edge, square" }
     },
     "media": {
       "radius": { "$type": "dimension", "$value": "{radius.lg}" },

@@ -127,13 +127,17 @@
 }
 
 /* Nav + footer specimens: render the fixed/full-bleed components in place */
-.ds-specimen--nav { align-items: center; padding-block: var(--space-2xl); }
-.ds-specimen--nav .nav { position: relative; top: auto; left: auto; right: auto; transform: none; z-index: auto; max-width: 100%; overflow-x: auto; }
+.ds-specimen--nav { align-items: center; padding-top: 0; padding-bottom: var(--space-2xl); }
+.ds-specimen--nav .nav { position: relative; top: auto; left: auto; right: auto; transform: none; z-index: auto; max-width: min(100%, var(--nav-max-width)); align-self: center; overflow-x: auto; }
 .ds-specimen--footer { padding: 0; overflow: hidden; }
 .ds-specimen--footer .footer { border-top: 0; }
 @media (max-width: 991px) {
   /* Below the breakpoint the real nav collapses to a menu; the specimen shows the desktop bar scrolled */
-  .ds-specimen--nav .nav { justify-content: flex-start; width: 100%; min-width: 0; }
+  .ds-specimen--nav .nav {
+    justify-content: flex-start; width: 100%; min-width: 0;
+    border-left: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle);
+    border-radius: 0 0 var(--nav-radius) var(--nav-radius);
+  }
   .ds-specimen--nav .nav > * { flex: none; }
   .ds-specimen--nav .nav__menu { position: static; display: flex; flex-direction: row; padding: 0; background: none; border: 0; box-shadow: none; }
   .ds-specimen--nav .nav__link { padding: 6px var(--space-xs); font-size: var(--type-body-sm); }

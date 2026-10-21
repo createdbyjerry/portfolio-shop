@@ -99,9 +99,11 @@
   },
   "radius": {
     "$type": "dimension",
+    "none":   { "$value": "0px" },
     "sm":     { "$value": "3px" },
     "md":     { "$value": "6px" },
     "lg":     { "$value": "10px" },
+    "xl":     { "$value": "24px" },
     "pill":   { "$value": "999px" },
     "circle": { "$value": "50%" }
   },
@@ -111,7 +113,8 @@
     "dot-md":     { "$value": "8px" },
     "container":  { "$value": "1200px" },
     "prose":      { "$value": "720px" },
-    "nav-height": { "$value": "60px" }
+    "nav-height": { "$value": "60px" },
+    "nav-max-width": { "$value": "800px" }
   },
   "blur": {
     "$type": "dimension",

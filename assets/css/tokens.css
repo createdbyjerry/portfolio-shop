@@ -68,9 +68,11 @@
   --space-4xl: 80px;
   --space-5xl: 120px;
   --space-6xl: 200px;
+  --radius-none: 0px;
   --radius-sm: 3px;
   --radius-md: 6px;
   --radius-lg: 10px;
+  --radius-xl: 24px;
   --radius-pill: 999px;
   --radius-circle: 50%;
   --size-dot-sm: 6px;
@@ -78,6 +80,7 @@
   --size-container: 1200px;
   --size-prose: 720px;
   --size-nav-height: 60px;
+  --size-nav-max-width: 800px;
   --blur-sm: 12px;
   --blur-md: 20px;
   --motion-duration-fast: 150ms;
@@ -137,6 +140,7 @@
   --layout-section-y: var(--space-6xl);
   --layout-section-y-compact: var(--space-4xl);
   --layout-nav-height: var(--size-nav-height);
+  --layout-nav-max-width: var(--size-nav-max-width);
   --button-bg: var(--accent-primary);
   --button-bg-hover: var(--accent-primary-hover);
   --button-fg: var(--text-inverse);
@@ -155,6 +159,9 @@
   --tag-border: var(--border-subtle);
   --tag-fg: var(--text-secondary);
   --tag-radius: var(--radius-pill);
+  --nav-max-width: var(--layout-nav-max-width);
+  --nav-radius: var(--radius-xl);
+  --nav-radius-mobile: var(--radius-none);
   --media-radius: var(--radius-lg);
   --media-border: var(--border-subtle);
   --frame-corner: var(--accent-primary);
