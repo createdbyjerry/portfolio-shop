@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalibr8 (K8): Disaster-Relief UAV Survey | Created by Jerry</title>
+  <meta name="description" content="An offline-first, Android-ready discovery prototype that takes disaster-relief drone pilots from autonomous survey to FEMA damage report.">
+  <link rel="canonical" href="https://www.createdbyjerry.com/projects/kalibr8-uav-survey/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kalibr8 (K8): Disaster-Relief UAV Survey | Created by Jerry">
+  <meta property="og:description" content="An offline-first, Android-ready discovery prototype that takes disaster-relief drone pilots from autonomous survey to FEMA damage report.">
+  <meta property="og:url" content="https://www.createdbyjerry.com/projects/kalibr8-uav-survey/">
+  <meta name="theme-color" content="#0a0b0d">
+  <script>/* Apply the saved theme before first paint (no flash). Default: Perigee (dark). */try{if(localStorage.getItem('cbj-theme')==='light'){document.documentElement.dataset.theme='apogee';document.querySelector('meta[name="theme-color"]').content='#ffffff'}else document.documentElement.dataset.theme='perigee'}catch(e){document.documentElement.dataset.theme='perigee'}</script>
+  <link rel="icon" type="image/png" href="../../assets/images/cbj-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Oxygen:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-open="false">
+    <a class="brand" href="../../">
+      <img src="../../assets/images/cbj-logo.png" alt="" width="40" height="40">
+      <span class="brand__type"><span>created</span><span>by jerry</span></span>
+      <span class="visually-hidden">Home</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><a class="nav__link" href="../../prototypes/">Prototypes</a></li>
+        <li><a class="nav__link" href="../../arcade/">Arcade</a></li>
+        <li><a class="nav__link" href="../../3d/">3D</a></li>
+        <li><a class="nav__link" href="../../shop/">UI Kits</a></li>
+        <li><a class="nav__link" href="../../about-jerry/">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav__actions">
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span></span><span class="visually-hidden">Menu</span></button>
+    </div>
+  </header>
+
+  <button class="theme-toggle theme-toggle--floating" type="button" role="switch" aria-checked="false" title="Switch to light theme">
+    <span class="visually-hidden">Light theme</span>
+    <span class="theme-toggle__thumb" aria-hidden="true"></span>
+    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="2.75"/><path d="M8 1.25v1.5M8 13.25v1.5M1.25 8h1.5M13.25 8h1.5M3.23 3.23l1.06 1.06M11.71 11.71l1.06 1.06M3.23 12.77l1.06-1.06M11.71 4.29l1.06-1.06"/></svg>
+    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M14 8.53A6 6 0 1 1 7.47 2a4.67 4.67 0 0 0 6.53 6.53z"/></svg>
+  </button>
+
+  <main id="main">
+    <header class="cs-hero">
+      <div class="container">
+        <a class="back-link mono" href="../../work/"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> All work</a>
+        <div class="cs-hero__head">
+          <h1 class="h1">Disaster-Relief UAV Survey Prototype Case Study</h1>
+          <p class="h3 text-accent">From Companion App to Field Tool</p>
+        </div>
+        <div class="cs-hero__grid">
+          <img class="cs-hero__media" src="../../assets/images/k8-hero.png" alt="Kalibr8 flying an autonomous survey over Overtown, Miami: the web app shows the flight log, live telemetry and an annotation flagging a roof collapse, beside the same live mission on an Android phone" width="1200" height="800">
+          <div class="cs-hero__text">
+            <p class="body text-secondary">In 2020 I helped design Slingshot Edge, an MVP companion app that turned UAV pilots’ hurricane surveys into damage reports for FEMA. Years later, a recruiter at a drone company asked me three questions:</p>
+            <ol class="body text-secondary cs-hero__list">
+              <li>Do you design for mobile? Their pilots use Android phones because connections in the field are poor.</li>
+              <li>How do you design for trust?</li>
+              <li>How do you design for autonomy?</li>
+            </ol>
+            <p class="body text-secondary">Those questions sent me back to the MVP to ask what it took for granted: a working connection, one kind of device, and a pilot who only touched the data after the flight. This case study is my answer: Kalibr8 (K8), an offline-first, Android-ready discovery prototype that covers a pilot’s whole mission, and a plan to put it in front of pilots to check my assumptions about trust and autonomy.</p>
+          </div>
+        </div>
+        <ul class="cs-meta">
+            <li><span class="mono">Role</span><span class="meta">Sr. Product Designer</span></li>
+            <li><span class="mono">Legacy MVP</span><span class="meta">Slingshot Edge, 2020</span></li>
+            <li><span class="mono">Research</span><span class="meta">5 UAV pilot interviews</span></li>
+            <li><span class="mono">Industry</span><span class="meta">Disaster Response / UAS</span></li>
+            <li><span class="mono">Status</span><span class="meta">Discovery prototype</span></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="cs-section" id="s1" aria-labelledby="s1-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">01</span> / The Problem</span>
+          <h2 class="h2" id="s1-title">What the MVP Assumed</h2>
+        </div>
+        <div class="prose body-md">
+          <p>Slingshot Edge, the 2020 MVP, did one job well. It took a pilot’s survey results and produced a damage report in the format FEMA expects. Looking back, it was built on three assumptions that a real disaster can break.</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <svg class="callout__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4c-1.48 0-2.85.43-4.01 1.17l1.46 1.46A5.47 5.47 0 0 1 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3 0 1.13-.64 2.11-1.56 2.62l1.45 1.45C23.16 18.16 24 16.68 24 15c0-2.64-2.05-4.78-4.65-4.96zM3 5.27l2.75 2.74C2.56 8.15 0 10.77 0 14c0 3.31 2.69 6 6 6h11.73l2 2L21 20.73 4.27 4 3 5.27zM7.73 10l8 8H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h1.73z"/></svg>
+            <div class="stack stack--tight">
+              <h3 class="h4">There’s a signal.</h3>
+              <p class="body">The MVP generated and sent reports over a connection. After a hurricane, cell towers and Wi-Fi are often the first things to go.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <svg class="callout__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+            <div class="stack stack--tight">
+              <h3 class="h4">The report starts after the flight.</h3>
+              <p class="body">As a companion app, it picked up where the drone’s own software left off. Planning, flying and reviewing still happened somewhere else, and every hand-off was a chance to lose a photo or mislabel a house.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <svg class="callout__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 1.6a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM18 2.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 1.6a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM6 14.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 1.6a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM18 14.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 1.6a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM10 9.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5zM7.6 7.6l2.1 2.1-.9.9-2.1-2.1zM16.4 7.6l.9.9-2.1 2.1-.9-.9zM9.7 14.3l-2.1 2.1-.9-.9 2.1-2.1zM14.3 14.3l2.1 2.1.9-.9-2.1-2.1z"/></svg>
+            <div class="stack stack--tight">
+              <h3 class="h4">Everyone has the same device.</h3>
+              <p class="body">Pilots fly with whatever their agency or company issues. Often that’s an Android phone or controller, so the design has to hold up on a phone, not just a larger screen.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">Why it matters</span>
+          <p class="body-md">FEMA’s Preliminary Damage Assessment sorts each home as Affected, Minor, Major or Destroyed, and those counts help decide whether federal assistance is declared. A report tool that needs a signal and a second app fails at the exact moment it’s needed most.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Before: the legacy MVP">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>FIG 01 — Before: the legacy MVP</p>
+        <img class="figure__img" src="../../assets/images/k8-01-legacy-mvp.png" alt="The 2020 Slingshot Edge MVP: a desktop flight console with an annotation panel over satellite imagery and a live video inset, beside a tablet fleet view showing storm-damaged homes" width="1600" height="1000" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s2" aria-labelledby="s2-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">02</span> / Constraints</span>
+          <h2 class="h2" id="s2-title">Designing for the Worst Day</h2>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <svg class="callout__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4c-1.48 0-2.85.43-4.01 1.17l1.46 1.46A5.47 5.47 0 0 1 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3 0 1.13-.64 2.11-1.56 2.62l1.45 1.45C23.16 18.16 24 16.68 24 15c0-2.64-2.05-4.78-4.65-4.96zM3 5.27l2.75 2.74C2.56 8.15 0 10.77 0 14c0 3.31 2.69 6 6 6h11.73l2 2L21 20.73 4.27 4 3 5.27zM7.73 10l8 8H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h1.73z"/></svg>
+            <div class="stack stack--tight">
+              <h3 class="h4">No connectivity.</h3>
+              <p class="body">Everything has to work with no Wi-Fi or cell signal: maps, flight planning, damage review and report generation. Reports queue on the device and send when a connection returns.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <svg class="callout__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 1.6a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM18 2.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 1.6a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM6 14.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 1.6a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM18 14.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 1.6a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM10 9.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5zM7.6 7.6l2.1 2.1-.9.9-2.1-2.1zM16.4 7.6l.9.9-2.1 2.1-.9-.9zM9.7 14.3l-2.1 2.1-.9-.9 2.1-2.1zM14.3 14.3l2.1 2.1.9-.9-2.1-2.1z"/></svg>
+            <div class="stack stack--tight">
+              <h3 class="h4">Android is a first-class platform.</h3>
+              <p class="body">The revisit designs for an Android phone, in portrait and landscape, alongside the responsive web app. It uses Material 3 rather than a squeezed-down web layout.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <svg class="callout__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+            <div class="stack stack--tight">
+              <h3 class="h4">Field conditions.</h3>
+              <p class="body">I expect sun glare, heat and gloves to matter. That’s why the design uses a dark, high-contrast theme, large touch targets and short, linear steps. Pilots need to confirm it.</p>
+            </div>
+          </div>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <svg class="callout__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <div class="stack stack--tight">
+              <h3 class="h4">No users yet.</h3>
+              <p class="body">The five 2020 interviews are my only research. Every new decision in this revisit is a hypothesis until pilots use it.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <svg class="callout__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 4h3.2v6.6L11.6 4h3.9l-5.8 7 6 9h-3.9l-4.2-6.5-1.4 1.7V20H3z"/><path fill-rule="evenodd" d="M18.4 3.6c-2 0-3.4 1.2-3.4 2.9 0 1.1.6 1.9 1.5 2.4-1.2.5-2 1.5-2 2.9 0 2 1.6 3.3 3.9 3.3s3.9-1.3 3.9-3.3c0-1.4-.8-2.4-2-2.9.9-.5 1.5-1.3 1.5-2.4 0-1.7-1.4-2.9-3.4-2.9zm0 1.9c.8 0 1.3.5 1.3 1.2s-.5 1.2-1.3 1.2-1.3-.5-1.3-1.2.5-1.2 1.3-1.2zm0 4.4c1 0 1.6.6 1.6 1.4s-.6 1.4-1.6 1.4-1.6-.6-1.6-1.4.6-1.4 1.6-1.4z"/></svg>
+            <div class="stack stack--tight">
+              <h3 class="h4">A new name and mark.</h3>
+              <p class="body">The revisit ships as Kalibr8 (K8), with its own monogram, so it stands apart from the Slingshot Edge brand.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Designing for the worst day">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>FIG 02 — Designing for the worst day</p>
+        <img class="figure__img" src="../../assets/images/k8-02-worst-day.png" alt="Four Android screens built for no signal: drawing a survey area, the damage review list with FEMA category counts, the offline report builder, and the FEMA PDA report preview queued to send" width="1600" height="1000" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s3" aria-labelledby="s3-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">03</span> / Strategy</span>
+          <h2 class="h2" id="s3-title">From Report Generator to Whole Mission</h2>
+        </div>
+        <div class="prose body-md">
+          <p>The revisit rests on one rule: <strong>keep the pilot on the map.</strong> Every step of the mission happens over the same map, so the pilot always knows where the drone is and which houses have been surveyed.</p>
+        </div>
+        <table class="compare">
+          <caption class="visually-hidden">Slingshot Edge compared with Kalibr8</caption>
+          <thead>
+            <tr><th scope="col" class="mono">Slingshot Edge (2020 MVP)</th><td aria-hidden="true"></td><th scope="col" class="mono text-accent">Kalibr8 (K8)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Companion app that generates FEMA reports</td><td class="compare__arrow" aria-hidden="true">→</td><td>One app: connect, plan, fly, review, report</td></tr>
+            <tr><td>Needs a connection to generate and send</td><td class="compare__arrow" aria-hidden="true">→</td><td>Builds reports offline and queues them to send</td></tr>
+            <tr><td>No native Android experience</td><td class="compare__arrow" aria-hidden="true">→</td><td>Responsive web app (laptop, tablet or phone) plus native Android phone layouts, portrait and landscape, from one token system</td></tr>
+            <tr><td>Report starts from finished survey data</td><td class="compare__arrow" aria-hidden="true">→</td><td>Damage is pinned to each building on the map as the survey runs</td></tr>
+          </tbody>
+        </table>
+        <div class="prose body-md">
+          <p>These are the assumptions the prototype is built to explore. None of them are proven yet. They’re what I want pilots to confirm, push back on or reshape.</p>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">Hypotheses</span>
+          <p class="body-md"><strong>H1 — One flow.</strong> If the whole mission lives in one predictable flow, pilots will spend less time managing tools and more time on the survey.</p>
+          <p class="body-md"><strong>H2 — Calibrated trust.</strong> Trust works best when it sits between overuse and underuse. Pilots should rely on the autonomy where it’s strong and question it where it isn’t.</p>
+          <p class="body-md"><strong>H3 — Human in the loop.</strong> Autonomy should always leave room for a human to step in. Pilots will feel more confident handing work to the drone when they know they can take it back at any moment.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="From report generator to whole mission">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>FIG 03 — From report generator to whole mission</p>
+        <img class="figure__img" src="../../assets/images/k8-03-whole-mission.png" alt="Before and after flows: the 2020 MVP's five steps, two of which need a signal, versus Kalibr8's connect, plan, fly and monitor, review and verify, and offline report" width="1600" height="1000" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s4" aria-labelledby="s4-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">04</span> / UX Work</span>
+          <h2 class="h2" id="s4-title">Extending the Journey</h2>
+        </div>
+        <div class="prose body-md">
+          <p>I kept the MVP’s report flow as the end point and extended the journey backward to cover the whole mission. That gave five steps, and each one became a short run of screens.</p>
+        </div>
+        <div class="callouts callouts--5">
+          <div class="callout">
+            <span class="callout__step mono">Step 01</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Connect the drone.</h3>
+              <p class="body">Pick the aircraft over USB, Wi-Fi Direct or Bluetooth, then confirm battery, signal and storage before anything else.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 02</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Plan an autonomous flight.</h3>
+              <p class="body">Draw the survey area on the map and set altitude and overlap. The app generates the flight lines, then walks the pilot through a pre-flight checklist.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 03</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Fly and monitor.</h3>
+              <p class="body">A live view shows altitude, speed, ETA and damaged structures found so far. Hold, Return Home and Annotate stay on screen.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 04</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Review damage.</h3>
+              <p class="body">The app tags each building Affected, Minor, Major or Destroyed, with an estimated loss. The pilot verifies or corrects each call against the photo.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">Step 05</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Generate and send the report.</h3>
+              <p class="body">The step the MVP was built for, now offline. The app builds a FEMA PDA summary, then queues it or offers Quick Share or PDF.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Extending the journey">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>FIG 04 — Extending the journey</p>
+        <img class="figure__img" src="../../assets/images/k8-04-journey.png" alt="Five Android screens in order, from connecting the drone and drawing the survey area to the live flight, damage review and offline report builder" width="1600" height="1000" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s5" aria-labelledby="s5-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">05</span> / UI Design</span>
+          <h2 class="h2" id="s5-title">One System, Two Platforms</h2>
+        </div>
+        <div class="prose body-md">
+          <p>I built one token-based design system for Kalibr8 in Figma and applied it to both a responsive web app and Google’s Material 3 kit for Android. A single color or type change updates every screen on both platforms.</p>
+        </div>
+        <div class="cs-actions">
+          <a class="btn btn--ghost" href="https://www.figma.com/design/Y0XBTO5DmE0HKkMxNeDeop/K8---Kalibr8?node-id=51-16405&amp;t=2VnhoUzq5AHiHjMx-1" target="_blank" rel="noopener">Figma file <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+          <a class="btn btn--ghost" href="https://createdbyjerry.github.io/Kalibr8/design-system/" target="_blank" rel="noopener">Design system <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Layered tokens.</h3>
+              <p class="body">Primitive values sit underneath semantic roles named after Material 3 (<code>primary</code>, <code>surface-container</code>, <code>on-surface</code>). Each role carries its code name for both platforms: a CSS variable for the web and a <code>MaterialTheme.colorScheme</code> role for Android.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Platform modes, not two systems.</h3>
+              <p class="body">A Platform collection has a web mode and an Android mode. It switches type sizes and control heights, so the same text style renders at the right density on each device.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Re-themed Material 3, not a lookalike.</h3>
+              <p class="body">The Android screens use real Material 3 components (navigation bar and rail, bottom and side sheets, text fields, snackbars) remapped to my tokens. Brand details carry over: tighter corners, uppercase button labels and a filled selected-nav state.</p>
+            </div>
+          </div>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Mission-specific tokens.</h3>
+              <p class="body">FEMA’s four damage categories each have a dedicated color, plus overlay tokens for the survey area, drone range and map scrim. Damage reads the same on every screen and in the report.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Built for rotation.</h3>
+              <p class="body">Each Android screen has a portrait and a landscape version. In landscape the bottom nav becomes a navigation rail, bottom sheets become side sheets and full-screen dialogs split into two columns, so the map stays visible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="One system, two platforms">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>FIG 05 — One system, two platforms</p>
+        <img class="figure__img" src="../../assets/images/k8-05-one-system.png" alt="One token flowing from blue/500 to color/primary, then to a CSS variable and a Material 3 color role, with FEMA damage category tokens, web and Android density modes, and the same review screen on web, Android portrait and Android landscape" width="1600" height="1000" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s6" aria-labelledby="s6-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">06</span> / Prototype</span>
+          <h2 class="h2" id="s6-title">From Figma to a Working Prototype</h2>
+        </div>
+        <div class="prose body-md">
+          <p>This is a discovery prototype. It isn’t meant to prove the design works. It’s meant to give pilots something real to react to, so I can find out whether my assumptions hold up.</p>
+          <p>A static mockup can’t show whether a pilot trusts an autonomous flight, so the journey runs as a real, responsive web app. It runs from one folder with no server or install. A service worker keeps the app and map working offline, and a simulated drone flies the survey so the whole mission can be explored anywhere.</p>
+        </div>
+        <div class="cs-actions">
+          <a class="btn" href="https://createdbyjerry.github.io/Kalibr8/" target="_blank" rel="noopener">Prototype <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <span class="callout__step mono">H1</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">One flow</h3>
+              <p class="body">The pilot moves from connect to report without leaving the app or losing sight of the map. If they reach for another tool, or get lost between steps, I’ll see it.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">H2</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Calibrated trust</h3>
+              <p class="body">The review step shows each damage call next to its photo and asks the pilot to verify or correct it. This is where I’ll see how much pilots lean on the system’s judgment.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">H3</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Human in the loop</h3>
+              <p class="body">Hold, Return Home and Annotate stay on screen for the whole flight. I want to hear whether that makes pilots more comfortable letting the drone fly itself.</p>
+            </div>
+          </div>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Offline is the default.</h3>
+              <p class="body">“No signal,” “queued to send” and “sent when connection returned” are designed screens, not error states. The pilot never meets a screen that assumes a connection.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">What it fakes.</h3>
+              <p class="body">There’s no real drone or live AI. Flight data and damage calls are scripted so every session follows the same path. That keeps the conversation on pilots’ reactions, not on how a model performs that day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="From Figma to a working prototype">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>FIG 06 — From Figma to a working prototype</p>
+        <img class="figure__img" src="../../assets/images/k8-06-prototype.png" alt="The working web prototype mid-flight with an annotation dialog open, beside notes on how it's built and the three hypotheses it is built to test" width="1600" height="1000" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s7" aria-labelledby="s7-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">07</span> / Next Steps</span>
+          <h2 class="h2" id="s7-title">Putting It in Front of Pilots</h2>
+        </div>
+        <div class="prose body-md">
+          <p>No pilot has used this prototype yet. Round one is discovery: put the prototype in front of pilots and learn whether my hypotheses hold up, where they break and what I didn’t think to ask.</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <span class="callout__step mono">H1</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">One flow</h3>
+              <p class="body">Does keeping the whole mission in one app make the work easier, or do pilots still want the tools they already know?</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">H2</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Calibrated trust</h3>
+              <p class="body">Where would pilots rely on the autonomy, and where would they double-check it? What makes them trust or doubt a damage call?</p>
+            </div>
+          </div>
+          <div class="callout">
+            <span class="callout__step mono">H3</span>
+            <div class="stack stack--tight">
+              <h3 class="h4">Human in the loop</h3>
+              <p class="body">Does always being able to take control make pilots more willing to hand work to the drone? When would they actually step in?</p>
+            </div>
+          </div>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Who.</h3>
+              <p class="body">5–8 drone pilots, at least half of whom have flown a real post-disaster survey. A mix of Android users and pilots who normally fly with a tablet or laptop.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Format.</h3>
+              <p class="body">Moderated sessions, 60 minutes, in person. Each pilot walks through one full mission with Wi-Fi off, from connecting the drone to sending the report, on the platform they’d actually use.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Think-aloud plus observation.</h3>
+              <p class="body">Pilots talk through what they expect at each step while I watch what they do. Hesitations, backtracking and reaching for a different tool all count as findings.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Ground it in their real missions.</h3>
+              <p class="body">Before the walkthrough, each pilot tells me about a recent survey: the tools they used, where it went wrong and when they stopped trusting the drone. Afterward, I ask how K8 compares.</p>
+            </div>
+          </div>
+        </div>
+        <div class="prose body-md">
+          <p><strong>Gauging human trust in the autonomy.</strong> The goal is not maximum trust. It’s calibrated trust: trust that matches what the system can really do. I’ll gauge it three ways, because what pilots say and what they do often differ.</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">What they do.</h3>
+              <p class="body">How long they look at each damage call before verifying it, whether they open the photo or just approve, and when they move toward Hold or Return Home.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">What they say.</h3>
+              <p class="body">A 1–7 trust rating after each phase (plan, flight, review, report), used to start a conversation rather than as a score: “Why a 4 and not a 6?”</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Where they’d draw the line.</h3>
+              <p class="body">Which parts they’d hand to the drone on a real disaster day, which they’d keep for themselves and what would need to change for them to trust it more.</p>
+            </div>
+          </div>
+        </div>
+        <div class="callouts callouts--2">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">What I’ll do with it.</h3>
+              <p class="body">Sort findings by hypothesis and mark each one holds, needs work or wrong. Anything that doesn’t fit a hypothesis goes on a new-assumptions list for the next round.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Round two: outdoors.</h3>
+              <p class="body">Glare, heat and gloves are core constraints, so later sessions move outside, using whatever round one changed.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">Overtrust vs. distrust</span>
+          <p class="body-md">Overtrust leads to misuse, such as accepting a damage call without looking. Distrust leads to disuse, such as flying by hand when the autonomy would do better. Each pilot’s answers place each phase somewhere on that line.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="figure" aria-label="Designing for trust">
+      <div class="container">
+        <p class="figure__caption mono"><span class="dot"></span>FIG 07 — Designing for trust</p>
+        <img class="figure__img" src="../../assets/images/k8-07-trust.png" alt="A two-by-two of pilot trust against what the system can really do: overtrust leads to misuse, distrust to disuse, with calibrated trust and calibrated caution on the diagonal, beside five ways trust will be gauged" width="1600" height="1000" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cs-section" id="s8" aria-labelledby="s8-title">
+      <div class="container">
+        <div class="cs-section__head">
+          <span class="mono text-tertiary"><span class="text-accent">08</span> / Takeaways</span>
+          <h2 class="h2" id="s8-title">What the Revisit Taught Me</h2>
+        </div>
+        <div class="prose body-md">
+          <p>Going back to a five-year-old MVP with three new questions changed how I think about designing for autonomy.</p>
+        </div>
+        <div class="callouts callouts--3">
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">Autonomy moves the pilot’s job, it doesn’t remove it.</h3>
+              <p class="body">The pilot stops flying and starts supervising and verifying. The interface has to be designed for that role.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">A design system pays off fastest across platforms.</h3>
+              <p class="body">One set of tokens covered the responsive web app, Android portrait and Android landscape screens without three diverging designs.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <div class="stack stack--tight">
+              <h3 class="h4">A prototype is a question, not an answer.</h3>
+              <p class="body">This one exists to put my assumptions in front of pilots and find out where they’d rely on the autonomy and where they wouldn’t.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="note">
+          <span class="mono text-primary">The ultimate takeaway</span>
+          <p class="body-md">In a disaster, an autonomous tool is only as good as the pilot’s judgment about when to rely on it. Design for calibrated trust, then ask pilots whether you got it.</p>
+        </aside>
+      </div>
+    </section>
+
+
+    <section class="section section--compact" aria-label="Next project">
+      <div class="container">
+        <span class="mono text-tertiary">Next project</span>
+        <a class="h2 link link--wrap" href="../../projects/hijinks-design-system/">Hijinks Design System →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__intro">
+          <a class="footer__brand" href="../../">
+            <img src="../../assets/images/cbj-logo.png" alt="" width="32" height="32">
+            <span>created by jerry</span>
+            <span class="visually-hidden">Home</span>
+          </a>
+          <p class="footer__tagline">Senior product designer shipping interfaces, design systems, and live prototypes.</p>
+          <a class="footer__email" href="mailto:jerryborundajr@gmail.com">jerryborundajr@gmail.com <span aria-hidden="true">↗</span></a>
+        </div>
+        <nav class="footer__nav" aria-label="Sitemap">
+          <span class="mono footer__label">Sitemap</span>
+          <ul class="footer__list footer__list--2col">
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../work/">Work</a></li>
+            <li><a href="../../prototypes/">Prototypes</a></li>
+            <li><a href="../../arcade/">Arcade</a></li>
+            <li><a href="../../3d/">3D</a></li>
+            <li><a href="../../shop/">UI Kits</a></li>
+            <li><a href="../../about-jerry/">About</a></li>
+            <li><a href="../../ai-disclosure-statement/">AI Disclosure</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__nav" aria-label="Elsewhere">
+          <span class="mono footer__label">Elsewhere</span>
+          <ul class="footer__list">
+            <li><a href="https://www.linkedin.com/in/jerryborundajr/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://createdbyjerry.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+            <li><a href="https://www.instagram.com/created_by_jerry/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://github.com/createdbyjerry" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bar mono">
+        <span>© <span data-year>2026</span> createdbyjerry</span>
+        <span class="footer__status"><span class="footer__dot" aria-hidden="true"></span>Open for select freelance work</span>
+        <a class="footer__top" href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

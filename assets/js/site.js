@@ -148,3 +148,102 @@ if (counters.length && 'IntersectionObserver' in window && !window.matchMedia('(
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   cards.forEach((el) => io.observe(el));
 })();
+
+// Expandable images: every case-study image (hero + figures) lifts on hover and opens in a lightbox.
+// Click the enlarged image to view it at full size and pan; arrows step through the page's images; Esc closes.
+(() => {
+  const imgs = [...document.querySelectorAll('main .cs-hero__media, main .figure__img')].filter((img) => img.tagName === 'IMG');
+  if (!imgs.length || typeof HTMLDialogElement !== 'function') return;
+
+  const icon = (d) => `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+  const ICON_EXPAND = 'M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5 9 7M2.5 13.5 7 9';
+  const captionFor = (img) => {
+    const hero = img.closest('.cs-hero');
+    const title = hero && hero.querySelector('.h1');
+    if (title) return title.textContent.trim();
+    const fig = img.closest('.figure-pair__item, .figure .container');
+    const cap = fig && fig.querySelector('.figure__caption');
+    return (cap ? cap.textContent : '').trim() || img.alt || 'Image';
+  };
+
+  // Make each image a trigger: reuse an existing full-size link, otherwise wrap the image in a button
+  const triggers = imgs.map((img, i) => {
+    let el = img.closest('a.figure__link');
+    if (el) {
+      el.classList.add('zoomable');
+      el.removeAttribute('target');
+    } else {
+      el = document.createElement('button');
+      el.type = 'button';
+      el.className = 'zoomable';
+      img.parentNode.insertBefore(el, img);
+      el.appendChild(img);
+    }
+    el.setAttribute('aria-label', `Expand image: ${captionFor(img)}`);
+    el.setAttribute('aria-haspopup', 'dialog');
+    el.insertAdjacentHTML('beforeend', `<span class="zoomable__badge" aria-hidden="true">${icon(ICON_EXPAND)}Expand</span>`);
+    el.addEventListener('click', (e) => { e.preventDefault(); open(i, el); });
+    return el;
+  });
+
+  const box = document.createElement('dialog');
+  box.className = 'lightbox';
+  box.setAttribute('aria-label', 'Image viewer');
+  box.innerHTML = `
+    <div class="lightbox__bar">
+      <span class="lightbox__caption"></span>
+      <div class="lightbox__controls">
+        <button class="lightbox__btn" type="button" data-step="-1" aria-label="Previous image">${icon('M10 3 5 8l5 5')}</button>
+        <button class="lightbox__btn" type="button" data-step="1" aria-label="Next image">${icon('M6 3l5 5-5 5')}</button>
+        <a class="lightbox__btn" data-full target="_blank" rel="noopener" aria-label="Open full size in a new tab">${icon('M6 3h7v7M13 3 4 12')}</a>
+        <button class="lightbox__btn" type="button" data-close aria-label="Close">${icon('M3.5 3.5l9 9M12.5 3.5l-9 9')}</button>
+      </div>
+    </div>
+    <div class="lightbox__stage"><img class="lightbox__img" alt=""></div>
+    <span class="lightbox__hint">Click image to zoom · Esc to close</span>`;
+  document.body.appendChild(box);
+
+  const big = box.querySelector('.lightbox__img');
+  const cap = box.querySelector('.lightbox__caption');
+  const full = box.querySelector('[data-full]');
+  const stage = box.querySelector('.lightbox__stage');
+  const steppers = box.querySelectorAll('[data-step]');
+  let index = 0;
+  let opener = null;
+
+  const show = (i) => {
+    index = (i + imgs.length) % imgs.length;
+    const img = imgs[index];
+    box.classList.remove('is-zoomed');
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt;
+    cap.textContent = captionFor(img);
+    full.href = img.src;
+    stage.scrollTo(0, 0);
+  };
+  const open = (i, el) => {
+    opener = el;
+    steppers.forEach((b) => { b.hidden = imgs.length < 2; });
+    show(i);
+    box.showModal();
+  };
+
+  box.addEventListener('close', () => { big.removeAttribute('src'); if (opener) opener.focus(); });
+  box.querySelector('[data-close]').addEventListener('click', () => box.close());
+  steppers.forEach((b) => b.addEventListener('click', () => show(index + Number(b.dataset.step))));
+  // Clicking the dark area around the image closes the viewer
+  box.addEventListener('click', (e) => { if (e.target === box || e.target === stage) box.close(); });
+  // Toggle between fit-to-screen and full size; when zooming in, keep the clicked point in view
+  big.addEventListener('click', (e) => {
+    const r = big.getBoundingClientRect();
+    const fx = (e.clientX - r.left) / r.width;
+    const fy = (e.clientY - r.top) / r.height;
+    const zoomed = box.classList.toggle('is-zoomed');
+    if (zoomed) stage.scrollTo(fx * big.offsetWidth - stage.clientWidth / 2, fy * big.offsetHeight - stage.clientHeight / 2);
+  });
+  box.addEventListener('keydown', (e) => {
+    if (imgs.length < 2) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(index + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); show(index - 1); }
+  });
+})();
