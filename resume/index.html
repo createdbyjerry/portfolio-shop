@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume | Created by Jerry</title>
+  <meta name="description" content="Jerry Borunda, Senior Product Designer & Design Engineer for autonomy, geospatial and climate software. Interactive resume and PDF download.">
+  <link rel="canonical" href="https://www.createdbyjerry.com/resume/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Resume | Jerry Borunda">
+  <meta property="og:description" content="Senior Product Designer & Design Engineer: 15 years, 310+ production components, drone, satellite and climate platforms.">
+  <meta property="og:url" content="https://www.createdbyjerry.com/resume/">
+  <meta name="theme-color" content="#0a0b0d">
+  <script>/* Apply the saved theme before first paint (no flash). Default: Perigee (dark). */try{if(localStorage.getItem('cbj-theme')==='light'){document.documentElement.dataset.theme='apogee';document.querySelector('meta[name="theme-color"]').content='#ffffff'}else document.documentElement.dataset.theme='perigee'}catch(e){document.documentElement.dataset.theme='perigee'}</script>
+  <link rel="icon" type="image/png" href="../assets/images/cbj-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Oxygen:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/resume.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jerry Borunda",
+    "jobTitle": "Senior Product Designer & Design Engineer",
+    "email": "mailto:jerryborundajr@gmail.com",
+    "url": "https://www.createdbyjerry.com/",
+    "address": { "@type": "PostalAddress", "addressLocality": "Rio Rancho", "addressRegion": "NM", "addressCountry": "US" },
+    "sameAs": ["https://www.linkedin.com/in/jerryborundajr/", "https://github.com/createdbyjerry"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-open="false">
+    <a class="brand" href="../">
+      <img src="../assets/images/cbj-logo.png" alt="" width="40" height="40">
+      <span class="brand__type"><span>created</span><span>by jerry</span></span>
+      <span class="visually-hidden">Home</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="../work/">Work</a></li>
+        <li><a class="nav__link" href="../prototypes/">Prototypes</a></li>
+        <li><a class="nav__link" href="../arcade/">Arcade</a></li>
+        <li><a class="nav__link" href="../3d/">3D</a></li>
+        <li><a class="nav__link" href="../shop/">UI Kits</a></li>
+        <li><a class="nav__link" href="../about-jerry/">About</a></li>
+        <li><a class="nav__link" href="../resume/" aria-current="page">Resume</a></li>
+      </ul>
+    </nav>
+    <div class="nav__actions">
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span></span><span class="visually-hidden">Menu</span></button>
+    </div>
+  </header>
+
+  <button class="theme-toggle theme-toggle--floating" type="button" role="switch" aria-checked="false" title="Switch to light theme">
+    <span class="visually-hidden">Light theme</span>
+    <span class="theme-toggle__thumb" aria-hidden="true"></span>
+    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="2.75"/><path d="M8 1.25v1.5M8 13.25v1.5M1.25 8h1.5M13.25 8h1.5M3.23 3.23l1.06 1.06M11.71 11.71l1.06 1.06M3.23 12.77l1.06-1.06M11.71 4.29l1.06-1.06"/></svg>
+    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M14 8.53A6 6 0 1 1 7.47 2a4.67 4.67 0 0 0 6.53 6.53z"/></svg>
+  </button>
+
+  <div class="orb-canvas" aria-hidden="true"></div>
+
+  <main id="main">
+
+    <!-- 01 · Header ----------------------------------------------------- -->
+    <section class="section section--first rs-hero" id="top" aria-labelledby="resume-title">
+      <div class="container">
+        <div class="frame">
+          <span class="frame__corner frame__corner--tl"></span><span class="frame__corner frame__corner--tr"></span>
+          <span class="frame__corner frame__corner--br"></span><span class="frame__corner frame__corner--bl"></span>
+          <span class="frame__readout frame__readout--tr mono rs-hide-sm">35.24°N · 106.66°W</span>
+
+          <div class="rs-hero__grid">
+            <div class="rs-hero__copy">
+              <span class="tag"><span class="dot dot--pulse"></span>Resume · Open to roles</span>
+              <p class="mono text-tertiary">Rio Rancho, NM · Remote (US) · Open to relocation</p>
+              <h1 class="h1" id="resume-title">Jerry Borunda</h1>
+              <p class="rs-hero__role">Senior Product Designer &amp; Design Engineer</p>
+              <p class="mono text-highlight">Autonomy · Geospatial · Climate</p>
+              <p class="body-md text-secondary rs-hero__summary">I design and prototype in code for drone, satellite and climate platforms. Fifteen years turning early-stage engineering into field-ready products at Slingshot Aerospace, Planet, Geospan and Gevo, with tokenized design systems and working HTML/CSS/JS prototypes so engineering ships faster with less rework.</p>
+
+              <div class="cluster rs-actions">
+                <a class="btn" href="../assets/docs/jerry-borunda-resume.pdf" download="Jerry-Borunda-Resume.pdf" data-analytics="resume_download">
+                  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 1v7M3 5.5 6 8.5 9 5.5M1.5 11h9"/></svg>
+                  Download PDF
+                </a>
+                <a class="btn btn--ghost" href="#download">Preview</a>
+                <button class="btn btn--ghost" type="button" data-copy="jerryborundajr@gmail.com">
+                  <span data-copy-label>Copy email</span>
+                </button>
+              </div>
+            </div>
+
+            <dl class="rs-stats">
+              <div class="rs-stat">
+                <dt class="mono text-tertiary">Experience</dt>
+                <dd class="stat__value"><span class="visually-hidden">15 years</span><span aria-hidden="true"><span data-count="15">15</span><span class="stat__unit">yrs</span></span></dd>
+              </div>
+              <div class="rs-stat">
+                <dt class="mono text-tertiary">Components shipped</dt>
+                <dd class="stat__value"><span class="visually-hidden">310+</span><span aria-hidden="true"><span data-count="310">310</span><span>+</span></span></dd>
+              </div>
+              <div class="rs-stat">
+                <dt class="mono text-tertiary">Research studies</dt>
+                <dd class="stat__value"><span class="visually-hidden">40+</span><span aria-hidden="true"><span data-count="40">40</span><span>+</span></span></dd>
+              </div>
+              <div class="rs-stat">
+                <dt class="mono text-tertiary">Asset downloads</dt>
+                <dd class="stat__value"><span class="visually-hidden">12.4K+</span><span aria-hidden="true"><span data-count="12.4" data-decimals="1">12.4</span><span>K+</span></span></dd>
+              </div>
+              <div class="rs-stat">
+                <dt class="mono text-tertiary">Shipped at</dt>
+                <dd class="mono text-highlight rs-stat__list">Planet · Slingshot · Geospan · Gevo</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · Toolbar + trajectory --------------------------------------- -->
+    <div class="rs-toolbar" role="region" aria-label="Resume filters">
+      <div class="container rs-toolbar__inner">
+        <span class="mono text-tertiary rs-toolbar__label" id="filter-label">Filter by domain</span>
+        <div class="rs-chips" role="group" aria-labelledby="filter-label">
+          <button class="rs-chip" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="rs-chip" type="button" data-filter="systems" aria-pressed="false">Design systems</button>
+          <button class="rs-chip" type="button" data-filter="geo" aria-pressed="false">Geospatial</button>
+          <button class="rs-chip" type="button" data-filter="aero" aria-pressed="false">Aerospace</button>
+          <button class="rs-chip" type="button" data-filter="climate" aria-pressed="false">Climate</button>
+          <button class="rs-chip" type="button" data-filter="research" aria-pressed="false">Research</button>
+          <button class="rs-chip" type="button" data-filter="mentor" aria-pressed="false">Mentorship</button>
+        </div>
+        <button class="rs-toggle-all mono" type="button" data-expand-all aria-pressed="false">Expand all</button>
+      </div>
+    </div>
+
+    <section class="section section--glass section--compact" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="stack">
+            <span class="tag"><span class="dot dot--gold"></span>Flight path</span>
+            <h2 class="h2" id="experience-title">Professional Experience</h2>
+          </div>
+          <p class="mono text-tertiary rs-hide-sm" aria-live="polite" data-filter-status>9 roles · 2016 → Now</p>
+        </div>
+
+        <!-- Gantt-style trajectory, built by resume.js from the roles below -->
+        <figure class="rs-track" aria-hidden="true" data-track>
+          <div class="rs-track__axis" data-track-axis></div>
+          <div class="rs-track__rows" data-track-rows></div>
+        </figure>
+
+        <ol class="list-reset rs-roles">
+          <li class="rs-role" id="role-consulting" data-start="2024-02" data-end="now" data-tags="systems climate mentor" data-short="Consulting" data-parttime>
+            <details>
+              <summary>
+                <span class="rs-role__when mono">Feb 2024 — Present</span>
+                <span class="rs-role__head">
+                  <span class="h4 rs-role__title">Product Design Consultant</span>
+                  <span class="rs-role__org">Independent Practice · Rio Rancho, NM</span>
+                </span>
+                <span class="rs-role__kpi"><span class="rs-kpi">−40%</span><span class="mono text-tertiary">ramp-up time</span></span>
+                <span class="rs-role__chev" aria-hidden="true"></span>
+              </summary>
+              <div class="rs-role__body">
+                <p class="rs-role__context mono text-tertiary">Part-time advisory practice, held alongside the roles below</p>
+                <ul class="rs-bullets">
+                  <li>Executed short-term advisory projects focused on design system audits, AI-assisted design integration, and developer handoff optimizations for early-stage clients.</li>
+                  <li>Accelerated 0-to-1 startup launch cycles from napkin sketch to engineer-approved GitHub code using modular, adaptive UI frameworks.</li>
+                  <li>Reduced designer onboarding and engineering ramp-up time by <strong class="metric">40%</strong> by codifying design system documentation, contribution rules, and design-to-code specs.</li>
+                </ul>
+                <ul class="rs-tags list-reset"><li>Design system audits</li><li>AI-assisted workflows</li><li>0 → 1</li></ul>
+              </div>
+            </details>
+          </li>
+
+          <li class="rs-role" id="role-geospan" data-start="2024-08" data-end="2025-06" data-tags="systems geo mentor" data-short="Geospan">
+            <details>
+              <summary>
+                <span class="rs-role__when mono">Aug 2024 — Jun 2025</span>
+                <span class="rs-role__head">
+                  <span class="h4 rs-role__title">Senior Product Designer</span>
+                  <span class="rs-role__org">Geospan · Remote</span>
+                </span>
+                <span class="rs-role__kpi"><span class="rs-kpi">−60%</span><span class="mono text-tertiary">duplicate builds</span></span>
+                <span class="rs-role__chev" aria-hidden="true"></span>
+              </summary>
+              <div class="rs-role__body">
+                <p class="rs-role__context mono text-tertiary">SaaS platform for 3D roof measurement and modeling</p>
+                <ul class="rs-bullets">
+                  <li>Architected UX component standards for a B2C SaaS platform projected to generate <strong class="metric">$3M+</strong> in product expansion revenue.</li>
+                  <li>Led the Hijinks Design System (documentation blueprint and three-tier tokens synced between Figma and code), cutting duplicate component builds about <strong class="metric">60%</strong> within two quarters.</li>
+                  <li>Cut project rework by <strong class="metric">25%</strong> and boosted step-to-completion engagement by <strong class="metric">18%</strong> through redesigned 3D roof modeling and purchase workflows.</li>
+                  <li>Mentored cross-functional teams and junior designers to ensure alignment on new B2C component standards and UI implementation.</li>
+                </ul>
+                <ul class="rs-tags list-reset"><li>Hijinks Design System</li><li>3-tier tokens</li><li>3D modeling UX</li></ul>
+                <a class="link rs-role__case" href="../projects/hijinks-design-system/">Read the Hijinks case study →</a>
+              </div>
+            </details>
+          </li>
+
+          <li class="rs-role" id="role-gevo" data-start="2022-08" data-end="2024-02" data-tags="systems climate research mentor" data-short="Gevo">
+            <details>
+              <summary>
+                <span class="rs-role__when mono">Aug 2022 — Feb 2024</span>
+                <span class="rs-role__head">
+                  <span class="h4 rs-role__title">Lead Product Designer</span>
+                  <span class="rs-role__org">Gevo, Inc. · Englewood, CO (Remote)</span>
+                </span>
+                <span class="rs-role__kpi"><span class="rs-kpi">−35%</span><span class="mono text-tertiary">reporting time</span></span>
+                <span class="rs-role__chev" aria-hidden="true"></span>
+              </summary>
+              <div class="rs-role__body">
+                <p class="rs-role__context mono text-tertiary">Enterprise emissions-reporting platforms for supply-chain clients</p>
+                <ul class="rs-bullets">
+                  <li>Increased cross-functional developer velocity by <strong class="metric">25%</strong> and eliminated UI fragmentation by scaling a <strong class="metric">150+</strong> component multi-product design system with design tokens and governance.</li>
+                  <li>Reduced supply-chain client reporting time by <strong class="metric">35%</strong> across enterprise emissions platforms by conducting <strong class="metric">40+</strong> user research studies and translating insights into reusable UI patterns.</li>
+                  <li>Improved task success rates by <strong class="metric">18%</strong> and platform satisfaction by <strong class="metric">20%</strong> by establishing UX quality gates, workflow evaluations, and system audits.</li>
+                  <li>Championed cross-team mentorship by guiding product teams and engineers on design token integration, system governance, and democratizing design practices.</li>
+                </ul>
+                <ul class="rs-tags list-reset"><li>Nube Design System</li><li>Emissions dashboards</li><li>Governance</li></ul>
+                <a class="link rs-role__case" href="../projects/corn-to-ethanol---emissions-dashboard/">Read the emissions dashboard case study →</a>
+              </div>
+            </details>
+          </li>
+
+          <li class="rs-role" id="role-planet" data-start="2022-01" data-end="2022-08" data-tags="systems geo aero mentor" data-short="Planet">
+            <details>
+              <summary>
+                <span class="rs-role__when mono">Jan 2022 — Aug 2022</span>
+                <span class="rs-role__head">
+                  <span class="h4 rs-role__title">Senior Product Designer</span>
+                  <span class="rs-role__org">Planet · San Francisco, CA (Remote)</span>
+                </span>
+                <span class="rs-role__kpi"><span class="rs-kpi">60+</span><span class="mono text-tertiary">components</span></span>
+                <span class="rs-role__chev" aria-hidden="true"></span>
+              </summary>
+              <div class="rs-role__body">
+                <p class="rs-role__context mono text-tertiary">Satellite imagery and geospatial data platform</p>
+                <ul class="rs-bullets">
+                  <li>Decreased design-to-engineering handoff cycle time by <strong class="metric">20%</strong> by standardizing spec workflows and structuring Figma component libraries.</li>
+                  <li>Reduced UI inconsistencies by <strong class="metric">35%</strong> across multi-product surfaces by expanding the Planet Design System with <strong class="metric">60+</strong> tokenized UI components.</li>
+                  <li>Improved geospatial imagery search-to-action completion rate by <strong class="metric">15%</strong> by redesigning area-of-interest selection and search discovery workflows.</li>
+                  <li>Mentored and onboarded internal designers on the structural logic of the Planet Design System and standardized spec handoff workflows.</li>
+                </ul>
+                <ul class="rs-tags list-reset"><li>Satellite imagery search</li><li>AOI selection</li><li>Spec handoff</li></ul>
+                <a class="link rs-role__case" href="../projects/managing-and-editing-geospatial-vectors/">Read the geospatial vectors case study →</a>
+              </div>
+            </details>
+          </li>
+
+          <li class="rs-role" id="role-slingshot" data-start="2020-05" data-end="2021-08" data-tags="systems geo aero mentor" data-short="Slingshot">
+            <details>
+              <summary>
+                <span class="rs-role__when mono">May 2020 — Aug 2021</span>
+                <span class="rs-role__head">
+                  <span class="h4 rs-role__title">Product Designer</span>
+                  <span class="rs-role__org">Slingshot Aerospace · Remote</span>
+                </span>
+                <span class="rs-role__kpi"><span class="rs-kpi">−40%</span><span class="mono text-tertiary">survey time</span></span>
+                <span class="rs-role__chev" aria-hidden="true"></span>
+              </summary>
+              <div class="rs-role__body">
+                <p class="rs-role__context mono text-tertiary">Government contractor building aerospace and defense software for space and mission operations</p>
+                <ul class="rs-bullets">
+                  <li>Decreased on-site UAV survey execution time by <strong class="metric">~40%</strong> by engineering interactive mapping workflows and geospatial visualization patterns.</li>
+                  <li>Accelerated development cycles by <strong class="metric">25%</strong> by building a tokenized Material UI design system with <strong class="metric">100+</strong> production components.</li>
+                  <li>Boosted student orbital mechanics comprehension by <strong class="metric">60%</strong> and achieved <strong class="metric">&gt;85%</strong> student adoption by designing an interactive aerospace education simulator, “Slingshot Laboratory”.</li>
+                  <li>Provided informal mentorship to junior designers, sharing best practices for building interactive mapping workflows and handling dense geospatial data.</li>
+                </ul>
+                <ul class="rs-tags list-reset"><li>UAV survey</li><li>Material UI</li><li>Orbital simulator</li></ul>
+                <a class="link rs-role__case" href="../projects/kalibr8-uav-survey/">Read the Kalibr8 UAV case study →</a>
+              </div>
+            </details>
+          </li>
+
+          <li class="rs-role" id="role-impacti" data-start="2020-02" data-end="2020-06" data-tags="systems climate" data-short="Impacti">
+            <details>
+              <summary>
+                <span class="rs-role__when mono">Feb 2020 — Jun 2020</span>
+                <span class="rs-role__head">
+                  <span class="h4 rs-role__title">Senior Product Designer (Contract)</span>
+                  <span class="rs-role__org">Impacti · Remote</span>
+                </span>
+                <span class="rs-role__kpi"><span class="rs-kpi">−30%</span><span class="mono text-tertiary">reporting time</span></span>
+                <span class="rs-role__chev" aria-hidden="true"></span>
+              </summary>
+              <div class="rs-role__body">
+                <p class="rs-role__context mono text-tertiary">ESG and carbon-reporting software</p>
+                <ul class="rs-bullets">
+                  <li>Reduced carbon emissions reporting time by <strong class="metric">30%</strong> for sustainability analysts by re-architecting data-entry and ESG reporting workflows.</li>
+                  <li>Boosted developer velocity by <strong class="metric">20%</strong> by authoring a semantic Material UI design system with standardized token rules and component documentation.</li>
+                </ul>
+                <ul class="rs-tags list-reset"><li>ESG reporting</li><li>Semantic tokens</li></ul>
+              </div>
+            </details>
+          </li>
+
+          <li class="rs-role" id="role-xpansiv" data-start="2018-10" data-end="2020-01" data-tags="systems climate mentor" data-short="Xpansiv">
+            <details>
+              <summary>
+                <span class="rs-role__when mono">Oct 2018 — Jan 2020</span>
+                <span class="rs-role__head">
+                  <span class="h4 rs-role__title">Product Manager / Product Designer</span>
+                  <span class="rs-role__org">Xpansiv · Albuquerque, NM</span>
+                </span>
+                <span class="rs-role__kpi"><span class="rs-kpi">−25%</span><span class="mono text-tertiary">QA issues</span></span>
+                <span class="rs-role__chev" aria-hidden="true"></span>
+              </summary>
+              <div class="rs-role__body">
+                <p class="rs-role__context mono text-tertiary">Environmental commodities marketplace</p>
+                <ul class="rs-bullets">
+                  <li>Reduced QA compliance issues by <strong class="metric">25%</strong> by enforcing tokenized color systems and automated WCAG 2.1 accessibility contrast checking.</li>
+                  <li>Mentored cross-functional product peers on enforcing tokenized color systems and maintaining strict WCAG 2.1 accessibility standards.</li>
+                </ul>
+                <ul class="rs-tags list-reset"><li>WCAG 2.1</li><li>Carbon markets</li></ul>
+              </div>
+            </details>
+          </li>
+
+          <li class="rs-role" id="role-echo" data-start="2016-01" data-end="2018-10" data-tags="research mentor" data-short="Project ECHO">
+            <details>
+              <summary>
+                <span class="rs-role__when mono">Jan 2016 — Oct 2018</span>
+                <span class="rs-role__head">
+                  <span class="h4 rs-role__title">Art &amp; Design Supervisor · UX/UI &amp; Graphic Designer</span>
+                  <span class="rs-role__org">Project ECHO, UNM · Albuquerque, NM</span>
+                </span>
+                <span class="rs-role__kpi"><span class="rs-kpi">30+</span><span class="mono text-tertiary">countries</span></span>
+                <span class="rs-role__chev" aria-hidden="true"></span>
+              </summary>
+              <div class="rs-role__body">
+                <p class="rs-role__context mono text-tertiary">Global telementoring platform that trains healthcare providers through virtual case-based learning · Supervisor 2017–2018, UX/UI &amp; Graphic Designer 2016–2017</p>
+                <ul class="rs-bullets">
+                  <li>Supervised and formally mentored a design team, establishing reusable UX patterns and conducting global user research that improved telehealth platform usability scores by <strong class="metric">20%</strong> across <strong class="metric">30+</strong> countries.</li>
+                </ul>
+                <ul class="rs-tags list-reset"><li>Telehealth</li><li>Team lead</li><li>Global research</li></ul>
+              </div>
+            </details>
+          </li>
+
+          <li class="rs-role rs-role--extra" id="role-cbj" data-start="2025-01" data-end="now" data-tags="" data-short="Created by Jerry" data-parttime>
+            <p class="mono text-tertiary rs-role__eyebrow">Additional experience</p>
+            <details>
+              <summary>
+                <span class="rs-role__when mono">Jan 2025 — Present</span>
+                <span class="rs-role__head">
+                  <span class="h4 rs-role__title">Technical Product Designer &amp; Studio Founder</span>
+                  <span class="rs-role__org">Created by Jerry · Rio Rancho, NM</span>
+                </span>
+                <span class="rs-role__kpi"><span class="rs-kpi">12.4K+</span><span class="mono text-tertiary">downloads</span></span>
+                <span class="rs-role__chev" aria-hidden="true"></span>
+              </summary>
+              <div class="rs-role__body">
+                <ul class="rs-bullets">
+                  <li>Scaled indie game developer asset ecosystem to <strong class="metric">12.4K+</strong> downloads on Itch.io by defining product vision, optimizing distribution workflows, and eliminating creator integration friction.</li>
+                  <li>Bridged digital and physical product design by digitally sculpting, prototyping, and 3D printing fully articulated toys, managing real-world physical tolerances and spatial relationships.</li>
+                </ul>
+                <ul class="rs-tags list-reset"><li>UI kits</li><li>Itch.io</li><li>3D printing</li></ul>
+                <a class="link rs-role__case" href="../shop/">Browse the UI kits →</a>
+              </div>
+            </details>
+          </li>
+        </ol>
+
+        <p class="body text-tertiary rs-earlier"><span class="mono text-secondary">Earlier career ·</span> Visual Designer / Founder, Borunda Designs, LLC (2015–2017); Graphic Designer &amp; Marketing Intern, Chartwells (2013–2015); Graphic Artist &amp; Retail Operations, Whole Foods Market, Staples, OfficeMax (2011–2016).</p>
+      </div>
+    </section>
+
+    <!-- 03 · Skills ----------------------------------------------------- -->
+    <section class="section section--compact" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="stack">
+            <span class="tag"><span class="dot"></span>Toolkit</span>
+            <h2 class="h2" id="skills-title">Core Skills &amp; Technical Stack</h2>
+          </div>
+          <label class="rs-search">
+            <span class="visually-hidden">Find a skill</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3.5 3.5"/></svg>
+            <input type="search" placeholder="Find a skill — e.g. Figma, GSAP" data-skill-search autocomplete="off">
+            <span class="mono text-tertiary" data-skill-count aria-live="polite"></span>
+          </label>
+        </div>
+
+        <div class="rs-skills">
+          <article class="card card--static rs-skillset">
+            <div class="card__body">
+              <span class="mono text-accent">01</span>
+              <h3 class="h4">Design Systems &amp; Infrastructure</h3>
+              <ul class="list-reset rs-pills"><li>Design Tokens</li><li>Component Architecture</li><li>Material UI (MUI)</li><li>Figma</li><li>Figma Token Libraries</li><li>Multi-Product Design Systems</li><li>Semantic Styling</li><li>System Governance</li><li>Storybook Integration</li><li>Web Accessibility (WCAG 2.1)</li></ul>
+            </div>
+          </article>
+          <article class="card card--static rs-skillset">
+            <div class="card__body">
+              <span class="mono text-accent">02</span>
+              <h3 class="h4">UI/UX &amp; Product Strategy</h3>
+              <ul class="list-reset rs-pills"><li>0-to-1 Product Strategy</li><li>Systems Thinking</li><li>End-to-End UX</li><li>Interaction Design</li><li>Motion Design</li><li>UI Micro-interactions</li><li>Visual Craft</li><li>Information Architecture</li><li>Dashboard UX</li><li>Wireframing</li><li>User Flows</li><li>Journey Mapping</li><li>Personas</li><li>Feature Prioritization</li><li>KPI-Driven Design</li><li>Cross-Functional Collaboration</li><li>Stakeholder Management</li></ul>
+            </div>
+          </article>
+          <article class="card card--static rs-skillset">
+            <div class="card__body">
+              <span class="mono text-accent">03</span>
+              <h3 class="h4">Technical Stack &amp; Agile Workflow</h3>
+              <ul class="list-reset rs-pills"><li>HTML/CSS</li><li>CSS Animations/Transitions</li><li>JavaScript (GSAP)</li><li>Git/GitHub</li><li>Agile/Scrum</li><li>Jira</li><li>Confluence</li><li>WebGL</li><li>Three.js</li><li>Blender</li><li>Unity</li><li>Godot Engine</li><li>React handoff</li><li>TypeScript handoff</li><li>Vue handoff</li><li>Tailwind CSS handoff</li></ul>
+            </div>
+          </article>
+          <article class="card card--static rs-skillset">
+            <div class="card__body">
+              <span class="mono text-accent">04</span>
+              <h3 class="h4">Research, Prototyping &amp; AI</h3>
+              <ul class="list-reset rs-pills"><li>Interactive Prototyping</li><li>Rapid Prototyping</li><li>High-Fidelity Prototypes</li><li>AI-Accelerated Workflows</li><li>Claude</li><li>Google Gemini</li><li>User Research (40+ Studies)</li><li>Usability Testing</li><li>UX Audits</li><li>A/B Testing</li></ul>
+            </div>
+          </article>
+          <article class="card card--static rs-skillset">
+            <div class="card__body">
+              <span class="mono text-accent">05</span>
+              <h3 class="h4">Spatial UI &amp; Physical Prototyping</h3>
+              <ul class="list-reset rs-pills"><li>3D Interface Design</li><li>Digital Sculpting</li><li>Physical Articulation</li><li>3D Printing</li></ul>
+            </div>
+          </article>
+          <article class="card card--static rs-skillset rs-skillset--edu">
+            <div class="card__body">
+              <span class="mono text-highlight">Education</span>
+              <h3 class="h4">B.A. in Graphic Design</h3>
+              <p class="body text-secondary">Southwest University of Visual Arts · 2010–2015</p>
+              <span class="mono text-highlight rs-skillset__sub">Certifications · 2017</span>
+              <p class="body text-secondary">IDEO Design Kit: Prototyping<br>IDEO Design Kit: The Course of Human-Centered Design</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · Download --------------------------------------------------- -->
+    <section class="section section--glass section--compact" id="download" aria-labelledby="download-title">
+      <div class="container">
+        <div class="rs-download">
+          <a class="rs-download__sheet" href="../assets/docs/jerry-borunda-resume.pdf" target="_blank" rel="noopener" aria-label="Open the resume PDF in a new tab">
+            <img src="../assets/images/resume-preview.png" alt="First page of Jerry Borunda's resume" width="1105" height="1430" loading="lazy">
+            <span class="rs-download__badge mono">PDF · 3 pp</span>
+          </a>
+          <div class="stack rs-download__copy">
+            <span class="tag"><span class="dot"></span>Download</span>
+            <h2 class="h2" id="download-title">Take the Resume With You</h2>
+            <p class="body-md text-secondary">The same content as this page, in an ATS-friendly PDF for applicant systems, hiring panels and your own notes.</p>
+            <dl class="rs-filemeta">
+              <div><dt class="mono text-tertiary">Format</dt><dd class="mono">PDF · Letter</dd></div>
+              <div><dt class="mono text-tertiary">Length</dt><dd class="mono">3 pages</dd></div>
+              <div><dt class="mono text-tertiary">Size</dt><dd class="mono">84 KB</dd></div>
+              <div><dt class="mono text-tertiary">Updated</dt><dd class="mono">Nov 2026</dd></div>
+            </dl>
+            <div class="cluster rs-actions">
+              <a class="btn" href="../assets/docs/jerry-borunda-resume.pdf" download="Jerry-Borunda-Resume.pdf" data-analytics="resume_download">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 1v7M3 5.5 6 8.5 9 5.5M1.5 11h9"/></svg>
+                Download PDF
+              </a>
+              <a class="btn btn--ghost" href="../assets/docs/jerry-borunda-resume.pdf" target="_blank" rel="noopener">Open in new tab ↗</a>
+              <button class="btn btn--ghost" type="button" data-print>Print this page</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <span class="tag"><span class="dot"></span>Contact</span>
+        <h2 class="h2" id="contact-title">Let's Talk About Your Next Build</h2>
+        <p class="body text-secondary">Hiring for product design, design systems or design engineering? I'd love to hear about the team.</p>
+        <div class="cluster">
+          <a class="btn" href="mailto:jerryborundajr@gmail.com">Get in touch</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/jerryborundajr/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__intro">
+          <a class="footer__brand" href="../">
+            <img src="../assets/images/cbj-logo.png" alt="" width="32" height="32">
+            <span>created by jerry</span>
+            <span class="visually-hidden">Home</span>
+          </a>
+          <p class="footer__tagline">Senior product designer shipping interfaces, design systems, and live prototypes.</p>
+          <a class="footer__email" href="mailto:jerryborundajr@gmail.com">jerryborundajr@gmail.com <span aria-hidden="true">↗</span></a>
+        </div>
+        <nav class="footer__nav" aria-label="Sitemap">
+          <span class="mono footer__label">Sitemap</span>
+          <ul class="footer__list footer__list--2col">
+            <li><a href="../">Home</a></li>
+            <li><a href="../work/">Work</a></li>
+            <li><a href="../prototypes/">Prototypes</a></li>
+            <li><a href="../arcade/">Arcade</a></li>
+            <li><a href="../3d/">3D</a></li>
+            <li><a href="../shop/">UI Kits</a></li>
+            <li><a href="../about-jerry/">About</a></li>
+            <li><a href="../resume/">Resume</a></li>
+            <li><a href="../ai-disclosure-statement/">AI Disclosure</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__nav" aria-label="Elsewhere">
+          <span class="mono footer__label">Elsewhere</span>
+          <ul class="footer__list">
+            <li><a href="https://www.linkedin.com/in/jerryborundajr/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://createdbyjerry.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+            <li><a href="https://www.instagram.com/created_by_jerry/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://github.com/createdbyjerry" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bar mono">
+        <span>© <span data-year>2026</span> createdbyjerry</span>
+        <span class="footer__status"><span class="footer__dot" aria-hidden="true"></span>Open for select freelance work</span>
+        <a class="footer__top" href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="../assets/js/orb.js" defer></script>
+  <script src="../assets/js/site.js" defer></script>
+  <script src="../assets/js/resume.js" defer></script>
+</body>
+</html>
