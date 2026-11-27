@@ -56,7 +56,7 @@
         <a class="back-link mono" href="../../work/"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> All work</a>
         <div class="cs-hero__head">
           <h1 class="h1">Geospatial Vectors</h1>
-          <p class="h3 text-accent">Taming the Wild West of Geospatial Vectors</p>
+          <p class="h3 text-accent">Making vector editing predictable</p>
         </div>
         <div class="cs-hero__grid">
           <img class="cs-hero__media" src="../../assets/images/geo-hero.jpg" alt="Satellite map with a drawn field polygon, a Navigate, Draw and Edit mode switch, and the consolidated measurements panel and toolbar" width="1200" height="800">
@@ -78,7 +78,7 @@
       <div class="container">
         <div class="cs-section__head">
           <span class="mono text-tertiary"><span class="text-accent">01</span> / The Problem</span>
-          <h2 class="h2" id="s1-title">Lost in the Coordinates</h2>
+          <h2 class="h2" id="s1-title">Users were abandoning the vector tools</h2>
         </div>
         <div class="prose body-md">
           <p>We were dealing with a deeply frustrating user journey that risked pushing our core audience straight into the arms of competitor mapping tools:</p>
@@ -124,7 +124,7 @@
         <div class="callouts callouts--2">
           <div class="callout">
             <div class="stack stack--tight">
-              <h3 class="h4">Two-Person Army</h3>
+              <h3 class="h4">Two engineers</h3>
               <p class="body">We only had two lead engineers available to implement the entire redesign.</p>
             </div>
           </div>
@@ -134,6 +134,10 @@
               <p class="body">We were building on top of a fragile, legacy geospatial codebase that didn’t take kindly to massive, sweeping changes.</p>
             </div>
           </div>
+          <aside class="note">
+          <span class="mono text-primary">Why it mattered</span>
+          <p class="body-md">With two engineers and a codebase that broke under big changes, we couldn’t rebuild the editor from scratch. Every decision had to ship in small, safe steps: the new toolbar first, then the editing states, without breaking the tools people already relied on.</p>
+        </aside>
         </div>
       </div>
     </section>
