@@ -393,6 +393,16 @@ html:not([data-theme]) .theme-toggle { display: none; }
   -webkit-backdrop-filter: contrast(200%) blur(var(--blur-sm));
 }
 .frame__content { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2xl); }
+/* Hero tagline: sits tight under the name (8px) so it reads as its subtitle,
+   with extra room (56px) before the intro paragraph. */
+.hero__subtitle {
+  margin-top: calc(var(--space-2xs) - var(--space-2xl));
+  margin-bottom: calc(var(--space-3xl) - var(--space-2xl));
+  font-size: var(--type-body-lg);
+  line-height: var(--font-line-height-snug);
+  max-width: 48ch;
+  text-wrap: balance;
+}
 .frame__corner { position: absolute; width: var(--frame-corner-size); height: var(--frame-corner-size); border: 0 solid var(--frame-corner); pointer-events: none; }
 .frame__corner--tl { top: 0; left: 0; border-top-width: 1px; border-left-width: 1px; }
 .frame__corner--tr { top: 0; right: 0; border-top-width: 1px; border-right-width: 1px; }
