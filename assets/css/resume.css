@@ -37,15 +37,20 @@
 .rs-stat__list { line-height: var(--font-line-height-body); }
 
 /* 2. Sticky filter bar ------------------------------------------------------ */
+/* Pins flush to the top of the viewport. The extra top padding is the band the
+   fixed main nav (z-index 50) floats over, so the chips always sit just below it. */
 .rs-toolbar {
   position: sticky;
-  top: calc(var(--layout-nav-height) + var(--space-sm));
-  z-index: 20;
-  padding-block: var(--space-xs);
-  background: color-mix(in srgb, var(--surface-page) 82%, transparent);
+  top: 0;
+  z-index: 20; /* below .nav */
+  /* Nav bar is (nav-height − 12px) tall; this leaves an 8px gap under it
+     (minus the 2px of breathing room .rs-chips keeps for focus rings) */
+  padding-top: calc(var(--layout-nav-height) - var(--space-xs) + var(--space-2xs) - 2px);
+  padding-bottom: var(--space-xs);
+  background: color-mix(in srgb, var(--surface-page) 88%, transparent);
   backdrop-filter: blur(var(--blur-md));
   -webkit-backdrop-filter: blur(var(--blur-md));
-  border-block: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
 }
 .rs-toolbar__inner { flex-direction: row; align-items: center; gap: var(--space-sm); }
 .rs-toolbar__label { flex: none; }
@@ -139,7 +144,7 @@
 .rs-role {
   border-top: 1px solid var(--border-subtle);
   transition: opacity var(--motion-duration-slow) var(--motion-easing-standard);
-  scroll-margin-top: calc(var(--layout-nav-height) + 96px);
+  scroll-margin-top: calc(var(--layout-nav-height) + 96px); /* clears the pinned filter bar */
 }
 .rs-role:last-child { border-bottom: 1px solid var(--border-subtle); }
 .rs-role.is-dim { opacity: .28; }
@@ -329,11 +334,12 @@
 /* 9. Fixes / resets ---------------------------------------------------------- */
 .rs-stats dd, .rs-filemeta dd { margin: 0; }
 .section-head .stack { align-items: flex-start; }
-.rs-hero { padding-bottom: var(--layout-section-y-compact); border-bottom: 0; }
+/* The filter bar below carries its own nav-height of top padding, so the hero needs little of its own */
+.rs-hero { padding-bottom: var(--space-sm); border-bottom: 0; }
 .rs-track__bar { border: 0; padding: 0; }
 .rs-track__bar--part { border: 1px dashed var(--accent-secondary); }
 .rs-chips { min-width: 0; }
 @media (max-width: 767px) {
   .rs-track__years span:nth-child(even):not(:last-child) { display: none; }
-  .rs-toolbar { top: var(--layout-nav-height); }
 }
+
